@@ -283,45 +283,45 @@ export default function Home() {
       />
 
       {/* Fullscreen Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center px-4 z-10">
-        <div className="max-w-5xl mx-auto text-center space-y-12">
+      <section className="relative h-screen flex flex-col items-start justify-center px-8 z-10">
+        <div className="max-w-[90%] ml-0 mr-auto space-y-12">
           {/* Explorer Badge removed */}
           
           {/* Main Headline */}
-          <div className={`max-w-3xl mx-auto text-center transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`max-w-[95%] ml-16 mr-auto transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 
-              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-1000 ease-out`} 
-              style={{ textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)' }}
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-left bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-1000 ease-out`} 
+              style={{ textShadow: '0 0 20px rgba(147, 197, 253, 0.5), 0 0 40px rgba(147, 197, 253, 0.3)' }}
             >
               Nurjahan Jhorna
             </h1>
             <p 
-              className="text-xl md:text-2xl text-blue-300 mb-8"
+              className="text-xl md:text-2xl mb-8 text-left"
               style={{
-                textShadow: '0 0 10px rgba(34, 211, 238, 0.3)'
+                background: 'linear-gradient(to right, #a5f3fc, #7dd3fc, #93c5fd)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 15px rgba(56, 189, 248, 0.6), 0 0 30px rgba(59, 130, 246, 0.3)'
               }}
             >
               UX Designer & Frontend Developer
             </p>
-            <p className="text-lg text-white/90 max-w-2xl mx-auto font-light mb-10">
-              Crafting intuitive digital experiences through thoughtful design and clean code. Transforming ideas into engaging, accessible web solutions that make an impact.
+            <p className="text-xl md:text-2xl text-white/90 max-w-[80%] font-light mb-10 text-left leading-normal tracking-normal">
+              Where design meets code: crafting engaging, user-centered experiences that bring clarity, beauty, and accessibility to the web. My focus is on blending thoughtful UX design with clean, modern development to deliver digital solutions that are not only functional, but meaningful and impactful.
             </p>
             
             {/* Glowing Button */}
-            <div className={`flex flex-wrap gap-6 justify-center transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`flex flex-wrap gap-6 justify-start transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Button asChild size="lg" className="rounded-full px-8 py-6 text-base bg-transparent hover:bg-transparent relative group overflow-hidden">
-                <Link href="/about" className="relative z-10 text-white font-medium text-lg">
+                <Link href="https://www.linkedin.com/in/nurjahanjhorna" target="_blank" rel="noopener noreferrer" className="relative z-10 text-white font-medium text-lg">
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur-md group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
                   <span className="relative z-20 flex items-center justify-center gap-2 text-white">
-                    Explore Now
+                    Let's Connect!
                   </span>
                 </Link>
               </Button>
               
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-cyan-700/20 text-cyan-400 hover:text-cyan-300 hover:bg-slate-700 hover:border-cyan-700/40">
-                <Link href="/contact">Contact</Link>
-              </Button>
             </div>
           </div>
           

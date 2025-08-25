@@ -178,7 +178,7 @@ To make this portfolio your own:
 2. Modify project data in `src/lib/projects.ts`
 3. Customize the Explorer theme colors in `tailwind.config.mjs` if desired
 4. Replace the profile picture in `src/porfolio_pic.jpg`
-5. Update contact information in both `src/app/contact/page.tsx` and `src/components/footer.tsx`
+5. Update contact information in `src/components/footer.tsx`
 6. Modify the favicon in `public/favicon.svg` if you want a different theme
 
 ---

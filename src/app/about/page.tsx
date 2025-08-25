@@ -84,9 +84,6 @@ export default function About() {
               }}>
                 Nurjahan Jhorna
               </h1>
-              <p className="text-2xl md:text-3xl text-blue-300 font-light">
-                Digital Explorer & Frontend Developer
-              </p>
             </div>
             
             <div className="space-y-6 mb-12">
@@ -103,94 +100,9 @@ export default function About() {
               </p>
             </div>
             
-            <div className="flex gap-6">
-              <Link 
-                href="/projects" 
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-medium flex items-center gap-2 group"
-              >
-                <span>Explore My Work</span>
-                <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-              </Link>
-              <Link 
-                href="/" 
-                className="px-8 py-3 bg-[rgba(10,17,40,0.5)] hover:bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-lg text-blue-300 hover:text-blue-200 border border-blue-500/20 transition-all duration-300 shadow-lg hover:shadow-xl font-medium"
-              >
-                Back to Base Camp
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* Knowledge & Tools Section */}
-        <div className="max-w-6xl mx-auto mt-32">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-300 mb-16">
-            Knowledge & Tools
-          </h2>
-          <div className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-xl p-8 border border-blue-500/10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="bg-[rgba(10,17,40,0.5)] p-8 rounded-xl border border-blue-500/20 shadow-lg hover:shadow-blue-500/5 transition-all duration-500 transform hover:scale-[1.01] hover:bg-[rgba(10,17,40,0.6)]">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
-                    <Code className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-medium text-blue-300">Development</h3>
-                </div>
-                <ul className="space-y-4 text-slate-200">
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>HTML, CSS, JavaScript</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>React & Next.js</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>TypeScript</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Responsive Web Design</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Git Version Control</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-[rgba(10,17,40,0.5)] p-8 rounded-xl border border-blue-500/20 shadow-lg hover:shadow-blue-500/5 transition-all duration-500 transform hover:scale-[1.01] hover:bg-[rgba(10,17,40,0.6)]">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
-                    <Palette className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-medium text-blue-300">Design</h3>
-                </div>
-                <ul className="space-y-4 text-slate-200">
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Figma</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>UI/UX Design Principles</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Wireframing & Prototyping</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Visual Design</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Tailwind CSS</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
     </div>
   );

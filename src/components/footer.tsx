@@ -51,13 +51,6 @@ export function Footer() {
                 <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-2"></span>
                 Projects
               </Link>
-              <Link 
-                href="/contact" 
-                className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
-              >
-                <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-2"></span>
-                Contact
-              </Link>
             </nav>
           </div>
           

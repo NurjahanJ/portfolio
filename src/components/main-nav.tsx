@@ -60,7 +60,6 @@ export function MainNav() {
   const routes = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
   ]
   
   // Function to check if the route is active
