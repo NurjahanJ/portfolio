@@ -4,9 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ProjectsAnimation } from "@/components/ProjectsAnimation";
-import { projects } from "@/lib/projects";
-import { Compass, Code, Palette, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -338,121 +336,6 @@ export default function Home() {
       </section>
 
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
-        {/* My Journey Section */}
-        <section id="journey" className="py-12 md:py-20 relative overflow-hidden">
-          {/* Subtle stars in journey section */}
-          <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-            {Array.from({ length: 25 }).map((_, i) => (
-              <div 
-                key={`star-journey-${i}`}
-                className="absolute rounded-full bg-white"
-                style={{
-                  width: `${Math.random() * 2 + 1}px`,
-                  height: `${Math.random() * 2 + 1}px`,
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  opacity: Math.random() * 0.7 + 0.3
-                }}
-              />
-            ))}
-          </div>
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-blue-500/50 mr-4"></div>
-              <h2 
-                className="text-3xl md:text-4xl font-bold text-blue-300 font-sans"
-                style={{
-                  textShadow: '0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3)'
-                }}
-              >
-                The Expedition
-              </h2>
-              <div className="h-px w-12 bg-cyan-500/70 ml-4"></div>
-            </div>
-            <p className="text-lg text-blue-300 max-w-3xl mx-auto text-center font-light mb-12">
-              Navigating the digital wilderness through continuous exploration, discovery, and creation of innovative web experiences.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {/* Education Card */}
-            <article className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-6 border border-blue-500/20 hover:shadow-blue-500/5 hover:translate-y-[-2px] transition-all duration-300">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
-                  <Compass className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-medium text-blue-300 font-sans">Navigation</h3>
-              </div>
-              <p className="text-slate-200 leading-relaxed font-light">
-                Navigating the complex terrain of Web & Information Systems with strategic precision. My methodical approach integrates UX research, information architecture, and accessibility standards to create intuitive digital pathways that guide users through seamless experiences with clarity and purpose.
-              </p>
-            </article>
-            
-            {/* Development Card */}
-            <article className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-6 border border-blue-500/20 hover:shadow-blue-500/5 hover:translate-y-[-2px] transition-all duration-300">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
-                  <Code className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-medium text-blue-300 font-sans">Development</h3>
-              </div>
-              <p className="text-slate-200 leading-relaxed font-light">
-                Engineering robust frontend solutions with modern web technologies including React, TypeScript, and Next.js. My development approach emphasizes clean architecture, performance optimization, and responsive design principles to create scalable applications that deliver exceptional user experiences across all devices.
-              </p>
-            </article>
-            
-            {/* Design Card */}
-            <article className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-6 border border-blue-500/20 hover:shadow-blue-500/5 hover:translate-y-[-2px] transition-all duration-300">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
-                  <Palette className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-medium text-blue-300 font-sans">Design</h3>
-              </div>
-              <p className="text-slate-200 leading-relaxed font-light">
-                Crafting visually compelling interfaces that balance form and function through systematic design thinking. My process incorporates user research, prototyping, and iterative testing to create cohesive design systems that communicate clearly, evoke appropriate emotions, and guide users intuitively through digital experiences.
-              </p>
-            </article>
-          </div>
-        </section>
-        
-        {/* Projects Section */}
-        <section id="projects" className="py-16 md:py-24 bg-[rgba(10,17,40,0.7)] backdrop-blur-sm border-y border-blue-500/20 relative overflow-hidden">
-          {/* Subtle stars in projects section */}
-          <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-            {Array.from({ length: 30 }).map((_, i) => (
-              <div 
-                key={`star-projects-${i}`}
-                className="absolute rounded-full bg-white"
-                style={{
-                  width: `${Math.random() * 2 + 1}px`,
-                  height: `${Math.random() * 2 + 1}px`,
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  opacity: Math.random() * 0.7 + 0.3
-                }}
-              />
-            ))}
-          </div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-blue-500/50 mr-4"></div>
-              <h2 
-                className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" 
-                style={{textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)'}} 
-              >
-                My Playground
-              </h2>
-              <div className="h-px w-12 bg-cyan-500/70 ml-4"></div>
-            </div>
-            <p className="text-lg text-blue-300 max-w-3xl mx-auto font-light mb-12">
-              Artifacts from my digital expeditions — projects that showcase my approach to exploration, problem-solving, and innovation in the technological wilderness.
-            </p>
-          </div>
-          
-          <ProjectsAnimation projects={projects} />
-        </section>
       </main>
     </div>
   );
