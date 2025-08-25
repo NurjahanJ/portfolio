@@ -79,10 +79,10 @@ export default function About() {
           {/* Header Section */}
           <div className="max-w-4xl mx-auto mb-20">
             <div className="space-y-4 mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" style={{
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center" style={{
                 textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)'
               }}>
-                Nurjahan Jhorna
+                A little about me
               </h1>
             </div>
             

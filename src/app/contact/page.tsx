@@ -272,15 +272,6 @@ export default function Contact() {
         </div>
 
         {/* Navigation Button */}
-        <div className="mt-12 flex justify-start">
-          <Link 
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[rgba(10,17,40,0.5)] text-blue-300 rounded-lg border border-blue-500/20 hover:bg-[rgba(10,17,40,0.7)] transition-all duration-300 hover:border-blue-500/30 hover:text-blue-200"
-          >
-            <Compass className="w-5 h-5" />
-            Back to Base Camp
-          </Link>
-        </div>
       </main>
     </div>
   );
