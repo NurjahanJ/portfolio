@@ -307,7 +307,7 @@ export default function Home() {
               UX Designer & Frontend Developer
             </p>
             <p className="text-xl md:text-2xl text-white/90 max-w-[80%] font-light mb-10 text-left leading-normal tracking-normal">
-              Where design meets code: crafting engaging, user-centered experiences that bring clarity, beauty, and accessibility to the web. My focus is on blending thoughtful UX design with clean, modern development to deliver digital solutions that are not only functional, but meaningful and impactful.
+              Where design meets code: I craft user-centered experiences that bring clarity, beauty, and accessibility to the web. By blending thoughtful UX design with clean, modern development, I create digital solutions that are not just functional but meaningful and impactful.
             </p>
             
             {/* Glowing Button */}
@@ -317,7 +317,7 @@ export default function Home() {
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur-md group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
                   <span className="relative z-20 flex items-center justify-center gap-2 text-white">
-                    Let's Connect!
+                    Get In Touch
                   </span>
                 </Link>
               </Button>

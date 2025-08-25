@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Code, Palette, Compass } from "lucide-react";
 
 export default function About() {
@@ -87,19 +88,80 @@ export default function About() {
             </div>
             
             <div className="space-y-6 mb-12">
-              <p className="text-xl leading-relaxed text-slate-300">
-                As a Web & Information Systems student at New Jersey Institute of Technology, I'm at a pivotal point in my academic journey where theory transforms into wisdom. My journey began with a curiosity about how technology can create meaningful experiences, and I'm particularly drawn to the intersection of design and functionality.
+              <p className="text-xl leading-relaxed text-white">
+                Hi there! I'm a Web & Information Systems student at New Jersey Institute of Technology, passionate about creating digital experiences that are both intuitive and impactful. My curiosity for technology began with a simple question: <i>how can design and code work together to make life easier and more enjoyable?</i> That curiosity has grown into a drive to design and build solutions that put people at the center.
               </p>
               
-              <p className="text-xl leading-relaxed text-slate-300">
-                Through my academic projects, I've developed a thoughtful approach to front-end technologies like HTML, CSS, JavaScript, and React. I value the analytical process of translating complex concepts into responsive, accessible websites that provide meaningful learning experiences. Each project is an expedition into new possibilities, where I apply my growing toolkit to craft digital experiences that resonate and inspire.
+              <p className="text-xl leading-relaxed text-white">
+                Throughout my academic journey, I've worked with front-end technologies like HTML, CSS, JavaScript, and React, while also diving into UX design and research. I enjoy learning from users, prototyping with Figma, and refining designs into responsive, accessible websites. Each project is more than development—it's an opportunity to solve problems creatively and bring clarity, beauty, and functionality to the web.
               </p>
               
-              <p className="text-xl leading-relaxed text-slate-300">
-                I'm proficient with design tools like Figma, which I use to prototype and refine my ideas before implementation. This methodical approach helps me create cohesive experiences that balance clarity with functionality. I'm dedicated to continuous learning and growth, always seeking deeper understanding and opportunities to share insights through my work.
+              <p className="text-xl leading-relaxed text-white">
+                I'm a lifelong learner, always experimenting with new frameworks and exploring better ways to design for real people. Recently, I've begun integrating AI into my workflow to stay current with industry changes, boost efficiency, and spark new ideas. Whether coding, sketching, or testing with users, my goal is simple: to create experiences that resonate, empower, and make a difference.
               </p>
             </div>
             
+            {/* Personal Hobbies Section */}
+            <div className="mt-16 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center mb-8" style={{
+                textShadow: '0 0 15px rgba(147, 197, 253, 0.3), 0 0 30px rgba(147, 197, 253, 0.1)'
+              }}>
+                Life Outside Design & Code
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Crochet */}
+                <div className="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                  <div className="flex flex-col items-center">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg">
+                      <Image 
+                        src="/corchet.png" 
+                        alt="Crochet hobby" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2">Crochet</h3>
+                    <p className="text-white text-center">I love bringing creativity to life with yarn, whether it's making cozy blankets or experimenting with intricate patterns and decorations. Crochet gives me a sense of calm while letting me design something tangible and meaningful.</p>
+                  </div>
+                </div>
+                
+                {/* Cross Stitch */}
+                <div className="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                  <div className="flex flex-col items-center">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg">
+                      <Image 
+                        src="/cross-stitch.png" 
+                        alt="Cross stitch hobby" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2">Cross Stitch</h3>
+                    <p className="text-white text-center">Cross stitch is one of my favorite creative outlets. It allows me to focus on the details and transform simple threads into colorful, patterned designs. It's both relaxing and rewarding to see each piece come together.</p>
+                  </div>
+                </div>
+                
+                {/* Games */}
+                <div className="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                  <div className="flex flex-col items-center">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg">
+                      <Image 
+                        src="/games.png" 
+                        alt="Gaming hobby" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2">Games</h3>
+                    <p className="text-white text-center">I enjoy exploring virtual worlds and taking on strategic challenges through video and board games. Gaming fuels my curiosity, sharpens my problem-solving skills, and inspires me to think creatively in new ways.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

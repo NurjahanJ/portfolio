@@ -88,7 +88,6 @@ export function MainNav() {
           className="flex items-center gap-2 text-xl font-semibold text-white hover:text-cyan-400 transition-colors duration-300" 
           aria-label="Nurjahan Jhorna home page"
         >
-          <Mountain className="h-5 w-5 text-cyan-400" aria-hidden="true" />
           <span className="font-serif">Nurjahan Jhorna</span>
         </Link>
         
