@@ -288,7 +288,7 @@ export default function Home() {
           {/* Explorer Badge removed */}
           
           {/* Main Headline */}
-          <div className={`max-w-[95%] ml-16 mr-auto transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`max-w-[95%] ml-16 mr-auto transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ marginTop: '-260px' }}>
             <h1 
               className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-left bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-1000 ease-out`} 
               style={{ 
@@ -333,7 +333,7 @@ export default function Home() {
           </div>
           
           {/* Bouncing Compass Icon */}
-          <div className={`absolute bottom-16 left-1/2 transform -translate-x-1/2 ${compassBounce ? 'animate-bounce' : 'opacity-0'} transition-opacity duration-500`}>
+          <div className={`absolute bottom-30 left-1/2 transform -translate-x-1/2 ${compassBounce ? 'animate-bounce' : 'opacity-0'} transition-opacity duration-500`}>
             <div className="bg-slate-800/70 p-3 rounded-full border border-slate-600/50 backdrop-blur-sm">
               <ChevronDown className="h-6 w-6 text-[#C33909]" />
               <span className="sr-only">Scroll down</span>

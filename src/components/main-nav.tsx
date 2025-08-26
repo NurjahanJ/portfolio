@@ -76,13 +76,13 @@ export function MainNav() {
     <nav 
       className={`flex items-center justify-between w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'py-3 backdrop-blur-[10px] bg-[rgba(10,17,40,0.7)] border-b border-cyan-700/20' 
-          : 'py-5 backdrop-blur-[10px] bg-[rgba(10,17,40,0.6)]'
-      } ${isAboutPage ? 'py-2' : ''}`} 
+          ? 'py-3 backdrop-blur-[10px] bg-[rgba(4,10,30,0.65)] border-b border-[#C33909]/20' 
+          : 'py-5 backdrop-blur-[10px] bg-[rgba(4,10,30,0.55)]'
+      } ${isAboutPage ? 'py-1' : ''}`} 
       style={{
-        boxShadow: scrolled ? '0 4px 20px rgba(34, 211, 238, 0.05)' : 'none',
-        borderBottom: '1px solid rgb(14, 116, 144, 0.2)',
-        ...(isAboutPage && { height: '100px' })
+        boxShadow: scrolled ? '0 4px 20px rgba(195, 57, 9, 0.05)' : 'none',
+        borderBottom: '1px solid rgba(195, 57, 9, 0.2)',
+        ...(isAboutPage && { height: '70px' })
       }}
       aria-label="Main navigation"
     >
@@ -90,15 +90,15 @@ export function MainNav() {
         <div className="flex items-center" style={{ paddingLeft: '6rem' }}>
           <Link 
             href="/" 
-            className="flex items-center gap-2 text-xl font-semibold text-white hover:text-cyan-400 transition-colors duration-300" 
+            className="flex items-center gap-2 text-xl font-semibold text-white hover:text-[#C33909] transition-colors duration-300" 
             aria-label="Nurjahan Jhorna home page"
           >
             <div className="flex items-center gap-3">
               <img 
                 src="/logo.png" 
                 alt="Digital Map Logo" 
-                width={isAboutPage ? "70" : "85"} 
-                height={isAboutPage ? "70" : "85"} 
+                width={isAboutPage ? "50" : "70"} 
+                height={isAboutPage ? "50" : "70"} 
                 className="md:ml-4 ml-0 rounded-full" 
               />
             </div>
@@ -139,20 +139,20 @@ export function MainNav() {
                 aria-label="Open menu" 
                 aria-expanded="false"
                 aria-haspopup="true"
-                className="p-2 rounded-lg bg-slate-800 border border-cyan-700/20 text-cyan-400 hover:bg-slate-700 hover:border-cyan-700/40 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-[#0a1128]"
+                className="p-2 rounded-lg bg-slate-800 border border-[#C33909]/20 text-[#C33909] hover:bg-slate-700 hover:border-[#C33909]/40 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#C33909]/50 focus:ring-offset-2 focus:ring-offset-[#0a1128]"
               >
                 <Menu className="h-6 w-6" aria-hidden="true" />
               </button>
             </SheetTrigger>
             <SheetContent 
               side="right" 
-              className="p-0 w-full max-w-[100vw] border-l-0 bg-[#0a1128]/95 backdrop-blur-md"
+              className="p-0 w-full max-w-[100vw] border-l-0 bg-[rgba(4,10,30,0.75)] backdrop-blur-md"
             >
               <div className="flex justify-end p-4">
                 <SheetTrigger asChild>
                   <button 
                     aria-label="Close menu" 
-                    className="p-2 rounded-full bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors duration-300 border border-cyan-700/20 hover:border-cyan-700/40"
+                    className="p-2 rounded-full bg-slate-800 text-[#C33909] hover:bg-slate-700 transition-colors duration-300 border border-[#C33909]/20 hover:border-[#C33909]/40"
                   >
                     <X className="h-6 w-6" aria-hidden="true" />
                   </button>
@@ -207,7 +207,7 @@ export function MainNav() {
                       href="https://github.com/NurjahanJ" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors duration-300 border border-cyan-700/20 hover:border-cyan-700/40"
+                      className="p-2 rounded-full bg-slate-800 text-[#C33909] hover:bg-slate-700 transition-colors duration-300 border border-[#C33909]/20 hover:border-[#C33909]/40"
                       aria-label="GitHub"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -216,7 +216,7 @@ export function MainNav() {
                       href="https://linkedin.com/in/nurjahan-jhorna" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-slate-800 text-cyan-400 hover:bg-slate-700 transition-colors duration-300 border border-cyan-700/20 hover:border-cyan-700/40"
+                      className="p-2 rounded-full bg-slate-800 text-[#C33909] hover:bg-slate-700 transition-colors duration-300 border border-[#C33909]/20 hover:border-[#C33909]/40"
                       aria-label="LinkedIn"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
