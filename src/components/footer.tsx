@@ -94,9 +94,9 @@ export function Footer() {
           
           {/* About Site */}
           <div className="space-y-4">
-            <h3 className="text-cyan-400 font-bold text-lg mb-4">About This Map</h3>
+            <h3 className="text-cyan-400 font-bold text-lg mb-4">About This Journal</h3>
             <p className="text-slate-300 text-sm leading-relaxed">
-              My Digital Map is a portfolio designed to guide you through my journey as a developer and designer.
+              Design Journal is a portfolio designed to guide you through my journey as a developer and designer.
               Built with Next.js, TypeScript, and Tailwind CSS, it showcases my projects and skills.
             </p>
             <p className="text-slate-300 text-sm mt-4">

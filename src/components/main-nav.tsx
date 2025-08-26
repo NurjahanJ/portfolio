@@ -88,11 +88,20 @@ export function MainNav() {
           className="flex items-center gap-2 text-xl font-semibold text-white hover:text-cyan-400 transition-colors duration-300" 
           aria-label="Nurjahan Jhorna home page"
         >
-          <span className="font-serif">Nurjahan Jhorna</span>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/north.png" 
+              alt="Digital Map Logo" 
+              width="48" 
+              height="48" 
+              className="md:ml-12 ml-0" 
+            />
+            <span className="text-white text-xl font-medium" style={{ fontFamily: 'var(--font-lora)' }}>Design Journal</span>
+          </div>
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden md:flex gap-8 items-center ml-auto" style={{ marginLeft: '63rem' }}>
           {routes.map((route, index) => (
             <Link 
               key={route.href} 
@@ -102,16 +111,16 @@ export function MainNav() {
               className="group relative overflow-hidden"
             >
               <span className={`text-base font-medium transition-colors capitalize py-1 ${isActive(route.href) 
-                ? 'text-cyan-400 font-semibold' 
-                : 'text-slate-300 hover:text-cyan-400'}`}
+                ? 'text-[#C33909] font-semibold' 
+                : 'text-slate-300 hover:text-[#C33909]'}`}
               >
                 {route.label}
               </span>
               {/* Animated underline */}
               <span 
                 className={`absolute bottom-0 left-0 w-full h-[2px] ${isActive(route.href) 
-                  ? 'bg-cyan-400 shadow-cyan-400/40' 
-                  : 'bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-cyan-400/40'}`}
+                  ? 'bg-[#C33909] shadow-[#C33909]/40' 
+                  : 'bg-[#C33909] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-[#C33909]/40'}`}
               />
             </Link>
           ))}
@@ -146,9 +155,16 @@ export function MainNav() {
               </div>
               
               <div className="flex flex-col items-center justify-center h-[80vh] gap-8">
-                <div className="flex items-center gap-2 mb-8">
-                  <Compass className="h-8 w-8 text-cyan-400" aria-hidden="true" />
-                  <span className="text-2xl font-serif font-semibold text-white">Nurjahan Jhorna</span>
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src="/north.png" 
+                      alt="Digital Map Logo" 
+                      width="64" 
+                      height="64" 
+                    />
+                    <span className="text-white text-2xl font-medium" style={{ fontFamily: 'var(--font-lora)' }}>Design Journal</span>
+                  </div>
                 </div>
                 
                 <nav className="flex flex-col items-center gap-8 w-full">
@@ -164,16 +180,16 @@ export function MainNav() {
                       >
                         <span 
                           className={`text-2xl font-medium capitalize py-1 transition-colors duration-300 ${active 
-                            ? 'text-cyan-400 font-semibold' 
-                            : 'text-slate-300 hover:text-cyan-400'}`}
+                            ? 'text-[#C33909] font-semibold' 
+                            : 'text-slate-300 hover:text-[#C33909]'}`}
                         >
                           {route.label}
                         </span>
                         {/* Animated underline */}
                         <span 
                           className={`absolute bottom-0 left-0 w-full h-[2px] ${active 
-                            ? 'bg-cyan-400 shadow-cyan-400/40' 
-                            : 'bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-cyan-400/40'}`}
+                            ? 'bg-[#C33909] shadow-[#C33909]/40' 
+                            : 'bg-[#C33909] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-[#C33909]/40'}`}
                         />
                       </Link>
                     )

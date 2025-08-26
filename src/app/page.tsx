@@ -291,32 +291,39 @@ export default function Home() {
           <div className={`max-w-[95%] ml-16 mr-auto transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 
               className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-left bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-1000 ease-out`} 
-              style={{ textShadow: '0 0 20px rgba(147, 197, 253, 0.5), 0 0 40px rgba(147, 197, 253, 0.3)' }}
+              style={{ 
+                fontFamily: 'var(--font-lora)', 
+                fontWeight: 500, 
+                textShadow: '0 0 20px rgba(147, 197, 253, 0.5), 0 0 40px rgba(147, 197, 253, 0.3)',
+                paddingTop: '10px',
+                paddingBottom: '10px',
+                lineHeight: '1.2'
+              }}
             >
               Nurjahan Jhorna
             </h1>
             <p 
               className="text-xl md:text-2xl mb-8 text-left"
               style={{
-                background: 'linear-gradient(to right, #a5f3fc, #7dd3fc, #93c5fd)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 15px rgba(56, 189, 248, 0.6), 0 0 30px rgba(59, 130, 246, 0.3)'
+                fontFamily: 'var(--font-lora)',
+                fontWeight: 500,
+                color: '#C33909',
+                textShadow: '0 0 10px rgba(195, 57, 9, 0.5)'
               }}
             >
               UX Designer & Frontend Developer
             </p>
-            <p className="text-xl md:text-2xl text-white/90 max-w-[80%] font-light mb-10 text-left leading-normal tracking-normal">
-              Where design meets code: I craft user-centered experiences that bring clarity, beauty, and accessibility to the web. By blending thoughtful UX design with clean, modern development, I create digital solutions that are not just functional but meaningful and impactful.
+            <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 max-w-[80%] mb-10 text-left leading-normal tracking-normal" style={{ fontFamily: 'var(--font-lora)', fontWeight: 400 }}>
+              Where design meets code: I craft user-centered experiences that bring clarity, beauty, and accessibility to the web.
             </p>
             
             {/* Glowing Button */}
             <div className={`flex flex-wrap gap-6 justify-start transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Button asChild size="lg" className="rounded-full px-8 py-6 text-base bg-transparent hover:bg-transparent relative group overflow-hidden">
                 <Link href="https://www.linkedin.com/in/nurjahanjhorna" target="_blank" rel="noopener noreferrer" className="relative z-10 text-white font-medium text-lg">
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur-md group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
-                  <span className="relative z-20 flex items-center justify-center gap-2 text-white">
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#A62F07] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#A62F07] group-hover:to-[#C33909] transition-all duration-300"></span>
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#8B2703] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#8B2703] group-hover:to-[#C33909] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                  <span className="relative z-20 flex items-center justify-center gap-2 text-white" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
                     Get In Touch
                   </span>
                 </Link>
@@ -326,9 +333,9 @@ export default function Home() {
           </div>
           
           {/* Bouncing Compass Icon */}
-          <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${compassBounce ? 'animate-bounce' : 'opacity-0'} transition-opacity duration-500`}>
+          <div className={`absolute bottom-16 left-1/2 transform -translate-x-1/2 ${compassBounce ? 'animate-bounce' : 'opacity-0'} transition-opacity duration-500`}>
             <div className="bg-slate-800/70 p-3 rounded-full border border-slate-600/50 backdrop-blur-sm">
-              <ChevronDown className="h-6 w-6 text-cyan-400" />
+              <ChevronDown className="h-6 w-6 text-[#C33909]" />
               <span className="sr-only">Scroll down</span>
             </div>
           </div>
