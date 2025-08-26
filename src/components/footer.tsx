@@ -33,7 +33,7 @@ export function Footer() {
         </nav>
         
         {/* Right - Social links */}
-        <div className="flex flex-col space-y-3 items-center md:items-end">
+        <div className="flex flex-col space-y-3 items-center md:items-end h-full justify-center">
           <a 
             href="https://linkedin.com/in/nurjahan-jhorna" 
             target="_blank" 

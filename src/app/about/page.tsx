@@ -105,7 +105,7 @@ export default function About() {
             </div>
             
             {/* Personal Hobbies Section */}
-            <div className="mt-16 mb-8">
+            <div className="mt-24 mb-8">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center mb-4" style={{
                 textShadow: '0 0 15px rgba(147, 197, 253, 0.3), 0 0 30px rgba(147, 197, 253, 0.1)'
               }}>
