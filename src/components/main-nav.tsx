@@ -90,13 +90,12 @@ export function MainNav() {
         >
           <div className="flex items-center gap-3">
             <img 
-              src="/north.png" 
+              src="/logo.png" 
               alt="Digital Map Logo" 
-              width="48" 
-              height="48" 
-              className="md:ml-12 ml-0" 
+              width="85" 
+              height="85" 
+              className="md:ml-12 ml-0 rounded-full" 
             />
-            <span className="text-white text-xl font-medium" style={{ fontFamily: 'var(--font-lora)' }}>Design Journal</span>
           </div>
         </Link>
         
@@ -158,12 +157,12 @@ export function MainNav() {
                 <div className="flex flex-col items-center justify-center mb-8">
                   <div className="flex items-center gap-3">
                     <img 
-                      src="/north.png" 
+                      src="/logo.png" 
                       alt="Digital Map Logo" 
-                      width="64" 
-                      height="64" 
+                      width="120" 
+                      height="120" 
+                      className="rounded-full" 
                     />
-                    <span className="text-white text-2xl font-medium" style={{ fontFamily: 'var(--font-lora)' }}>Design Journal</span>
                   </div>
                 </div>
                 
