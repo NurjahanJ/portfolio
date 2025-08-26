@@ -87,7 +87,7 @@ export default function About() {
               </h1>
               
               {/* Thin line separator */}
-              <div className="w-24 h-[2px] bg-[#C33909] mx-auto mt-6 mb-8"></div>
+              <div className="w-[500px] h-[2px] bg-[#C33909] mx-auto mt-6 mb-8"></div>
             </div>
             
             <div className="space-y-6 mb-12">
@@ -106,17 +106,20 @@ export default function About() {
             
             {/* Personal Hobbies Section */}
             <div className="mt-16 mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center mb-8" style={{
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center mb-4" style={{
                 textShadow: '0 0 15px rgba(147, 197, 253, 0.3), 0 0 30px rgba(147, 197, 253, 0.1)'
               }}>
                 Life Outside Design & Code
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Thin line separator */}
+              <div className="w-[500px] h-[2px] bg-[#C33909] mx-auto mt-2 mb-8"></div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-full mx-auto px-4">
                 {/* Crochet */}
-                <div className="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                  <div className="flex flex-col items-center">
-                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg">
+                <div className="rounded-xl py-6 px-4 transition-all duration-300">
+                  <div className="flex flex-col items-start">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg mx-auto">
                       <Image 
                         src="/corchet.png" 
                         alt="Crochet hobby" 
@@ -125,15 +128,15 @@ export default function About() {
                         className="transition-transform duration-500 hover:scale-110"
                       />
                     </div>
-                    <h3 className="text-xl font-semibold text-blue-300 mb-2">Crochet</h3>
-                    <p className="text-white text-center">I love bringing creativity to life with yarn, whether it's making cozy blankets or experimenting with intricate patterns and decorations. Crochet gives me a sense of calm while letting me design something tangible and meaningful.</p>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Crochet</h3>
+                    <p className="text-white text-left">I love bringing creativity to life with yarn, whether it's making cozy blankets or experimenting with intricate patterns and decorations. Crochet gives me a sense of calm while letting me design something tangible and meaningful.</p>
                   </div>
                 </div>
                 
                 {/* Cross Stitch */}
-                <div className="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                  <div className="flex flex-col items-center">
-                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg">
+                <div className="rounded-xl py-6 px-4 transition-all duration-300">
+                  <div className="flex flex-col items-start">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg mx-auto">
                       <Image 
                         src="/cross-stitch.png" 
                         alt="Cross stitch hobby" 
@@ -142,15 +145,15 @@ export default function About() {
                         className="transition-transform duration-500 hover:scale-110"
                       />
                     </div>
-                    <h3 className="text-xl font-semibold text-blue-300 mb-2">Cross Stitch</h3>
-                    <p className="text-white text-center">Cross stitch is one of my favorite creative outlets. It allows me to focus on the details and transform simple threads into colorful, patterned designs. It's both relaxing and rewarding to see each piece come together.</p>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Cross Stitch</h3>
+                    <p className="text-white text-left">Cross stitch is one of my favorite creative outlets. It allows me to focus on the details and transform simple threads into colorful, patterned designs. It's both relaxing and rewarding to see each piece come together.</p>
                   </div>
                 </div>
                 
                 {/* Games */}
-                <div className="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                  <div className="flex flex-col items-center">
-                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg">
+                <div className="rounded-xl py-6 px-4 transition-all duration-300">
+                  <div className="flex flex-col items-start">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg mx-auto">
                       <Image 
                         src="/games.png" 
                         alt="Gaming hobby" 
@@ -159,8 +162,8 @@ export default function About() {
                         className="transition-transform duration-500 hover:scale-110"
                       />
                     </div>
-                    <h3 className="text-xl font-semibold text-blue-300 mb-2">Games</h3>
-                    <p className="text-white text-center">I enjoy exploring virtual worlds and taking on strategic challenges through video and board games. Gaming fuels my curiosity, sharpens my problem-solving skills, and inspires me to think creatively in new ways.</p>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Games</h3>
+                    <p className="text-white text-left">I enjoy exploring virtual worlds and taking on strategic challenges through video and board games. Gaming fuels my curiosity, sharpens my problem-solving skills, and inspires me to think creatively in new ways.</p>
                   </div>
                 </div>
               </div>

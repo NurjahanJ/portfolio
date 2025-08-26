@@ -82,7 +82,7 @@ export function MainNav() {
       style={{
         boxShadow: scrolled ? '0 4px 20px rgba(34, 211, 238, 0.05)' : 'none',
         borderBottom: '1px solid rgb(14, 116, 144, 0.2)',
-        ...(isAboutPage && { height: '70px' })
+        ...(isAboutPage && { height: '100px' })
       }}
       aria-label="Main navigation"
     >
@@ -97,8 +97,8 @@ export function MainNav() {
               <img 
                 src="/logo.png" 
                 alt="Digital Map Logo" 
-                width={isAboutPage ? "50" : "85"} 
-                height={isAboutPage ? "50" : "85"} 
+                width={isAboutPage ? "70" : "85"} 
+                height={isAboutPage ? "70" : "85"} 
                 className="md:ml-4 ml-0 rounded-full" 
               />
             </div>
