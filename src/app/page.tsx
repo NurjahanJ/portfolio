@@ -283,7 +283,7 @@ export default function Home() {
       />
 
       {/* Fullscreen Hero Section */}
-      <section className="relative h-screen flex flex-col items-start justify-center px-8 z-10">
+      <section className="relative h-screen flex flex-col items-start justify-center px-8 z-10 pt-16">
         <div className="max-w-[90%] ml-0 mr-auto space-y-12">
           {/* Explorer Badge removed */}
           

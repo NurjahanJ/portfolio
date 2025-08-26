@@ -69,38 +69,44 @@ export function MainNav() {
     return false
   }
 
+  // Determine if we're on the About page
+  const isAboutPage = pathname === "/about";
+
   return (
     <nav 
-      className={`flex items-center justify-between w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`flex items-center justify-between w-full z-50 transition-all duration-300 ${
         scrolled 
           ? 'py-3 backdrop-blur-[10px] bg-[rgba(10,17,40,0.7)] border-b border-cyan-700/20' 
           : 'py-5 backdrop-blur-[10px] bg-[rgba(10,17,40,0.6)]'
-      }`} 
+      } ${isAboutPage ? 'py-2' : ''}`} 
       style={{
         boxShadow: scrolled ? '0 4px 20px rgba(34, 211, 238, 0.05)' : 'none',
-        borderBottom: '1px solid rgb(14, 116, 144, 0.2)'
+        borderBottom: '1px solid rgb(14, 116, 144, 0.2)',
+        ...(isAboutPage && { height: '70px' })
       }}
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <Link 
-          href="/" 
-          className="flex items-center gap-2 text-xl font-semibold text-white hover:text-cyan-400 transition-colors duration-300" 
-          aria-label="Nurjahan Jhorna home page"
-        >
-          <div className="flex items-center gap-3">
-            <img 
-              src="/logo.png" 
-              alt="Digital Map Logo" 
-              width="85" 
-              height="85" 
-              className="md:ml-12 ml-0 rounded-full" 
-            />
-          </div>
-        </Link>
+        <div className="flex items-center" style={{ paddingLeft: '6rem' }}>
+          <Link 
+            href="/" 
+            className="flex items-center gap-2 text-xl font-semibold text-white hover:text-cyan-400 transition-colors duration-300" 
+            aria-label="Nurjahan Jhorna home page"
+          >
+            <div className="flex items-center gap-3">
+              <img 
+                src="/logo.png" 
+                alt="Digital Map Logo" 
+                width={isAboutPage ? "50" : "85"} 
+                height={isAboutPage ? "50" : "85"} 
+                className="md:ml-4 ml-0 rounded-full" 
+              />
+            </div>
+          </Link>
+        </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center ml-auto" style={{ marginLeft: '63rem' }}>
+        <div className="hidden md:flex gap-8 items-center" style={{ paddingRight: '10rem' }}>
           {routes.map((route, index) => (
             <Link 
               key={route.href} 
@@ -109,7 +115,7 @@ export function MainNav() {
               aria-current={isActive(route.href) ? 'page' : undefined}
               className="group relative overflow-hidden"
             >
-              <span className={`text-base font-medium transition-colors capitalize py-1 ${isActive(route.href) 
+              <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 ${isActive(route.href) 
                 ? 'text-[#C33909] font-semibold' 
                 : 'text-slate-300 hover:text-[#C33909]'}`}
               >
@@ -159,8 +165,8 @@ export function MainNav() {
                     <img 
                       src="/logo.png" 
                       alt="Digital Map Logo" 
-                      width="120" 
-                      height="120" 
+                      width={isAboutPage ? "70" : "120"} 
+                      height={isAboutPage ? "70" : "120"} 
                       className="rounded-full" 
                     />
                   </div>
@@ -178,7 +184,7 @@ export function MainNav() {
                         className="group relative overflow-hidden"
                       >
                         <span 
-                          className={`text-2xl font-medium capitalize py-1 transition-colors duration-300 ${active 
+                          className={`${isAboutPage ? 'text-xl' : 'text-2xl'} font-medium capitalize py-1 transition-colors duration-300 ${active 
                             ? 'text-[#C33909] font-semibold' 
                             : 'text-slate-300 hover:text-[#C33909]'}`}
                         >

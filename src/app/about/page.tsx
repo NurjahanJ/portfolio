@@ -75,7 +75,7 @@ export default function About() {
           }}
         ></div>
       </div>
-      <main className="relative container mx-auto px-4 py-16 md:py-24">
+      <main className="relative container mx-auto px-4 pt-8 pb-16 md:pt-12 md:pb-24">
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           {/* Header Section */}
           <div className="max-w-4xl mx-auto mb-20">
@@ -85,6 +85,9 @@ export default function About() {
               }}>
                 A little about me
               </h1>
+              
+              {/* Thin line separator */}
+              <div className="w-24 h-[2px] bg-[#C33909] mx-auto mt-6 mb-8"></div>
             </div>
             
             <div className="space-y-6 mb-12">

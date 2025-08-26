@@ -41,8 +41,8 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: {
-    default: "Design Journal | Nurjahan Jhorna",
-    template: "%s | Design Journal",
+    default: "Home | Nurjahan Jhorna",
+    template: "%s | Nurjahan Jhorna",
   },
   description: "Exploring the digital frontier through web development and design - Nurjahan Jhorna's portfolio",
   authors: [{ name: "Nurjahan Jhorna" }],
