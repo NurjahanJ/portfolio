@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Code, Palette, Compass } from "lucide-react";
 
 export default function About() {
@@ -74,123 +75,102 @@ export default function About() {
           }}
         ></div>
       </div>
-      <main className="relative container mx-auto px-4 py-16 md:py-24">
+      <main className="relative container mx-auto px-4 pt-8 pb-16 md:pt-12 md:pb-24">
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           {/* Header Section */}
           <div className="max-w-4xl mx-auto mb-20">
             <div className="space-y-4 mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" style={{
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center" style={{
                 textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)'
               }}>
-                Nurjahan Jhorna
+                A little about me
               </h1>
-              <p className="text-2xl md:text-3xl text-blue-300 font-light">
-                Digital Explorer & Frontend Developer
-              </p>
+              
+              {/* Thin line separator */}
+              <div className="w-[500px] h-[2px] bg-[#C33909] mx-auto mt-6 mb-8"></div>
             </div>
             
             <div className="space-y-6 mb-12">
-              <p className="text-xl leading-relaxed text-slate-300">
-                As a Web & Information Systems student at New Jersey Institute of Technology, I'm at a pivotal point in my academic journey where theory transforms into wisdom. My journey began with a curiosity about how technology can create meaningful experiences, and I'm particularly drawn to the intersection of design and functionality.
+              <p className="text-xl leading-relaxed text-white">
+                Hi there! I'm a Web & Information Systems student at New Jersey Institute of Technology, passionate about creating digital experiences that are both intuitive and impactful. My curiosity for technology began with a simple question: <i>how can design and code work together to make life easier and more enjoyable?</i> That curiosity has grown into a drive to design and build solutions that put people at the center.
               </p>
               
-              <p className="text-xl leading-relaxed text-slate-300">
-                Through my academic projects, I've developed a thoughtful approach to front-end technologies like HTML, CSS, JavaScript, and React. I value the analytical process of translating complex concepts into responsive, accessible websites that provide meaningful learning experiences. Each project is an expedition into new possibilities, where I apply my growing toolkit to craft digital experiences that resonate and inspire.
+              <p className="text-xl leading-relaxed text-white">
+                Throughout my academic journey, I've worked with front-end technologies like HTML, CSS, JavaScript, and React, while also diving into UX design and research. I enjoy learning from users, prototyping with Figma, and refining designs into responsive, accessible websites. Each project is more than development—it's an opportunity to solve problems creatively and bring clarity, beauty, and functionality to the web.
               </p>
               
-              <p className="text-xl leading-relaxed text-slate-300">
-                I'm proficient with design tools like Figma, which I use to prototype and refine my ideas before implementation. This methodical approach helps me create cohesive experiences that balance clarity with functionality. I'm dedicated to continuous learning and growth, always seeking deeper understanding and opportunities to share insights through my work.
+              <p className="text-xl leading-relaxed text-white">
+                I'm a lifelong learner, always experimenting with new frameworks and exploring better ways to design for real people. Recently, I've begun integrating AI into my workflow to stay current with industry changes, boost efficiency, and spark new ideas. Whether coding, sketching, or testing with users, my goal is simple: to create experiences that resonate, empower, and make a difference.
               </p>
             </div>
             
-            <div className="flex gap-6">
-              <Link 
-                href="/projects" 
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-medium flex items-center gap-2 group"
-              >
-                <span>Explore My Work</span>
-                <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-              </Link>
-              <Link 
-                href="/" 
-                className="px-8 py-3 bg-[rgba(10,17,40,0.5)] hover:bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-lg text-blue-300 hover:text-blue-200 border border-blue-500/20 transition-all duration-300 shadow-lg hover:shadow-xl font-medium"
-              >
-                Back to Base Camp
-              </Link>
+            {/* Personal Hobbies Section */}
+            <div className="mt-24 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center mb-4" style={{
+                textShadow: '0 0 15px rgba(147, 197, 253, 0.3), 0 0 30px rgba(147, 197, 253, 0.1)'
+              }}>
+                Life Outside Design & Code
+              </h2>
+              
+              {/* Thin line separator */}
+              <div className="w-[500px] h-[2px] bg-[#C33909] mx-auto mt-2 mb-8"></div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-full mx-auto px-4">
+                {/* Crochet */}
+                <div className="rounded-xl py-6 px-4 transition-all duration-300">
+                  <div className="flex flex-col items-start">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg mx-auto">
+                      <Image 
+                        src="/corchet.png" 
+                        alt="Crochet hobby" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Crochet</h3>
+                    <p className="text-white text-left">I love bringing creativity to life with yarn, whether it's making cozy blankets or experimenting with intricate patterns and decorations. Crochet gives me a sense of calm while letting me design something tangible and meaningful.</p>
+                  </div>
+                </div>
+                
+                {/* Cross Stitch */}
+                <div className="rounded-xl py-6 px-4 transition-all duration-300">
+                  <div className="flex flex-col items-start">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg mx-auto">
+                      <Image 
+                        src="/cross-stitch.png" 
+                        alt="Cross stitch hobby" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Cross Stitch</h3>
+                    <p className="text-white text-left">Cross stitch is one of my favorite creative outlets. It allows me to focus on the details and transform simple threads into colorful, patterned designs. It's both relaxing and rewarding to see each piece come together.</p>
+                  </div>
+                </div>
+                
+                {/* Games */}
+                <div className="rounded-xl py-6 px-4 transition-all duration-300">
+                  <div className="flex flex-col items-start">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg mx-auto">
+                      <Image 
+                        src="/games.png" 
+                        alt="Gaming hobby" 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Games</h3>
+                    <p className="text-white text-left">I enjoy exploring virtual worlds and taking on strategic challenges through video and board games. Gaming fuels my curiosity, sharpens my problem-solving skills, and inspires me to think creatively in new ways.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Knowledge & Tools Section */}
-        <div className="max-w-6xl mx-auto mt-32">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-300 mb-16">
-            Knowledge & Tools
-          </h2>
-          <div className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-xl p-8 border border-blue-500/10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="bg-[rgba(10,17,40,0.5)] p-8 rounded-xl border border-blue-500/20 shadow-lg hover:shadow-blue-500/5 transition-all duration-500 transform hover:scale-[1.01] hover:bg-[rgba(10,17,40,0.6)]">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
-                    <Code className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-medium text-blue-300">Development</h3>
-                </div>
-                <ul className="space-y-4 text-slate-200">
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>HTML, CSS, JavaScript</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>React & Next.js</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>TypeScript</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Responsive Web Design</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Git Version Control</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-[rgba(10,17,40,0.5)] p-8 rounded-xl border border-blue-500/20 shadow-lg hover:shadow-blue-500/5 transition-all duration-500 transform hover:scale-[1.01] hover:bg-[rgba(10,17,40,0.6)]">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
-                    <Palette className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-medium text-blue-300">Design</h3>
-                </div>
-                <ul className="space-y-4 text-slate-200">
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Figma</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>UI/UX Design Principles</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Wireframing & Prototyping</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Visual Design</span>
-                  </li>
-                  <li className="flex items-center p-3 hover:bg-blue-900/20 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-4"></span>
-                    <span>Tailwind CSS</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
     </div>
   );

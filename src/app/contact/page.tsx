@@ -232,12 +232,14 @@ export default function Contact() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                    className="w-full relative group overflow-hidden bg-transparent hover:bg-transparent text-white py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                     disabled={isSubmitting}
                     aria-label="Send message"
                   >
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#A62F07] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#A62F07] group-hover:to-[#C33909] transition-all duration-300"></span>
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#8B2703] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#8B2703] group-hover:to-[#C33909] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
                     {isSubmitting ? (
-                      <span className="flex items-center">
+                      <span className="flex items-center relative z-20">
                         <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -245,7 +247,7 @@ export default function Contact() {
                         Processing...
                       </span>
                     ) : (
-                      <span className="flex items-center">
+                      <span className="flex items-center relative z-20" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
                         <Send className="mr-2 h-4 w-4" />
                         Send Message
                       </span>
@@ -272,15 +274,6 @@ export default function Contact() {
         </div>
 
         {/* Navigation Button */}
-        <div className="mt-12 flex justify-start">
-          <Link 
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[rgba(10,17,40,0.5)] text-blue-300 rounded-lg border border-blue-500/20 hover:bg-[rgba(10,17,40,0.7)] transition-all duration-300 hover:border-blue-500/30 hover:text-blue-200"
-          >
-            <Compass className="w-5 h-5" />
-            Back to Base Camp
-          </Link>
-        </div>
       </main>
     </div>
   );
