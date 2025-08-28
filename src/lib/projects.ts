@@ -39,7 +39,7 @@ export const projects: Project[] = [
   },
   {
     title: "StitchPal",
-    description: "An AI-powered crochet companion that generates custom patterns, yarn suggestions, and visual previews—plus built-in tools for counting stitches, sizing, and healthy break reminders.",
+    description: "AI crochet companion for patterns, yarn, and project tools.",
     tags: ["AI", "Mobile App", "Crafting", "UX Design"],
     github: "https://github.com/NurjahanJ/stitchpal"
   }
@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
     title: "StitchPal",
     slug: "stitchpal",
     category: "APP DESIGN | MVP (Prototype)",
-    description: "An AI-powered crochet companion that generates custom patterns, yarn suggestions, and visual previews—plus built-in tools for counting stitches, sizing, and healthy break reminders.",
+    description: "AI crochet companion for patterns, yarn, and project tools.",
     tags: ["AI", "Mobile App", "Crafting", "UX Design"],
     github: "https://github.com/NurjahanJ/stitchpal",
     imagePath: "/project1-images copy/op-page.png",

@@ -15,7 +15,7 @@ interface CaseStudyCardProps {
 
 export function CaseStudyCard({ category, title, description, imagePath, slug }: CaseStudyCardProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-10 px-8 md:px-12 relative">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-1 items-center py-16 px-10 md:px-16 relative max-w-[1400px] mx-auto">
       {/* Subtle star background */}
       <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
         {Array.from({ length: 12 }).map((_, i) => (
@@ -34,8 +34,8 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
       </div>
       
       {/* Content Section */}
-      <div className="flex flex-col space-y-4 order-2 md:order-1 relative z-10">
-        <div className="uppercase tracking-wider text-sm font-medium text-sky-400">
+      <div className="flex flex-col space-y-4 order-2 md:order-1 relative z-10 md:pr-8 md:pl-16 md:max-w-[90%] md:ml-6">
+        <div className="uppercase tracking-wider text-sm font-medium" style={{color: '#C33909', textShadow: '0 0 10px rgba(195, 57, 9, 0.5)'}}>
           {category}
         </div>
         
@@ -51,7 +51,8 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
           <Button 
             asChild 
             variant="default" 
-            className="group bg-transparent hover:bg-sky-900/30 text-sky-300 border border-sky-500/50 hover:border-sky-400 focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+            className="group bg-transparent hover:bg-[rgba(255,87,34,0.2)] text-[#FF5722] border border-[#FF5722]/50 hover:border-[#FF5722] focus:ring-2 focus:ring-[#FF5722] focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+            style={{textShadow: '0 0 10px rgba(255, 87, 34, 0.4)'}}
           >
             <Link href={`/case-studies/${slug}`} className="inline-flex items-center">
               See Case Study 
@@ -62,12 +63,12 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
       </div>
       
       {/* Image Section */}
-      <div className="relative order-1 md:order-2 aspect-[4/3] w-full overflow-hidden rounded-lg shadow-xl border border-sky-500/30 hover:border-sky-400/50 transition-all duration-300">
+      <div className="relative order-1 md:order-2 aspect-[4/3] w-[60%] mx-auto md:w-[70%] overflow-hidden rounded-lg shadow-xl border border-sky-500/30 hover:border-sky-400/50 transition-all duration-300">
         <Image
           src={imagePath}
           alt={`${title} preview`}
           fill
-          className="object-cover object-center"
+          className="object-contain object-center"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(4,10,30,0.4)] to-transparent pointer-events-none"></div>
