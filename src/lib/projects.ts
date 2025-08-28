@@ -8,6 +8,14 @@ export interface Project {
   image?: string;  // Optional image path
 }
 
+// Define the CaseStudy type for more detailed project showcases
+export interface CaseStudy extends Project {
+  category: string; // E.g., "APP DESIGN | MVP (Prototype)"
+  slug: string;     // URL-friendly identifier
+  imagePath: string; // Path to the main image
+  isFeatured?: boolean; // Whether to feature this case study prominently
+}
+
 // Export an array of projects
 export const projects: Project[] = [
   {
@@ -28,6 +36,26 @@ export const projects: Project[] = [
     description: "An innovative AI-powered storytelling platform that crafts unique narratives based on user prompts and preferences. Leveraging advanced NLP techniques, this Python application creates immersive, personalized stories with branching narratives that adapt to reader choices. Features include theme customization, character development, and exportable story formats for sharing adventures.",
     tags: ["AI", "Python", "NLP", "Interactive"],
     github: "https://github.com/NurjahanJ/story_ai"
+  },
+  {
+    title: "StitchPal",
+    description: "An AI-powered crochet companion that generates custom patterns, yarn suggestions, and visual previews—plus built-in tools for counting stitches, sizing, and healthy break reminders.",
+    tags: ["AI", "Mobile App", "Crafting", "UX Design"],
+    github: "https://github.com/NurjahanJ/stitchpal"
+  }
+];
+
+// Export an array of case studies
+export const caseStudies: CaseStudy[] = [
+  {
+    title: "StitchPal",
+    slug: "stitchpal",
+    category: "APP DESIGN | MVP (Prototype)",
+    description: "An AI-powered crochet companion that generates custom patterns, yarn suggestions, and visual previews—plus built-in tools for counting stitches, sizing, and healthy break reminders.",
+    tags: ["AI", "Mobile App", "Crafting", "UX Design"],
+    github: "https://github.com/NurjahanJ/stitchpal",
+    imagePath: "/project1-images copy/op-page.png",
+    isFeatured: true
   }
 ];
 

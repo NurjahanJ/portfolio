@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
+import { CaseStudySection } from "@/components/CaseStudySection";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -283,7 +284,7 @@ export default function Home() {
       />
 
       {/* Fullscreen Hero Section */}
-      <section className="relative h-screen flex flex-col items-start justify-center px-8 z-10 pt-16">
+      <section className="relative h-[80vh] flex flex-col items-start justify-center px-8 z-10 pt-60">
         <div className="max-w-[90%] ml-0 mr-auto space-y-12">
           {/* Explorer Badge removed */}
           
@@ -342,7 +343,8 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
+      <main className="container mx-auto space-y-8 px-4 py-8 relative z-10">
+        <CaseStudySection />
       </main>
     </div>
   );
