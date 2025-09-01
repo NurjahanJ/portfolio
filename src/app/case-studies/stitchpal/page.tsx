@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { caseStudies } from "@/lib/projects";
+import { ImageSlideshow } from "@/components/ImageSlideshow";
 
 export default function StitchPalCaseStudy() {
   // Find the StitchPal case study
@@ -155,6 +156,19 @@ export default function StitchPalCaseStudy() {
             Added UI polish as I coded: tags for filtering, progress bars, and ergonomic reminders.
           </p>
         </div>
+      </section>
+      
+      {/* Project Screenshots */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300">Project Screenshots</h2>
+        <ImageSlideshow 
+          images={[
+            "/project1-images copy/1.png",
+            "/project1-images copy/2.png",
+            "/project1-images copy/3.png",
+            "/project1-images copy/4.png"
+          ]}
+        />
       </section>
       
       {/* What I built */}
