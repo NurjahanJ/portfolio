@@ -15,7 +15,7 @@ interface CaseStudyCardProps {
 
 export function CaseStudyCard({ category, title, description, imagePath, slug }: CaseStudyCardProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-1 items-center py-16 px-10 md:px-16 relative max-w-[1400px] mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-20 px-12 md:px-20 relative max-w-[1600px] mx-auto">
       {/* Subtle star background */}
       <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
         {Array.from({ length: 12 }).map((_, i) => (
