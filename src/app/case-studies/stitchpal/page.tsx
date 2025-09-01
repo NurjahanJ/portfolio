@@ -16,7 +16,7 @@ export default function StitchPalCaseStudy() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-16">
+    <div className="max-w-4xl mx-auto space-y-16 pb-16">
       {/* Back button */}
       <div>
         <Button 
@@ -33,19 +33,19 @@ export default function StitchPalCaseStudy() {
       
       {/* Header */}
       <header className="space-y-4">
-        <div className="uppercase tracking-wider text-sm font-medium text-sky-400">
+        <div className="uppercase tracking-wider text-sm font-medium text-sky-400 mb-2">
           APP DESIGN | MVP (Class Project)
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-bold text-sky-300">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent" style={{ textShadow: '0 0 20px rgba(147, 197, 253, 0.5), 0 0 40px rgba(147, 197, 253, 0.3)', fontFamily: 'var(--font-lora)', fontWeight: 500, lineHeight: '1.2' }}>
           {caseStudy.title}
         </h1>
 
-        <p className="text-xl text-slate-300 mt-4">
+        <p className="text-xl md:text-2xl mt-4" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500, color: '#C33909', textShadow: '0 0 10px rgba(195, 57, 9, 0.5)' }}>
           Your AI-powered crochet companion at your fingertips.
         </p>
         
-        <div className="flex flex-wrap gap-2 mt-3" aria-label="Project technologies">
+        <div className="flex flex-wrap gap-2 mt-5" aria-label="Project technologies">
           {caseStudy.tags.map((tag) => (
             <span 
               key={tag} 
@@ -56,11 +56,35 @@ export default function StitchPalCaseStudy() {
             </span>
           ))}
         </div>
+        
+        <div className="mt-6">
+          {caseStudy.github && (
+            <Button 
+              asChild 
+              size="lg" 
+              className="rounded-full px-6 py-2 text-base bg-transparent hover:bg-transparent relative group overflow-hidden"
+            >
+              <Link 
+                href={caseStudy.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="relative z-10 text-white font-medium"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#A62F07] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#A62F07] group-hover:to-[#C33909] transition-all duration-300"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#8B2703] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#8B2703] group-hover:to-[#C33909] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                <span className="relative z-20 flex items-center justify-center gap-2 text-white" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
+                  <Github className="mr-1 h-4 w-4" aria-hidden="true" />
+                  View On Github
+                </span>
+              </Link>
+            </Button>
+          )}
+        </div>
       </header>
       
       {/* At a glance */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">At a glance</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>At a glance</h2>
         <ul className="space-y-4 text-slate-300">
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
@@ -87,7 +111,7 @@ export default function StitchPalCaseStudy() {
 
       {/* Problem */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">Problem</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Problem</h2>
         <p className="text-slate-300 text-lg leading-relaxed">
           As a beginner crocheter, I found myself constantly switching between YouTube tutorials, blogs, Pinterest, stitch counters, and sizing charts. This fragmented process made it hard to stay focused and enjoy the craft.
         </p>
@@ -98,7 +122,7 @@ export default function StitchPalCaseStudy() {
       
       {/* Context and Constraints */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">Context and Constraints</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Context and Constraints</h2>
         <ul className="space-y-4 text-slate-300">
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
@@ -121,7 +145,7 @@ export default function StitchPalCaseStudy() {
 
       {/* Design Process */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">Design Process</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Design Process</h2>
         
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-sky-200">Brainstorming</h3>
@@ -160,7 +184,7 @@ export default function StitchPalCaseStudy() {
       
       {/* Project Screenshots */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">Project Screenshots</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Project Screenshots</h2>
         <ImageSlideshow 
           images={[
             "/project1-images copy/1.png",
@@ -173,25 +197,25 @@ export default function StitchPalCaseStudy() {
       
       {/* What I built */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">What I built</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>What I built</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
             <h3 className="text-xl font-semibold text-sky-200 mb-3">AI Pattern Generator</h3>
             <p className="text-slate-300">Enter a description and tags (like "beginner scarf") to generate a step by step pattern.</p>
           </div>
           
-          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300">
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
             <h3 className="text-xl font-semibold text-sky-200 mb-3">Yarn Suggestions</h3>
             <p className="text-slate-300">Pattern results include yarn recommendations to save with the project.</p>
           </div>
           
-          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300">
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
             <h3 className="text-xl font-semibold text-sky-200 mb-3">Project Hub</h3>
             <p className="text-slate-300">Save multiple projects, track completion with progress bars, and filter by tags.</p>
           </div>
           
-          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300">
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
             <h3 className="text-xl font-semibold text-sky-200 mb-3">Crochet Tools</h3>
             <p className="text-slate-300">A suite of built-in helpers: Stitch Counter, Gauge Calculator, Hook & Yarn Conversion Charts, Project Timer with customizable break reminders, Hand Stretch Guide with ergonomic exercises.</p>
           </div>
@@ -200,7 +224,7 @@ export default function StitchPalCaseStudy() {
       
       {/* Reflections */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">Reflections</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Reflections</h2>
         
         <p className="text-slate-300 text-lg leading-relaxed">
           Since this was a fast paced class project, there was no time for formal user testing. Instead, I reflected on my own use of the app and the design decisions made along the way.
@@ -228,7 +252,7 @@ export default function StitchPalCaseStudy() {
       
       {/* Challenges */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">Challenges</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Challenges</h2>
         <ul className="space-y-4 text-slate-300">
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
@@ -247,7 +271,7 @@ export default function StitchPalCaseStudy() {
       
       {/* Conclusion */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300">Conclusion</h2>
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Conclusion</h2>
         <p className="text-slate-300 text-lg leading-relaxed">
           StitchPal reflects my ability to:
         </p>
@@ -269,47 +293,11 @@ export default function StitchPalCaseStudy() {
             <span className="text-lg">Build and iterate quickly with real AI integration</span>
           </li>
         </ul>
-        <p className="text-slate-300 text-lg leading-relaxed mt-4">
+        <p className="text-slate-300 text-lg leading-relaxed mt-6 border-l-4 border-[#C33909] pl-4 py-2 bg-[rgba(195,57,9,0.05)]">
           Whether I am coding or designing, my focus is the same: creating experiences that feel intuitive, supportive, and meaningful.
         </p>
       </section>
       
-      {/* Links */}
-      <div className="pt-8 flex flex-wrap gap-4">
-        {caseStudy.github && (
-          <Button 
-            asChild 
-            variant="outline" 
-            className="border-sky-500/50 text-sky-300 hover:bg-sky-900/30 focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
-          >
-            <Link 
-              href={caseStudy.github} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center"
-            >
-              <Github className="mr-1 h-4 w-4" aria-hidden="true" />
-              View on GitHub
-            </Link>
-          </Button>
-        )}
-        
-        <Button 
-          asChild 
-          variant="outline" 
-          className="border-sky-500/50 text-sky-300 hover:bg-sky-900/30 focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
-        >
-          <Link 
-            href="https://github.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center"
-          >
-            <ExternalLink className="mr-1 h-4 w-4" aria-hidden="true" />
-            See Prototype on GitHub
-          </Link>
-        </Button>
-      </div>
     </div>
   );
 }
