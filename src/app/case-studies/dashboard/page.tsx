@@ -1,62 +1,116 @@
+"use client";
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { caseStudies } from "@/lib/projects";
 
 export default function DashboardCaseStudy() {
+  // Find the Dashboard case study
+  const caseStudy = caseStudies.find(study => study.slug === "dashboard");
+  
+  if (!caseStudy) {
+    return <div>Case study not found</div>;
+  }
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      {/* Header */}
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-          Inflation & Housing <span className="text-[#C33909]">Dashboard</span>
-        </h1>
-        <p className="text-xl text-slate-300 mb-6">
-          WEB APP | DATA VISUALIZATION
-        </p>
-        <div className="flex justify-center gap-4">
-          <Link 
-            href="https://github.com/NurjahanJ/dasboard" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-lg bg-[#C33909] text-white hover:bg-[#C33909]/90 transition-colors"
-          >
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-            </svg>
-            GitHub Repository
-          </Link>
-          <Link 
-            href="https://dasboard-wheat.vercel.app/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-lg border border-[#C33909] text-[#C33909] hover:bg-[#C33909]/10 transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-            Live Demo
-          </Link>
-        </div>
+    <div className="max-w-4xl mx-auto space-y-16 pb-16">
+      {/* Back button */}
+      <div>
+        <Link 
+          href="/" 
+          className="inline-flex items-center px-6 py-3 rounded-lg bg-[#0a0f1e] text-white hover:bg-[#0a0f1e]/90 transition-colors border border-slate-800"
+        >
+          <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
+          <span className="text-lg font-medium">Back to Projects</span>
+        </Link>
       </div>
+      {/* Header */}
+      <header className="space-y-4">
+        <div className="uppercase tracking-wider text-sm font-medium text-sky-400 mb-2">
+          WEB APP | DATA VISUALIZATION
+        </div>
+        
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent" style={{ textShadow: '0 0 20px rgba(147, 197, 253, 0.5), 0 0 40px rgba(147, 197, 253, 0.3)', fontFamily: 'var(--font-lora)', fontWeight: 500, lineHeight: '1.2' }}>
+          {caseStudy.title}
+        </h1>
+
+        <p className="text-xl md:text-2xl mt-4" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500, color: 'white', textShadow: '0 0 10px rgba(195, 57, 9, 0.5)' }}>
+          Interactive data visualization with intuitive charts and responsive design.
+        </p>
+        
+        <div className="flex flex-wrap gap-2 mt-5" aria-label="Project technologies">
+          {caseStudy.tags.map((tag) => (
+            <span 
+              key={tag} 
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[rgba(10,17,40,0.9)] text-sky-300 border border-sky-500/30 transition-transform duration-300 hover:scale-105 hover:bg-sky-900/30"
+              role="listitem"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="mt-6">
+          {caseStudy.github && (
+            <Button 
+              asChild 
+              size="lg" 
+              className="rounded-full px-6 py-2 text-base bg-transparent hover:bg-transparent relative group overflow-hidden"
+            >
+              <Link 
+                href={caseStudy.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="relative z-10 text-white font-medium"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-sky-300 to-sky-400 rounded-full group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:to-sky-300 transition-all duration-300"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-sky-300 to-sky-500 rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-sky-300 group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                <span className="relative z-20 flex items-center justify-center gap-2 text-white" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
+                  <Github className="mr-1 h-4 w-4" aria-hidden="true" />
+                  View On Github
+                </span>
+              </Link>
+            </Button>
+          )}
+          {caseStudy.demo && (
+            <Button 
+              asChild 
+              size="lg" 
+              className="rounded-full px-6 py-2 text-base bg-transparent hover:bg-transparent relative group overflow-hidden ml-4"
+            >
+              <Link 
+                href={caseStudy.demo} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="relative z-10 text-white font-medium"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#0A4D68] to-[#088395] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#088395] group-hover:to-[#0A4D68] transition-all duration-300"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#0A4D68] to-[#05BFDB] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#05BFDB] group-hover:to-[#0A4D68] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                <span className="relative z-20 flex items-center justify-center gap-2 text-white" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
+                  <ExternalLink className="mr-1 h-4 w-4" aria-hidden="true" />
+                  Live Demo
+                </span>
+              </Link>
+            </Button>
+          )}
+        </div>
+      </header>
 
       {/* Main Image */}
-      <div className="relative w-full h-[500px] mb-12 rounded-xl overflow-hidden shadow-lg shadow-[#C33909]/10 bg-white/5">
+      <div className="relative w-full aspect-[16/9] mb-12 rounded-xl overflow-hidden shadow-lg shadow-sky-500/5 bg-[#0a0f1e]">
         <Image 
           src="/project2-images/image.png" 
           alt="Inflation & Housing Dashboard" 
           fill
-          className="object-contain p-4"
+          className="object-contain"
           quality={100}
           priority
         />
       </div>
 
       {/* Project Overview */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-white border-b border-[#C33909]/30 pb-2">
-          Project <span className="text-[#C33909]">Overview</span>
-        </h2>
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Project Overview</h2>
         <p className="text-slate-300 mb-4">
           The Inflation & Housing Dashboard is an interactive web application designed to transform complex data into intuitive, 
           visually appealing charts and graphs. Built with Next.js and Tailwind CSS, this dashboard provides users with a 
@@ -69,10 +123,8 @@ export default function DashboardCaseStudy() {
       </section>
 
       {/* Problem Statement */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-white border-b border-[#C33909]/30 pb-2">
-          The <span className="text-[#C33909]">Problem</span>
-        </h2>
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Problem</h2>
         <p className="text-slate-300 mb-4">
           Data analysis often involves working with large, complex datasets that can be difficult to interpret in their raw form. 
           Traditional spreadsheets and static reports fail to provide the interactive experience needed for effective data exploration 
@@ -85,34 +137,32 @@ export default function DashboardCaseStudy() {
       </section>
 
       {/* Solution */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-white border-b border-[#C33909]/30 pb-2">
-          The <span className="text-[#C33909]">Solution</span>
-        </h2>
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Solution</h2>
         <p className="text-slate-300 mb-6">
           The Inflation & Housing Dashboard addresses these challenges by providing:
         </p>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-slate-900/50 p-6 rounded-lg border border-[#C33909]/20 hover:shadow-md hover:shadow-[#C33909]/5 transition-shadow">
-            <h3 className="text-xl font-semibold mb-3 text-[#C33909]">Interactive Visualizations</h3>
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
+            <h3 className="text-xl font-semibold text-sky-200 mb-3">Interactive Visualizations</h3>
             <p className="text-slate-300">
               Dynamic charts and graphs that respond to user interactions, allowing for deeper exploration of data relationships.
             </p>
           </div>
-          <div className="bg-slate-900/50 p-6 rounded-lg border border-[#C33909]/20 hover:shadow-md hover:shadow-[#C33909]/5 transition-shadow">
-            <h3 className="text-xl font-semibold mb-3 text-[#C33909]">Responsive Design</h3>
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
+            <h3 className="text-xl font-semibold text-sky-200 mb-3">Responsive Design</h3>
             <p className="text-slate-300">
               A layout that automatically adjusts to provide optimal viewing experiences across desktop, tablet, and mobile devices.
             </p>
           </div>
-          <div className="bg-slate-900/50 p-6 rounded-lg border border-[#C33909]/20 hover:shadow-md hover:shadow-[#C33909]/5 transition-shadow">
-            <h3 className="text-xl font-semibold mb-3 text-[#C33909]">Customizable Filters</h3>
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
+            <h3 className="text-xl font-semibold text-sky-200 mb-3">Customizable Filters</h3>
             <p className="text-slate-300">
               Tools that allow users to focus on specific data points, time periods, or categories relevant to their analysis.
             </p>
           </div>
-          <div className="bg-slate-900/50 p-6 rounded-lg border border-[#C33909]/20 hover:shadow-md hover:shadow-[#C33909]/5 transition-shadow">
-            <h3 className="text-xl font-semibold mb-3 text-[#C33909]">Dark/Light Mode</h3>
+          <div className="bg-[rgba(10,17,40,0.6)] p-6 rounded-lg border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
+            <h3 className="text-xl font-semibold text-sky-200 mb-3">Dark/Light Mode</h3>
             <p className="text-slate-300">
               Theme options that enhance readability and reduce eye strain in different lighting conditions.
             </p>
@@ -121,10 +171,8 @@ export default function DashboardCaseStudy() {
       </section>
 
       {/* Technologies Used */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-white border-b border-[#C33909]/30 pb-2">
-          <span className="text-[#C33909]">Technologies</span> Used
-        </h2>
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Technologies Used</h2>
         <div className="flex flex-wrap gap-3">
           <span className="px-4 py-2 bg-slate-800 text-slate-200 rounded-full text-sm">Next.js</span>
           <span className="px-4 py-2 bg-slate-800 text-slate-200 rounded-full text-sm">Tailwind CSS</span>
@@ -136,10 +184,8 @@ export default function DashboardCaseStudy() {
       </section>
 
       {/* Challenges and Learnings */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-white border-b border-[#C33909]/30 pb-2">
-          <span className="text-[#C33909]">Challenges</span> & Learnings
-        </h2>
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Challenges & Learnings</h2>
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-semibold mb-2 text-white">Performance Optimization</h3>
@@ -166,10 +212,8 @@ export default function DashboardCaseStudy() {
       </section>
 
       {/* Conclusion */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-white border-b border-[#C33909]/30 pb-2">
-          <span className="text-[#C33909]">Conclusion</span>
-        </h2>
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Conclusion</h2>
         <p className="text-slate-300 mb-4">
           The Inflation & Housing Dashboard demonstrates how modern web technologies can transform raw data into actionable insights. 
           By prioritizing user experience, performance, and accessibility, this project delivers a powerful tool for data analysis 
@@ -181,43 +225,6 @@ export default function DashboardCaseStudy() {
         </p>
       </section>
 
-      {/* Call to Action */}
-      <div className="flex flex-col md:flex-row justify-center gap-6 mt-12">
-        <Link 
-          href="https://github.com/NurjahanJ/dasboard" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#C33909] text-white hover:bg-[#C33909]/90 transition-colors"
-        >
-          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-          </svg>
-          View Source Code
-        </Link>
-        <Link 
-          href="https://dasboard-wheat.vercel.app/" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-[#C33909] text-[#C33909] hover:bg-[#C33909]/10 transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-          Explore Live Demo
-        </Link>
-        <Link 
-          href="/#projects" 
-          className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-600 text-slate-300 hover:border-slate-400 hover:text-white transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          Back to Projects
-        </Link>
-      </div>
     </div>
-  )
+  );
 }

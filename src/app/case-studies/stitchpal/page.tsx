@@ -19,16 +19,13 @@ export default function StitchPalCaseStudy() {
     <div className="max-w-4xl mx-auto space-y-16 pb-16">
       {/* Back button */}
       <div>
-        <Button 
-          asChild 
-          variant="ghost" 
-          className="group text-sky-400 hover:text-sky-300 hover:bg-sky-900/20"
+        <Link 
+          href="/" 
+          className="inline-flex items-center px-6 py-3 rounded-lg bg-[#0a0f1e] text-white hover:bg-[#0a0f1e]/90 transition-colors border border-slate-800"
         >
-          <Link href="/" className="inline-flex items-center">
-            <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
-            Back to Projects
-          </Link>
-        </Button>
+          <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
+          <span className="text-lg font-medium">Back to Projects</span>
+        </Link>
       </div>
       
       {/* Header */}
@@ -41,7 +38,7 @@ export default function StitchPalCaseStudy() {
           {caseStudy.title}
         </h1>
 
-        <p className="text-xl md:text-2xl mt-4" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500, color: '#C33909', textShadow: '0 0 10px rgba(195, 57, 9, 0.5)' }}>
+        <p className="text-xl md:text-2xl mt-4" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500, color: 'white', textShadow: '0 0 10px rgba(195, 57, 9, 0.5)' }}>
           Your AI-powered crochet companion at your fingertips.
         </p>
         
@@ -70,8 +67,8 @@ export default function StitchPalCaseStudy() {
                 rel="noopener noreferrer" 
                 className="relative z-10 text-white font-medium"
               >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#A62F07] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#A62F07] group-hover:to-[#C33909] transition-all duration-300"></span>
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#8B2703] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#8B2703] group-hover:to-[#C33909] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-sky-300 to-sky-400 rounded-full group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:to-sky-300 transition-all duration-300"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-sky-300 to-sky-500 rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-sky-300 group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
                 <span className="relative z-20 flex items-center justify-center gap-2 text-white" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
                   <Github className="mr-1 h-4 w-4" aria-hidden="true" />
                   View On Github
@@ -182,19 +179,6 @@ export default function StitchPalCaseStudy() {
         </div>
       </section>
       
-      {/* Project Screenshots */}
-      <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Project Screenshots</h2>
-        <ImageSlideshow 
-          images={[
-            "/project1-images copy/1.png",
-            "/project1-images copy/2.png",
-            "/project1-images copy/3.png",
-            "/project1-images copy/4.png"
-          ]}
-        />
-      </section>
-      
       {/* What I built */}
       <section className="space-y-6">
         <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>What I built</h2>
@@ -220,6 +204,19 @@ export default function StitchPalCaseStudy() {
             <p className="text-slate-300">A suite of built-in helpers: Stitch Counter, Gauge Calculator, Hook & Yarn Conversion Charts, Project Timer with customizable break reminders, Hand Stretch Guide with ergonomic exercises.</p>
           </div>
         </div>
+      </section>
+      
+      {/* Project Screenshots */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-sky-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Project Screenshots</h2>
+        <ImageSlideshow 
+          images={[
+            "/project1-images copy/1.png",
+            "/project1-images copy/2.png",
+            "/project1-images copy/3.png",
+            "/project1-images copy/4.png"
+          ]}
+        />
       </section>
       
       {/* Reflections */}
