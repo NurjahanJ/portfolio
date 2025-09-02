@@ -275,7 +275,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="relative">
       {/* Animated Star Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -343,7 +343,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="container mx-auto space-y-8 px-4 py-8 relative z-10">
+      <main className="container mx-auto space-y-8 px-4 py-8 relative z-10 mb-0">
         <div id="projects">
           <CaseStudySection />
         </div>

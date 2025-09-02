@@ -11,7 +11,7 @@ export default function CaseStudiesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen w-full bg-[rgba(4,10,30,0.55)] backdrop-blur-[10px]">
+    <div className="min-h-screen w-full bg-[rgba(10,15,30,0.9)] backdrop-blur-[10px]">
       <div className="container mx-auto px-4 py-8">
         {children}
       </div>

@@ -290,9 +290,6 @@ export default function StitchPalCaseStudy() {
             <span className="text-lg">Build and iterate quickly with real AI integration</span>
           </li>
         </ul>
-        <p className="text-slate-300 text-lg leading-relaxed mt-6 border-l-4 border-[#C33909] pl-4 py-2 bg-[rgba(195,57,9,0.05)]">
-          Whether I am coding or designing, my focus is the same: creating experiences that feel intuitive, supportive, and meaningful.
-        </p>
       </section>
       
     </div>
