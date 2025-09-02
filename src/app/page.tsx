@@ -344,7 +344,9 @@ export default function Home() {
       </section>
 
       <main className="container mx-auto space-y-8 px-4 py-8 relative z-10">
-        <CaseStudySection />
+        <div id="projects">
+          <CaseStudySection />
+        </div>
       </main>
     </div>
   );

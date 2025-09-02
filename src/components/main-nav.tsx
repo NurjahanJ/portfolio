@@ -11,8 +11,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { Menu, X, Compass, Mountain } from "lucide-react"
+import { Menu, X, Compass, Mountain, ChevronDown } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { projects, caseStudies } from "@/lib/projects"
 
 export function MainNav() {
   const pathname = usePathname()
@@ -60,6 +61,7 @@ export function MainNav() {
   const routes = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/#projects", label: "Projects" },
   ]
   
   // Function to check if the route is active
@@ -107,28 +109,81 @@ export function MainNav() {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center" style={{ paddingRight: '10rem' }}>
-          {routes.map((route, index) => (
-            <Link 
-              key={route.href} 
-              href={route.href}
-              onClick={(e) => handleAnchorClick(e, route.href)}
-              aria-current={isActive(route.href) ? 'page' : undefined}
-              className="group relative overflow-hidden"
-            >
-              <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 ${isActive(route.href) 
-                ? 'text-[#C33909] font-semibold' 
-                : 'text-slate-300 hover:text-[#C33909]'}`}
+          {routes.map((route, index) => {
+            // Special handling for Projects link
+            if (route.label === "Projects") {
+              return (
+                <DropdownMenu key={route.href}>
+                  <DropdownMenuTrigger className="group relative overflow-hidden focus:outline-none">
+                    <div className="flex items-center gap-1">
+                      <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 
+                        text-slate-300 hover:text-[#C33909]`}
+                      >
+                        {route.label}
+                      </span>
+                      <ChevronDown className="h-4 w-4 text-slate-300 group-hover:text-[#C33909] transition-colors" />
+                    </div>
+                    {/* Animated underline */}
+                    <span 
+                      className={`absolute bottom-0 left-0 w-full h-[2px] 
+                        bg-[#C33909] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-[#C33909]/40`}
+                    />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent 
+                    align="center" 
+                    className="bg-[rgba(4,10,30,0.85)] backdrop-blur-md border border-[#C33909]/20 text-slate-200 p-2 rounded-lg shadow-lg w-56"
+                  >
+                    <DropdownMenuLabel className="text-[#C33909] border-b border-[#C33909]/20 mb-1 pb-1">Case Studies</DropdownMenuLabel>
+                    {caseStudies.map((study) => (
+                      <DropdownMenuItem key={study.slug} className="focus:bg-[#C33909]/10 focus:text-white rounded-md">
+                        <Link 
+                          href={`/case-studies/${study.slug}`} 
+                          className="flex items-center w-full py-1 px-1 hover:text-[#C33909] transition-colors"
+                        >
+                          {study.title}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                    
+                    <DropdownMenuSeparator className="bg-[#C33909]/20 my-1" />
+                    
+                    <DropdownMenuItem className="focus:bg-[#C33909]/10 focus:text-white rounded-md">
+                      <Link 
+                        href="/#projects" 
+                        className="flex items-center w-full py-1 px-1 hover:text-[#C33909] transition-colors"
+                      >
+                        View All Projects
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              );
+            }
+            
+            // Regular links
+            return (
+              <Link 
+                key={route.href} 
+                href={route.href}
+                onClick={(e) => handleAnchorClick(e, route.href)}
+                aria-current={isActive(route.href) ? 'page' : undefined}
+                className="group relative overflow-hidden"
               >
-                {route.label}
-              </span>
-              {/* Animated underline */}
-              <span 
-                className={`absolute bottom-0 left-0 w-full h-[2px] ${isActive(route.href) 
-                  ? 'bg-[#C33909] shadow-[#C33909]/40' 
-                  : 'bg-[#C33909] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-[#C33909]/40'}`}
-              />
-            </Link>
-          ))}
+                <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 ${isActive(route.href) 
+                  ? 'text-[#C33909] font-semibold' 
+                  : 'text-slate-300 hover:text-[#C33909]'}`}
+                >
+                  {route.label}
+                </span>
+                {/* Animated underline */}
+                <span 
+                  className={`absolute bottom-0 left-0 w-full h-[2px] ${isActive(route.href) 
+                    ? 'bg-[#C33909] shadow-[#C33909]/40' 
+                    : 'bg-[#C33909] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-[#C33909]/40'}`}
+                />
+              </Link>
+            );
+          })}
         </div>
         
         {/* Mobile Navigation - NavDrawer */}
@@ -175,6 +230,49 @@ export function MainNav() {
                 <nav className="flex flex-col items-center gap-8 w-full">
                   {routes.map((route) => {
                     const active = isActive(route.href)
+                    
+                    // Special handling for Projects in mobile menu
+                    if (route.label === "Projects") {
+                      return (
+                        <div key={route.href} className="flex flex-col items-center w-full">
+                          <Link
+                            href={route.href}
+                            onClick={(e) => handleAnchorClick(e, route.href)}
+                            aria-current={active ? 'page' : undefined}
+                            className="group relative overflow-hidden mb-2"
+                          >
+                            <span 
+                              className={`${isAboutPage ? 'text-xl' : 'text-2xl'} font-medium capitalize py-1 transition-colors duration-300 ${active 
+                                ? 'text-[#C33909] font-semibold' 
+                                : 'text-slate-300 hover:text-[#C33909]'}`}
+                            >
+                              {route.label}
+                            </span>
+                            {/* Animated underline */}
+                            <span 
+                              className={`absolute bottom-0 left-0 w-full h-[2px] ${active 
+                                ? 'bg-[#C33909] shadow-[#C33909]/40' 
+                                : 'bg-[#C33909] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left shadow-[#C33909]/40'}`}
+                            />
+                          </Link>
+                          
+                          {/* Project links in mobile menu */}
+                          <div className="flex flex-col items-center gap-3 mt-2 mb-4 w-full">
+                            {caseStudies.map((study) => (
+                              <Link 
+                                key={study.slug}
+                                href={`/case-studies/${study.slug}`} 
+                                className="text-sm text-slate-400 hover:text-[#C33909] transition-colors"
+                              >
+                                {study.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    }
+                    
+                    // Regular links
                     return (
                       <Link
                         key={route.href}
