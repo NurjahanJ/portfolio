@@ -19,8 +19,8 @@ export interface CaseStudy extends Project {
 // Export an array of projects
 export const projects: Project[] = [
   {
-    title: "Data Visualization Dashboard",
-    description: "An interactive analytics dashboard that visualizes complex data through intuitive charts and responsive layouts. Built with Next.js and Tailwind CSS, this project features dynamic data filtering, dark/light mode, and real-time updates that adapt seamlessly across all devices.",
+    title: "Inflation & Housing Dashboard",
+    description: "Interactive data visualization dashboard with intuitive charts and responsive design.",
     tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
     github: "https://github.com/NurjahanJ/dasboard",
     demo: "https://dasboard-wheat.vercel.app/"
@@ -55,6 +55,17 @@ export const caseStudies: CaseStudy[] = [
     tags: ["AI", "Mobile App", "Crafting", "UX Design"],
     github: "https://github.com/NurjahanJ/stitchpal",
     imagePath: "/project1-images copy/op-page.png",
+    isFeatured: true
+  },
+  {
+    title: "Inflation & Housing Dashboard",
+    slug: "dashboard",
+    category: "WEB APP | DATA VISUALIZATION",
+    description: "Interactive data visualization dashboard with intuitive charts and responsive design.",
+    tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
+    github: "https://github.com/NurjahanJ/dasboard",
+    demo: "https://dasboard-wheat.vercel.app/",
+    imagePath: "/project2-images/image.png",
     isFeatured: true
   }
 ];
