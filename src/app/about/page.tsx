@@ -92,15 +92,23 @@ export default function About() {
             
             <div className="space-y-6 mb-12">
               <p className="text-xl leading-relaxed text-white">
-                Hi there! I'm a Web & Information Systems student at New Jersey Institute of Technology, passionate about creating digital experiences that are both intuitive and impactful. My curiosity for technology began with a simple question: <i>how can design and code work together to make life easier and more enjoyable?</i> That curiosity has grown into a drive to design and build solutions that put people at the center.
+                Hi there! My name is Nurjahan Jhorna and I am a senior majoring at Web & Information Systems student at New Jersey Institute of Technology.
               </p>
               
               <p className="text-xl leading-relaxed text-white">
-                Throughout my academic journey, I've worked with front-end technologies like HTML, CSS, JavaScript, and React, while also diving into UX design and research. I enjoy learning from users, prototyping with Figma, and refining designs into responsive, accessible websites. Each project is more than development—it's an opportunity to solve problems creatively and bring clarity, beauty, and functionality to the web.
+                I'm passionate about crafting digital experiences that are intuitive, impactful, and centered around people. My curiosity for technology started with a simple question: <i>how can design and code work together to make life easier and more enjoyable?</i> Over time, that curiosity grew into a drive to design and build solutions that combine usability with creativity.
               </p>
               
               <p className="text-xl leading-relaxed text-white">
-                I'm a lifelong learner, always experimenting with new frameworks and exploring better ways to design for real people. Recently, I've begun integrating AI into my workflow to stay current with industry changes, boost efficiency, and spark new ideas. Whether coding, sketching, or testing with users, my goal is simple: to create experiences that resonate, empower, and make a difference.
+                Throughout my academic journey, I've gained hands-on experience with front-end development such as HTML, CSS, JavaScript, and React, while also exploring UX design and research. I enjoy prototyping with Figma and translating ideas into responsive, accessible websites. For me, every project is more than just development; it's a chance to solve problems thoughtfully and bring clarity, beauty, and functionality to the web.
+              </p>
+              
+              <p className="text-xl leading-relaxed text-white">
+                I'm a lifelong learner, always experimenting with new frameworks and exploring ways to design solutions that are practical and human-centered. Recently, I've begun integrating AI into my workflow to keep pace with industry shifts, boost efficiency, and spark innovation. Currently, I serve as a UX research assistant, contributing to a project that examines Generative AI and its environmental impacts.
+              </p>
+              
+              <p className="text-xl leading-relaxed text-white">
+                Whether I'm coding, sketching, or testing with users, my goal remains simple: to create experiences that resonate, empower, and make a difference.
               </p>
             </div>
             
