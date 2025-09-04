@@ -85,23 +85,23 @@ export default function StitchPalCaseStudy() {
         <ul className="space-y-4 text-slate-300">
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Role:</span> UX/UI design and Flutter development (solo)</span>
+            <span className="text-lg"><span className="font-medium text-white">Role:</span> UX/UI design and Flutter development (solo)</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Context:</span> Final project for Generative AI course, 3-week sprint</span>
+            <span className="text-lg"><span className="font-medium text-white">Context:</span> Final project for Generative AI course, 3-week sprint</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Platform:</span> Flutter (Android, iOS, Web)</span>
+            <span className="text-lg"><span className="font-medium text-white">Platform:</span> Flutter (Android, iOS, Web)</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Tech:</span> GPT-4 for pattern generation and yarn suggestions, Material Design 3 components</span>
+            <span className="text-lg"><span className="font-medium text-white">Tech:</span> GPT-4 for pattern generation and yarn suggestions, Material Design 3 components</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Status:</span> Working prototype in GitHub, not yet deployed</span>
+            <span className="text-lg"><span className="font-medium text-white">Status:</span> Working prototype in GitHub, not yet deployed</span>
           </li>
         </ul>
       </section>
@@ -113,7 +113,7 @@ export default function StitchPalCaseStudy() {
           As a beginner crocheter, I found myself constantly switching between YouTube tutorials, blogs, Pinterest, stitch counters, and sizing charts. This fragmented process made it hard to stay focused and enjoy the craft.
         </p>
         <p className="text-slate-300 text-lg leading-relaxed">
-          <span className="font-medium">Goal:</span> Create an app that combines AI-driven pattern generation with essential crochet tools and project tracking so crafters can stay organized, inspired, and healthy while working.
+          <span className="font-medium text-white">Goal:</span> Create an app that combines AI-driven pattern generation with essential crochet tools and project tracking so crafters can stay organized, inspired, and healthy while working.
         </p>
       </section>
       
@@ -123,19 +123,19 @@ export default function StitchPalCaseStudy() {
         <ul className="space-y-4 text-slate-300">
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Requirement:</span> Final project had to use a generative AI element.</span>
+            <span className="text-lg"><span className="font-medium text-white">Requirement:</span> Final project had to use a generative AI element.</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Timeframe:</span> Three weeks, so I prioritized coding an MVP over detailed wireframes.</span>
+            <span className="text-lg"><span className="font-medium text-white">Timeframe:</span> Three weeks, so I prioritized coding an MVP over detailed wireframes.</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Pivot:</span> I initially explored using the Pinterest API to pull existing crochet patterns, but after access issues I pivoted to generating original patterns with GPT-4.</span>
+            <span className="text-lg"><span className="font-medium text-white">Pivot:</span> I initially explored using the Pinterest API to pull existing crochet patterns, but after access issues I pivoted to generating original patterns with GPT-4.</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Design Vision:</span> A calming pink and beige color palette to reflect crochet's soothing nature and reduce visual fatigue.</span>
+            <span className="text-lg"><span className="font-medium text-white">Design Vision:</span> A calming pink and beige color palette to reflect crochet's soothing nature and reduce visual fatigue.</span>
           </li>
         </ul>
       </section>
@@ -163,9 +163,9 @@ export default function StitchPalCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-sky-200">Visual Language</h3>
           <p className="text-slate-300 text-lg leading-relaxed">
-            <span className="font-medium">Color Palette:</span> Pink and beige tones for calmness and warmth.<br/>
-            <span className="font-medium">Layout:</span> Bottom navigation with three tabs: Create, My Projects, Tools.<br/>
-            <span className="font-medium">Components:</span> Material Design 3 for consistency, accessibility, and responsive UI.
+            <span className="font-medium text-white">Color Palette:</span> Pink and beige tones for calmness and warmth.<br/>
+            <span className="font-medium text-white">Layout:</span> Bottom navigation with three tabs: Create, My Projects, Tools.<br/>
+            <span className="font-medium text-white">Components:</span> Material Design 3 for consistency, accessibility, and responsive UI.
           </p>
         </div>
         
@@ -253,15 +253,15 @@ export default function StitchPalCaseStudy() {
         <ul className="space-y-4 text-slate-300">
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Pinterest API:</span> Could not get access, so I pivoted to GPT-4 for generating new patterns.</span>
+            <span className="text-lg"><span className="font-medium text-white">Pinterest API:</span> Could not get access, so I pivoted to GPT-4 for generating new patterns.</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Prompt design:</span> Took trial and error to structure GPT-4 responses consistently.</span>
+            <span className="text-lg"><span className="font-medium text-white">Prompt design:</span> Took trial and error to structure GPT-4 responses consistently.</span>
           </li>
           <li className="flex items-start">
             <span className="text-sky-400 mr-2 text-xl">•</span>
-            <span className="text-lg"><span className="font-medium">Scope:</span> With only three weeks, I focused on core features and left polish for later.</span>
+            <span className="text-lg"><span className="font-medium text-white">Scope:</span> With only three weeks, I focused on core features and left polish for later.</span>
           </li>
         </ul>
       </section>
