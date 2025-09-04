@@ -144,17 +144,6 @@ export function MainNav() {
                         </Link>
                       </DropdownMenuItem>
                     ))}
-                    
-                    <DropdownMenuSeparator className="bg-[#C33909]/20 my-1" />
-                    
-                    <DropdownMenuItem className="focus:bg-[#C33909]/10 focus:text-white rounded-md">
-                      <Link 
-                        href="/#projects" 
-                        className="flex items-center w-full py-1 px-1 hover:text-[#C33909] transition-colors"
-                      >
-                        View All Projects
-                      </Link>
-                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               );
