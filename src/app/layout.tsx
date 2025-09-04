@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${montserrat.variable} ${ibmPlexMono.variable} ${dancingScript.variable} ${playfairDisplay.variable} ${lora.variable} font-lora antialiased`} style={{ fontFamily: 'var(--font-lora)' }}>
+      <body className={`${montserrat.variable} ${ibmPlexMono.variable} ${dancingScript.variable} ${playfairDisplay.variable} ${lora.variable} font-sans antialiased`} style={{ fontFamily: 'var(--font-sans)' }}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen flex flex-col bg-zinc-900 transition-colors duration-300">
             <MainNav />
