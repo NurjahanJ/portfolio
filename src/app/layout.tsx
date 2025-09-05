@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { IBM_Plex_Mono, Montserrat, Dancing_Script, Playfair_Display, Lora } from "next/font/google";
 import { MainNav } from "@/components/main-nav";
-import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const montserrat = Montserrat({
@@ -50,10 +49,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico?v=2", sizes: "32x32" },
-      { url: "/logo.png?v=2", type: "image/png" }
+      { url: "/logo.png?v=3", type: "image/png" }
     ],
     apple: [
-      { url: "/logo.png?v=2" }
+      { url: "/logo.png?v=3" }
     ],
   },
 };
@@ -81,7 +80,6 @@ export default function RootLayout({
             <main className="flex-grow">
               {children}
             </main>
-            <Footer />
           </div>
         </ThemeProvider>
       </body>
