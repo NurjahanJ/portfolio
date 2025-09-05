@@ -64,6 +64,9 @@ export function MainNav() {
     { href: "/#projects", label: "Projects" },
   ]
   
+  // Resume link (separate from main navigation routes)
+  const resumeLink = { href: "/Nurjahan_Resume.pdf", label: "Resume", external: true }
+  
   // Function to check if the route is active
   const isActive = (path: string) => {
     if (path === "/" && pathname === "/") return true
@@ -175,6 +178,24 @@ export function MainNav() {
               </Link>
             );
           })}
+          
+          {/* Resume Button with gradient background */}
+          <a 
+            href={resumeLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative overflow-hidden px-6 py-2 rounded-full"
+          >
+            {/* Gradient background with animation */}
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#8B2703] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#8B2703] group-hover:to-[#C33909] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+            
+            {/* Button content */}
+            <span className={`${isAboutPage ? 'text-base' : 'text-lg'} relative z-10 font-medium text-white`}
+              style={{ fontFamily: 'var(--font-sans)' }}
+            >
+              {resumeLink.label}
+            </span>
+          </a>
         </div>
         
         {/* Mobile Navigation - NavDrawer */}
@@ -290,6 +311,25 @@ export function MainNav() {
                       </Link>
                     )
                   })}
+                  
+                  {/* Resume Button in Mobile Menu with gradient background */}
+                  <a
+                    href={resumeLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative overflow-hidden px-8 py-3 rounded-full mt-2"
+                  >
+                    {/* Gradient background with animation */}
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#8B2703] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#8B2703] group-hover:to-[#C33909] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                    
+                    {/* Button content */}
+                    <span 
+                      className={`${isAboutPage ? 'text-xl' : 'text-2xl'} relative z-10 font-medium text-white`}
+                      style={{ fontFamily: 'var(--font-sans)' }}
+                    >
+                      {resumeLink.label}
+                    </span>
+                  </a>
                 </nav>
                 
                 <div className="absolute bottom-8 left-0 right-0 flex justify-center">
