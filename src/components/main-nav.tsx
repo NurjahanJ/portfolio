@@ -118,6 +118,7 @@ export function MainNav() {
                     <div className="flex items-center gap-1">
                       <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 
                         text-slate-300 hover:text-[#C33909]`}
+                        style={{ fontFamily: 'var(--font-sans)' }}
                       >
                         {route.label}
                       </span>
@@ -161,6 +162,7 @@ export function MainNav() {
                 <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 ${isActive(route.href) 
                   ? 'text-[#C33909] font-semibold' 
                   : 'text-slate-300 hover:text-[#C33909]'}`}
+                  style={{ fontFamily: 'var(--font-sans)' }}
                 >
                   {route.label}
                 </span>
@@ -234,6 +236,7 @@ export function MainNav() {
                               className={`${isAboutPage ? 'text-xl' : 'text-2xl'} font-medium capitalize py-1 transition-colors duration-300 ${active 
                                 ? 'text-[#C33909] font-semibold' 
                                 : 'text-slate-300 hover:text-[#C33909]'}`}
+                              style={{ fontFamily: 'var(--font-sans)' }}
                             >
                               {route.label}
                             </span>
@@ -274,6 +277,7 @@ export function MainNav() {
                           className={`${isAboutPage ? 'text-xl' : 'text-2xl'} font-medium capitalize py-1 transition-colors duration-300 ${active 
                             ? 'text-[#C33909] font-semibold' 
                             : 'text-slate-300 hover:text-[#C33909]'}`}
+                          style={{ fontFamily: 'var(--font-sans)' }}
                         >
                           {route.label}
                         </span>
