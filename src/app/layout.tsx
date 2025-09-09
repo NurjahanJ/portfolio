@@ -48,12 +48,12 @@ export const metadata: Metadata = {
   keywords: ["web development", "frontend developer", "portfolio", "digital explorer", "UI/UX design"],
   icons: {
     icon: [
-      { url: "/favicon.ico?v=2", sizes: "32x32" },
-      { url: "/logo.png?v=3", type: "image/png" }
+      { url: "/logo.png", type: "image/png" }
     ],
     apple: [
-      { url: "/logo.png?v=3" }
+      { url: "/logo.png" }
     ],
+    shortcut: "/logo.png",
   },
 };
 
