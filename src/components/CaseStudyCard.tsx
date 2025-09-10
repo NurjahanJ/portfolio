@@ -71,7 +71,6 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
           className="object-contain object-center"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(4,10,30,0.4)] to-transparent pointer-events-none"></div>
       </div>
     </div>
   );

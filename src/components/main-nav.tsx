@@ -187,7 +187,7 @@ export function MainNav() {
             className="group relative overflow-hidden px-6 py-2 rounded-full"
           >
             {/* Gradient background with animation */}
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#E64A19] group-hover:to-[#FF7533] group-hover:blur-lg transition-all duration-500"></span>
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#E64A19] group-hover:to-[#FF7533] transition-all duration-500"></span>
             
             {/* Button content */}
             <span className={`${isAboutPage ? 'text-base' : 'text-lg'} relative z-10 font-medium text-white`}
@@ -320,7 +320,7 @@ export function MainNav() {
                     className="group relative overflow-hidden px-8 py-3 rounded-full mt-2"
                   >
                     {/* Gradient background with animation */}
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#E64A19] group-hover:to-[#FF7533] group-hover:blur-lg transition-all duration-500"></span>
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#E64A19] group-hover:to-[#FF7533] transition-all duration-500"></span>
                     
                     {/* Button content */}
                     <span 
