@@ -308,8 +308,8 @@ export default function Home() {
               style={{
                 fontFamily: 'var(--font-lora)',
                 fontWeight: 500,
-                color: '#C33909',
-                textShadow: '0 0 10px rgba(195, 57, 9, 0.5)'
+                color: '#FF7533',
+                textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'
               }}
             >
               UX Designer & Frontend Developer
@@ -322,8 +322,8 @@ export default function Home() {
             <div className={`flex flex-wrap gap-6 justify-start transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Button asChild size="lg" className="rounded-full px-8 py-6 text-base bg-transparent hover:bg-transparent relative group overflow-hidden">
                 <Link href="https://www.linkedin.com/in/nurjahanjhorna" target="_blank" rel="noopener noreferrer" className="relative z-10 text-white font-medium text-lg">
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#A62F07] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#A62F07] group-hover:to-[#C33909] transition-all duration-300"></span>
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#C33909] to-[#8B2703] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#8B2703] group-hover:to-[#C33909] group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#FF5722] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#FF5722] group-hover:to-[#FF7533] transition-all duration-300"></span>
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#FF5722] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#FF5722] group-hover:to-[#FF7533] group-hover:blur-lg transition-all duration-500"></span>
                   <span className="relative z-20 flex items-center justify-center gap-2 text-white" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
                     Get In Touch
                   </span>
@@ -336,7 +336,7 @@ export default function Home() {
           {/* Bouncing Compass Icon */}
           <div className={`absolute bottom-30 left-1/2 transform -translate-x-1/2 ${compassBounce ? 'animate-bounce' : 'opacity-0'} transition-opacity duration-500`}>
             <div className="bg-slate-800/70 p-3 rounded-full border border-slate-600/50 backdrop-blur-sm">
-              <ChevronDown className="h-6 w-6 text-[#C33909]" />
+              <ChevronDown className="h-6 w-6 text-[#FF7533]" />
               <span className="sr-only">Scroll down</span>
             </div>
           </div>

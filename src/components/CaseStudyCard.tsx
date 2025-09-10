@@ -35,7 +35,7 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
       
       {/* Content Section */}
       <div className="flex flex-col space-y-4 order-2 md:order-1 relative z-10 md:pr-8 md:pl-16 md:max-w-[90%] md:ml-6">
-        <div className="uppercase tracking-wider text-sm font-medium" style={{color: '#C33909', textShadow: '0 0 10px rgba(195, 57, 9, 0.5)'}}>
+        <div className="uppercase tracking-wider text-sm font-medium" style={{color: '#FF7533', textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'}}>
           {category}
         </div>
         
@@ -51,8 +51,8 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
           <Button 
             asChild 
             variant="default" 
-            className="group bg-transparent hover:bg-[rgba(255,87,34,0.2)] text-[#FF5722] border border-[#FF5722]/50 hover:border-[#FF5722] focus:ring-2 focus:ring-[#FF5722] focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
-            style={{textShadow: '0 0 10px rgba(255, 87, 34, 0.4)'}}
+            className="group bg-transparent hover:bg-[rgba(255,117,51,0.2)] text-[#FF7533] border border-[#FF7533]/50 hover:border-[#FF7533] focus:ring-2 focus:ring-[#FF7533] focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+            style={{textShadow: '0 0 10px rgba(255, 117, 51, 0.4)'}}
           >
             <Link href={`/case-studies/${slug}`} className="inline-flex items-center">
               See Case Study 
