@@ -35,15 +35,15 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
       
       {/* Content Section */}
       <div className="flex flex-col space-y-4 order-2 md:order-1 relative z-10 md:pr-8 md:pl-16 md:max-w-[90%] md:ml-6">
-        <div className="uppercase tracking-wider text-sm font-medium" style={{color: '#FF7533', textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'}}>
+        <div className="text-overline font-medium" style={{color: '#FF7533', textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'}}>
           {category}
         </div>
         
-        <h3 className="text-3xl font-bold text-sky-300">
+        <h3 className="text-title font-bold text-sky-300">
           {title}
         </h3>
         
-        <p className="text-slate-300 text-base md:text-lg font-light leading-relaxed">
+        <p className="text-slate-300 text-body font-light leading-relaxed">
           {description}
         </p>
         

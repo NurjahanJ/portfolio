@@ -57,7 +57,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Power Up Or Power Down",
     slug: "power-up-or-power-down",
     category: "UX RESEARCH | PROTOTYPING",
-    description: "Environmental awareness study for generative AI usage through interactive prototypes. Conducted user research with 33+ college students to understand ChatGPT usage patterns and designed two functional prototypes: a color-changing interface and battery depletion system. Built for IT481: Prototyping in UX course to encourage mindful AI consumption through design nudges.",
+    description: "UX research study exploring environmental awareness in AI usage. Built two interactive ChatGPT prototypes with visual feedback systems to encourage mindful AI consumption through design nudges.",
     tags: ["UX Research", "React", "Prototyping", "Environmental Design", "ChatGPT API", "User Testing"],
     demo: "https://chatgpt-colorpage.vercel.app/",
     imagePath: "/project3-images/power-up-preview.png",

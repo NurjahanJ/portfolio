@@ -119,9 +119,7 @@ export function MainNav() {
                 <DropdownMenu key={route.href}>
                   <DropdownMenuTrigger className="group relative overflow-hidden focus:outline-none">
                     <div className="flex items-center gap-1">
-                      <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 
-                        text-slate-300 hover:text-[#FF7533]`}
-                        style={{ fontFamily: 'var(--font-sans)' }}
+                      <span className="text-base font-medium transition-colors capitalize py-1 text-slate-300 hover:text-[#FF7533]"
                       >
                         {route.label}
                       </span>
@@ -162,10 +160,9 @@ export function MainNav() {
                 aria-current={isActive(route.href) ? 'page' : undefined}
                 className="group relative overflow-hidden"
               >
-                <span className={`${isAboutPage ? 'text-base' : 'text-lg'} font-medium transition-colors capitalize py-1 ${isActive(route.href) 
+                <span className={`text-base font-medium transition-colors capitalize py-1 ${isActive(route.href) 
                   ? 'text-[#FF7533] font-semibold' 
                   : 'text-slate-300 hover:text-[#FF7533]'}`}
-                  style={{ fontFamily: 'var(--font-sans)' }}
                 >
                   {route.label}
                 </span>
@@ -190,8 +187,7 @@ export function MainNav() {
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#E64A19] group-hover:to-[#FF7533] transition-all duration-500"></span>
             
             {/* Button content */}
-            <span className={`${isAboutPage ? 'text-base' : 'text-lg'} relative z-10 font-medium text-white`}
-              style={{ fontFamily: 'var(--font-sans)' }}
+            <span className="text-base relative z-10 font-medium text-white"
             >
               {resumeLink.label}
             </span>
@@ -254,10 +250,9 @@ export function MainNav() {
                             className="group relative overflow-hidden mb-2"
                           >
                             <span 
-                              className={`${isAboutPage ? 'text-xl' : 'text-2xl'} font-medium capitalize py-1 transition-colors duration-300 ${active 
+                              className={`text-xl font-medium capitalize py-1 transition-colors duration-300 ${active 
                                 ? 'text-[#FF7533] font-semibold' 
                                 : 'text-slate-300 hover:text-[#FF7533]'}`}
-                              style={{ fontFamily: 'var(--font-sans)' }}
                             >
                               {route.label}
                             </span>
@@ -295,10 +290,9 @@ export function MainNav() {
                         className="group relative overflow-hidden"
                       >
                         <span 
-                          className={`${isAboutPage ? 'text-xl' : 'text-2xl'} font-medium capitalize py-1 transition-colors duration-300 ${active 
+                          className={`text-xl font-medium capitalize py-1 transition-colors duration-300 ${active 
                             ? 'text-[#FF7533] font-semibold' 
                             : 'text-slate-300 hover:text-[#FF7533]'}`}
-                          style={{ fontFamily: 'var(--font-sans)' }}
                         >
                           {route.label}
                         </span>
@@ -324,8 +318,7 @@ export function MainNav() {
                     
                     {/* Button content */}
                     <span 
-                      className={`${isAboutPage ? 'text-xl' : 'text-2xl'} relative z-10 font-medium text-white`}
-                      style={{ fontFamily: 'var(--font-sans)' }}
+                      className="text-xl relative z-10 font-medium text-white"
                     >
                       {resumeLink.label}
                     </span>

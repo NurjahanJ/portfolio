@@ -34,11 +34,11 @@ export default function StitchPalCaseStudy() {
           APP DESIGN | MVP (Class Project)
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-200 to-pink-300 bg-clip-text text-transparent" style={{ textShadow: '0 0 20px rgba(232, 165, 152, 0.5), 0 0 40px rgba(232, 165, 152, 0.3)', fontFamily: 'var(--font-lora)', fontWeight: 500, lineHeight: '1.2' }}>
+        <h1 className="text-headline md:text-5xl font-serif font-medium bg-gradient-to-r from-orange-200 to-pink-300 bg-clip-text text-transparent" style={{ textShadow: '0 0 20px rgba(232, 165, 152, 0.5), 0 0 40px rgba(232, 165, 152, 0.3)' }}>
           {caseStudy.title}
         </h1>
 
-        <p className="text-xl md:text-2xl mt-4" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500, color: 'white', textShadow: '0 0 10px rgba(232, 165, 152, 0.5)' }}>
+        <p className="text-subtitle md:text-2xl font-serif font-medium mt-4" style={{ color: 'white', textShadow: '0 0 10px rgba(232, 165, 152, 0.5)' }}>
           A comprehensive Flutter app combining AI pattern generation with essential crochet tools and wellness features.
         </p>
         
@@ -69,7 +69,7 @@ export default function StitchPalCaseStudy() {
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-300 to-pink-400 rounded-full group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-orange-300 transition-all duration-300"></span>
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-300 to-pink-500 rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-orange-300 group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
-                <span className="relative z-20 flex items-center justify-center gap-2 text-white" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>
+                <span className="relative z-20 flex items-center justify-center gap-2 text-white font-serif font-medium">
                   <Github className="mr-1 h-4 w-4" aria-hidden="true" />
                   View On Github
                 </span>
@@ -81,7 +81,7 @@ export default function StitchPalCaseStudy() {
       
       {/* At a glance */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-orange-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>At a glance</h2>
+        <h2 className="text-title font-serif font-medium text-orange-300">At a glance</h2>
         <ul className="space-y-4 text-slate-300">
           <li className="flex items-start">
             <span className="text-orange-400 mr-2 text-xl">•</span>

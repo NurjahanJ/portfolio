@@ -106,17 +106,17 @@ export default function Contact() {
             <MessageSquare className="h-6 w-6 text-blue-400" aria-hidden="true" />
           </div>
           <h1 
-            className="text-4xl md:text-5xl font-bold mb-6 tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent"
+            className="text-headline md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent"
             style={{
               textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)'
             }}
           >
             Let's Connect
           </h1>
-          <p className="text-xl text-blue-300 font-light max-w-2xl mx-auto">
+          <p className="text-subtitle text-blue-300 font-light max-w-2xl mx-auto">
             Have a question or want to collaborate? I'd love to hear from you.
           </p>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-body text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
             I'm available for collaboration on innovative web development and design projects. 
             Let's discuss how my expertise in frontend development and UX design can help transform your digital vision into an exceptional user experience.
           </p>
@@ -128,7 +128,7 @@ export default function Contact() {
           <div className="order-2 lg:order-1">
             <Card className="bg-[rgba(10,17,40,0.7)] border-blue-500/20 backdrop-blur-sm shadow-lg hover:shadow-blue-500/5 transition-all duration-500">
               <CardHeader>
-                <CardTitle className="text-blue-300 text-2xl">Connect With Me</CardTitle>
+                <CardTitle className="text-blue-300 text-title">Connect With Me</CardTitle>
                 <CardDescription className="text-slate-300">Choose your preferred method of contact</CardDescription>
               </CardHeader>
               <CardContent>
@@ -181,7 +181,7 @@ export default function Contact() {
           <div className="relative">
             <Card className="bg-[rgba(10,17,40,0.7)] border-blue-500/20 backdrop-blur-sm shadow-lg hover:shadow-blue-500/5 transition-all duration-500">
               <CardHeader>
-                <CardTitle className="text-blue-300 text-2xl">Send a Message</CardTitle>
+                <CardTitle className="text-blue-300 text-title">Send a Message</CardTitle>
                 <CardDescription className="text-slate-300">I'll get back to you as soon as possible</CardDescription>
               </CardHeader>
               <CardContent>
