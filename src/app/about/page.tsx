@@ -80,7 +80,7 @@ export default function About() {
           {/* Header Section */}
           <div className="max-w-4xl mx-auto mb-20">
             <div className="space-y-4 mb-12">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center" style={{
+              <h1 className="text-headline md:text-5xl font-bold bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center" style={{
                 textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)'
               }}>
                 A little about me
@@ -91,30 +91,30 @@ export default function About() {
             </div>
             
             <div className="space-y-6 mb-12">
-              <p className="text-xl leading-relaxed text-white">
+              <p className="text-body leading-relaxed text-white">
                 Hi there! My name is Nurjahan Jhorna and I am a senior majoring at Web & Information Systems student at New Jersey Institute of Technology.
               </p>
               
-              <p className="text-xl leading-relaxed text-white">
+              <p className="text-body leading-relaxed text-white">
                 I'm passionate about crafting digital experiences that are intuitive, impactful, and centered around people. My curiosity for technology started with a simple question: <i>how can design and code work together to make life easier and more enjoyable?</i> Over time, that curiosity grew into a drive to design and build solutions that combine usability with creativity.
               </p>
               
-              <p className="text-xl leading-relaxed text-white">
+              <p className="text-body leading-relaxed text-white">
                 Throughout my academic journey, I've gained hands-on experience with front-end development such as HTML, CSS, JavaScript, and React, while also exploring UX design and research. I enjoy prototyping with Figma and translating ideas into responsive, accessible websites. For me, every project is more than just development; it's a chance to solve problems thoughtfully and bring clarity, beauty, and functionality to the web.
               </p>
               
-              <p className="text-xl leading-relaxed text-white">
+              <p className="text-body leading-relaxed text-white">
                 I'm a lifelong learner, always experimenting with new frameworks and exploring ways to design solutions that are practical and human-centered. Recently, I've begun integrating AI into my workflow to keep pace with industry shifts, boost efficiency, and spark innovation. Currently, I serve as a UX research assistant, contributing to a project that examines Generative AI and its environmental impacts.
               </p>
               
-              <p className="text-xl leading-relaxed text-white">
+              <p className="text-body leading-relaxed text-white">
                 Whether I'm coding, sketching, or testing with users, my goal remains simple: to create experiences that resonate, empower, and make a difference.
               </p>
             </div>
             
             {/* Personal Hobbies Section */}
             <div className="mt-24 mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center mb-4" style={{
+              <h2 className="text-title md:text-3xl font-bold bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-center mb-4" style={{
                 textShadow: '0 0 15px rgba(147, 197, 253, 0.3), 0 0 30px rgba(147, 197, 253, 0.1)'
               }}>
                 Life Outside Design & Code
@@ -136,7 +136,7 @@ export default function About() {
                         className="transition-transform duration-500 hover:scale-110"
                       />
                     </div>
-                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Crochet</h3>
+                    <h3 className="text-subtitle font-semibold text-blue-300 mb-2 w-full text-center">Crochet</h3>
                     <p className="text-white text-left">I love bringing creativity to life with yarn, whether it's making cozy blankets or experimenting with intricate patterns and decorations. Crochet gives me a sense of calm while letting me design something tangible and meaningful.</p>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export default function About() {
                         className="transition-transform duration-500 hover:scale-110"
                       />
                     </div>
-                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Cross Stitch</h3>
+                    <h3 className="text-subtitle font-semibold text-blue-300 mb-2 w-full text-center">Cross Stitch</h3>
                     <p className="text-white text-left">Cross stitch is one of my favorite creative outlets. It allows me to focus on the details and transform simple threads into colorful, patterned designs. It's both relaxing and rewarding to see each piece come together.</p>
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function About() {
                         className="transition-transform duration-500 hover:scale-110"
                       />
                     </div>
-                    <h3 className="text-xl font-semibold text-blue-300 mb-2 w-full text-center">Games</h3>
+                    <h3 className="text-subtitle font-semibold text-blue-300 mb-2 w-full text-center">Games</h3>
                     <p className="text-white text-left">I enjoy exploring virtual worlds and taking on strategic challenges through video and board games. Gaming fuels my curiosity, sharpens my problem-solving skills, and inspires me to think creatively in new ways.</p>
                   </div>
                 </div>

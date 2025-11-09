@@ -11,9 +11,16 @@ interface CaseStudyCardProps {
   description: string;
   imagePath: string;
   slug: string;
+  duration?: string;
+  teamSize?: string;
+  status?: string;
+  techStack?: string[];
+  demo?: string;
+  github?: string;
+  highlights?: string[];
 }
 
-export function CaseStudyCard({ category, title, description, imagePath, slug }: CaseStudyCardProps) {
+export function CaseStudyCard({ category, title, description, imagePath, slug, duration, teamSize, status, techStack, demo, github, highlights }: CaseStudyCardProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-20 px-12 md:px-20 relative max-w-[1600px] mx-auto">
       {/* Subtle star background */}
@@ -35,27 +42,77 @@ export function CaseStudyCard({ category, title, description, imagePath, slug }:
       
       {/* Content Section */}
       <div className="flex flex-col space-y-4 order-2 md:order-1 relative z-10 md:pr-8 md:pl-16 md:max-w-[90%] md:ml-6">
-        <div className="uppercase tracking-wider text-sm font-medium" style={{color: '#FF7533', textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'}}>
+        <div className="text-overline font-medium" style={{color: '#FF7533', textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'}}>
           {category}
         </div>
         
-        <h3 className="text-3xl font-bold text-sky-300">
+        <h3 className="text-title font-bold text-sky-300">
           {title}
         </h3>
         
-        <p className="text-slate-300 text-base md:text-lg font-light leading-relaxed">
+        <p className="text-slate-300 text-body font-light leading-relaxed">
           {description}
         </p>
         
-        <div className="pt-4">
+        
+        {/* Tech Stack Preview */}
+        {techStack && techStack.length > 0 && (
+          <div className="mt-3">
+            <p className="text-caption text-slate-400 mb-2 font-medium">Tech Stack</p>
+            <div className="flex flex-wrap gap-1">
+              {techStack.slice(0, 3).map((tech) => (
+                <span 
+                  key={tech}
+                  className="text-caption bg-slate-800/50 text-slate-300 px-2 py-1 rounded text-xs border border-slate-600/30"
+                >
+                  {tech}
+                </span>
+              ))}
+              {techStack.length > 3 && (
+                <span className="text-caption text-slate-400 px-2 py-1 text-xs">
+                  +{techStack.length - 3} more
+                </span>
+              )}
+            </div>
+          </div>
+        )}
+        
+        {/* Differentiated CTAs */}
+        <div className="pt-4 flex flex-wrap gap-3">
+          {demo && (
+            <Button 
+              asChild 
+              variant="default" 
+              className="group bg-transparent hover:bg-[rgba(255,117,51,0.2)] text-[#FF7533] border border-[#FF7533]/50 hover:border-[#FF7533] focus:ring-2 focus:ring-[#FF7533] focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+              style={{textShadow: '0 0 10px rgba(255, 117, 51, 0.4)'}}
+            >
+              <Link href={demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                View Live Demo
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+            </Button>
+          )}
+          
+          {github && (
+            <Button 
+              asChild 
+              variant="outline" 
+              className="group bg-transparent border border-slate-500/50 text-slate-300 hover:bg-slate-800/30 hover:border-slate-400 transition-all duration-300"
+            >
+              <Link href={github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                View Code
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+            </Button>
+          )}
+          
           <Button 
             asChild 
-            variant="default" 
-            className="group bg-transparent hover:bg-[rgba(255,117,51,0.2)] text-[#FF7533] border border-[#FF7533]/50 hover:border-[#FF7533] focus:ring-2 focus:ring-[#FF7533] focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
-            style={{textShadow: '0 0 10px rgba(255, 117, 51, 0.4)'}}
+            variant="ghost" 
+            className="group bg-blue-900/30 text-blue-300 hover:text-blue-200 hover:bg-blue-800/40 border border-blue-500/20 transition-all duration-300"
           >
             <Link href={`/case-studies/${slug}`} className="inline-flex items-center">
-              See Case Study 
+              Read Case Study
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </Button>

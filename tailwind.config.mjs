@@ -9,7 +9,9 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ['Lora', 'serif'],
+      sans: ['Inter', 'system-ui', 'sans-serif'],
+      serif: ['Lora', 'Georgia', 'serif'],
+      mono: ['IBM Plex Mono', 'Menlo', 'monospace'],
     },
     extend: {
       colors: {
