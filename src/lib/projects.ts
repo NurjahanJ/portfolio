@@ -19,6 +19,12 @@ export interface CaseStudy extends Project {
 // Export an array of projects
 export const projects: Project[] = [
   {
+    title: "Power Up Or Power Down",
+    description: "UX research project exploring environmental awareness in AI usage through interactive prototypes. Features two ChatGPT-like interfaces with visual feedback systems: a color-changing screen that reflects energy usage and a battery icon that depletes with each prompt. Built for IT481: Prototyping in UX course to encourage mindful AI consumption.",
+    tags: ["UX Research", "React", "Prototyping", "Environmental Design", "ChatGPT API"],
+    demo: "https://chatgpt-colorpage.vercel.app/"
+  },
+  {
     title: "Inflation & Housing Dashboard",
     description: "Interactive data visualization dashboard with intuitive charts and responsive design.",
     tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
@@ -47,6 +53,16 @@ export const projects: Project[] = [
 
 // Export an array of case studies
 export const caseStudies: CaseStudy[] = [
+  {
+    title: "Power Up Or Power Down",
+    slug: "power-up-or-power-down",
+    category: "UX RESEARCH | PROTOTYPING",
+    description: "Environmental awareness study for generative AI usage through interactive prototypes. Conducted user research with 33+ college students to understand ChatGPT usage patterns and designed two functional prototypes: a color-changing interface and battery depletion system. Built for IT481: Prototyping in UX course to encourage mindful AI consumption through design nudges.",
+    tags: ["UX Research", "React", "Prototyping", "Environmental Design", "ChatGPT API", "User Testing"],
+    demo: "https://chatgpt-colorpage.vercel.app/",
+    imagePath: "/project3-images/power-up-preview.png",
+    isFeatured: true
+  },
   {
     title: "StitchPal",
     slug: "stitchpal",
