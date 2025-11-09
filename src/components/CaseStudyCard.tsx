@@ -93,18 +93,6 @@ export function CaseStudyCard({ category, title, description, imagePath, slug, d
             </Button>
           )}
           
-          {github && (
-            <Button 
-              asChild 
-              variant="outline" 
-              className="group bg-transparent border border-slate-500/50 text-slate-300 hover:bg-slate-800/30 hover:border-slate-400 transition-all duration-300"
-            >
-              <Link href={github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                View Code
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
-            </Button>
-          )}
           
           <Button 
             asChild 
