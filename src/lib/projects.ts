@@ -14,6 +14,11 @@ export interface CaseStudy extends Project {
   slug: string;     // URL-friendly identifier
   imagePath: string; // Path to the main image
   isFeatured?: boolean; // Whether to feature this case study prominently
+  duration?: string; // Project duration
+  teamSize?: string; // Team size
+  status?: string; // Project status (prototype, live, etc.)
+  techStack?: string[]; // Key technologies for quick preview
+  highlights?: string[]; // Key project highlights/achievements
 }
 
 // Export an array of projects
@@ -61,28 +66,43 @@ export const caseStudies: CaseStudy[] = [
     tags: ["UX Research", "React", "Prototyping", "Environmental Design", "ChatGPT API", "User Testing"],
     demo: "https://chatgpt-colorpage.vercel.app/",
     imagePath: "/project3-images/power-up-preview.png",
-    isFeatured: true
+    isFeatured: true,
+    duration: "3 weeks",
+    teamSize: "Solo project",
+    status: "Live demo",
+    techStack: ["React", "ChatGPT API", "Vercel"],
+    highlights: ["33+ User Interviews", "2 Interactive Prototypes", "Environmental UX Research"]
   },
   {
     title: "StitchPal",
     slug: "stitchpal",
     category: "APP DESIGN | MVP (Prototype)",
-    description: "AI crochet companion for patterns, yarn, and project tools.",
+    description: "Flutter mobile app integrating OpenAI for personalized crochet patterns. Features AI-powered yarn suggestions, stitch counter, and wellness tools with Material Design 3 interface.",
     tags: ["AI", "Mobile App", "Crafting", "UX Design"],
     github: "https://github.com/NurjahanJ/stitchpal",
     imagePath: "/project1-images copy/op-page.png",
-    isFeatured: true
+    isFeatured: true,
+    duration: "3 weeks",
+    teamSize: "Solo project",
+    status: "Prototype",
+    techStack: ["Flutter", "OpenAI", "Material Design"],
+    highlights: ["AI-Powered Patterns", "Material Design 3", "Wellness Features"]
   },
   {
     title: "Inflation & Housing Dashboard",
     slug: "dashboard",
     category: "WEB APP | DATA VISUALIZATION",
-    description: "Interactive data visualization dashboard with intuitive charts and responsive design.",
+    description: "React-based data visualization analyzing housing market trends. Processes economic data with interactive Plotly.js charts, D3.js visualizations, and CSV parsing for market insights.",
     tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
     github: "https://github.com/NurjahanJ/dasboard",
     demo: "https://dasboard-wheat.vercel.app/",
     imagePath: "/project2-images/image.png",
-    isFeatured: true
+    isFeatured: true,
+    duration: "2 weeks",
+    teamSize: "Solo project",
+    status: "Live demo",
+    techStack: ["React", "Plotly.js", "D3.js"],
+    highlights: ["Economic Data Analysis", "Interactive Charts", "Market Insights"]
   }
 ];
 

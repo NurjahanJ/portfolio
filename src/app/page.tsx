@@ -12,13 +12,39 @@ export default function Home() {
   const [headlineVisible, setHeadlineVisible] = useState(false);
   const [buttonVisible, setButtonVisible] = useState(false);
   const [compassBounce, setCompassBounce] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check for motion preferences and device type
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    
+    setPrefersReducedMotion(mediaQuery.matches);
+    setIsMobile(mobileQuery.matches);
+    
+    const handleMotionChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    const handleMobileChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    
+    mediaQuery.addEventListener('change', handleMotionChange);
+    mobileQuery.addEventListener('change', handleMobileChange);
+    
+    return () => {
+      mediaQuery.removeEventListener('change', handleMotionChange);
+      mobileQuery.removeEventListener('change', handleMobileChange);
+    };
+  }, []);
 
   // Animation timing effects
   useEffect(() => {
-    // Staggered animations for elements
-    const headlineTimer = setTimeout(() => setHeadlineVisible(true), 300);
-    const buttonTimer = setTimeout(() => setButtonVisible(true), 800);
-    const compassTimer = setTimeout(() => setCompassBounce(true), 1500);
+    // Respect motion preferences - faster animations or immediate display
+    const headlineDelay = prefersReducedMotion ? 100 : 300;
+    const buttonDelay = prefersReducedMotion ? 200 : 800;
+    const compassDelay = prefersReducedMotion ? 300 : 1500;
+    
+    const headlineTimer = setTimeout(() => setHeadlineVisible(true), headlineDelay);
+    const buttonTimer = setTimeout(() => setButtonVisible(true), buttonDelay);
+    const compassTimer = setTimeout(() => setCompassBounce(true), compassDelay);
     
     return () => {
       clearTimeout(headlineTimer);
@@ -31,6 +57,37 @@ export default function Home() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    
+    // Skip complex animation for reduced motion or mobile
+    if (prefersReducedMotion || isMobile) {
+      // Simple static background
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      // Simple gradient background
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, "#001233");
+      gradient.addColorStop(0.5, "#001845");
+      gradient.addColorStop(1, "#000814");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Add a few static stars
+      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+      for (let i = 0; i < 50; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const size = Math.random() * 2;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      
+      return;
+    }
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -272,7 +329,7 @@ export default function Home() {
     return () => {
       window.removeEventListener("resize", setCanvasDimensions);
     };
-  }, []);
+  }, [prefersReducedMotion, isMobile]);
 
   return (
     <div className="relative">
@@ -284,12 +341,12 @@ export default function Home() {
       />
 
       {/* Fullscreen Hero Section */}
-      <section className="relative h-[80vh] flex flex-col items-start justify-center px-8 z-10 pt-60">
-        <div className="max-w-[90%] ml-0 mr-auto space-y-12">
+      <section className="relative h-[90vh] flex flex-col items-start justify-center px-8 z-10 pt-16">
+        <div className="max-w-[95%] ml-0 mr-auto space-y-12">
           {/* Explorer Badge removed */}
           
           {/* Main Headline */}
-          <div className={`max-w-[95%] ml-16 mr-auto transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ marginTop: '-260px' }}>
+          <div className={`max-w-[100%] ml-16 mr-auto transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ marginTop: '-200px' }}>
             <h1 
               className={`text-display font-serif font-medium mb-6 text-left bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-1000 ease-out`} 
               style={{ 
@@ -301,7 +358,7 @@ export default function Home() {
               Nurjahan Jhorna
             </h1>
             <p 
-              className="text-subtitle font-serif font-medium mb-8 text-left"
+              className="text-subtitle font-serif font-medium mb-2 text-left"
               style={{
                 color: '#FF7533',
                 textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'
@@ -309,27 +366,54 @@ export default function Home() {
             >
               UX Designer & Frontend Developer
             </p>
-            <p className="text-subtitle font-serif font-normal text-white/90 max-w-[80%] mb-10 text-left">
+            
+            {/* Social Proof */}
+            <p className="text-caption text-blue-300 mb-6 font-light">
+              Currently: UX Research Assistant | NJIT
+            </p>
+            <p className="text-subtitle font-serif font-normal text-white/90 max-w-[80%] mb-6 text-left">
               Where design meets code: I craft user-centered experiences that bring clarity, beauty, and accessibility to the web.
             </p>
             
-            {/* Glowing Button */}
-            <div className={`flex flex-wrap gap-6 justify-start transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Skills Preview */}
+            <div className="mb-8">
+              <p className="text-caption text-blue-300 mb-3 font-medium">Core Skills</p>
+              <div className="flex flex-wrap gap-2 max-w-[80%]">
+                {['React', 'TypeScript', 'Figma', 'User Research', 'Next.js', 'UX Design', 'API Integration', 'AI Prompting'].map((skill) => (
+                  <span 
+                    key={skill}
+                    className="text-caption bg-blue-900/30 text-blue-200 px-3 py-1 rounded-full border border-blue-500/20 backdrop-blur-sm hover:bg-blue-800/40 transition-colors duration-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            {/* Multiple CTAs */}
+            <div className={`flex flex-wrap gap-4 justify-start transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              {/* Primary CTA - View Portfolio */}
               <Button asChild size="lg" className="rounded-full px-8 py-6 bg-transparent hover:bg-transparent relative group overflow-hidden">
-                <Link href="https://www.linkedin.com/in/nurjahanjhorna" target="_blank" rel="noopener noreferrer" className="relative z-10 text-white font-medium">
+                <Link href="/#projects" className="relative z-10 text-white font-medium">
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#FF5722] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#FF5722] group-hover:to-[#FF7533] transition-all duration-300"></span>
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#FF5722] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#FF5722] group-hover:to-[#FF7533] group-hover:blur-lg transition-all duration-500"></span>
                   <span className="relative z-20 flex items-center justify-center gap-2 text-white font-serif font-medium">
-                    Get In Touch
+                    View Projects
                   </span>
                 </Link>
               </Button>
               
+              {/* Secondary CTA - LinkedIn */}
+              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-6 bg-transparent border-2 border-blue-400/50 text-blue-300 hover:bg-blue-400/10 hover:border-blue-400 transition-all duration-300">
+                <Link href="https://www.linkedin.com/in/nurjahanjhorna" target="_blank" rel="noopener noreferrer" className="font-serif font-medium">
+                  Get In Touch
+                </Link>
+              </Button>
             </div>
           </div>
           
-          {/* Bouncing Compass Icon */}
-          <div className={`absolute bottom-30 left-1/2 transform -translate-x-1/2 ${compassBounce ? 'animate-bounce' : 'opacity-0'} transition-opacity duration-500`}>
+          {/* Scroll Indicator */}
+          <div className={`absolute bottom-30 left-1/2 transform -translate-x-1/2 ${compassBounce ? (prefersReducedMotion ? 'opacity-100' : 'animate-bounce') : 'opacity-0'} transition-opacity duration-500`}>
             <div className="bg-slate-800/70 p-3 rounded-full border border-slate-600/50 backdrop-blur-sm">
               <ChevronDown className="h-6 w-6 text-[#FF7533]" />
               <span className="sr-only">Scroll down</span>
@@ -338,7 +422,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="container mx-auto space-y-8 px-4 py-8 relative z-10 mb-0">
+      <main className="container mx-auto px-4 relative z-10 mb-0" style={{ marginTop: '-120px', paddingTop: '80px' }}>
         <div id="projects">
           <CaseStudySection />
         </div>
