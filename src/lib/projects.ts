@@ -65,7 +65,7 @@ export const caseStudies: CaseStudy[] = [
     description: "UX research study exploring environmental awareness in AI usage. Built two interactive ChatGPT prototypes with visual feedback systems to encourage mindful AI consumption through design nudges.",
     tags: ["UX Research", "React", "Prototyping", "Environmental Design", "ChatGPT API", "User Testing"],
     demo: "https://chatgpt-colorpage.vercel.app/",
-    imagePath: "/project3-images/power-up-preview.png",
+    imagePath: "/project3.png",
     isFeatured: true,
     duration: "3 weeks",
     teamSize: "Solo project",
