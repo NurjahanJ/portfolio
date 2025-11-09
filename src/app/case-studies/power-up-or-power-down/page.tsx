@@ -5,6 +5,9 @@ import Link from "next/link";
 import { ArrowLeft, ExternalLink, Users, Lightbulb, Target, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { caseStudies } from "@/lib/projects";
+import { ProjectNavigation } from "@/components/ProjectNavigation";
+import { ContactCTA } from "@/components/ContactCTA";
+import { ProjectMetrics } from "@/components/ProjectMetrics";
 
 export default function PowerUpOrPowerDownCaseStudy() {
   // Find the Power Up Or Power Down case study
@@ -19,7 +22,7 @@ export default function PowerUpOrPowerDownCaseStudy() {
       {/* Back button */}
       <div>
         <Link 
-          href="/" 
+          href="/#projects" 
           className="inline-flex items-center px-6 py-3 rounded-lg bg-[#0a0f1e] text-white hover:bg-[#0a0f1e]/90 transition-colors border border-slate-800"
         >
           <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
@@ -482,6 +485,15 @@ export default function PowerUpOrPowerDownCaseStudy() {
           </div>
         </div>
       </section>
+
+      {/* Contact CTA */}
+      <ContactCTA 
+        projectTitle="similar UX research projects"
+        accentColor="#22c55e"
+      />
+
+      {/* Project Navigation */}
+      <ProjectNavigation currentSlug="power-up-or-power-down" />
       
     </div>
   );

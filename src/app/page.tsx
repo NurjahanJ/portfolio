@@ -358,7 +358,7 @@ export default function Home() {
               Nurjahan Jhorna
             </h1>
             <p 
-              className="text-subtitle font-serif font-medium mb-2 text-left"
+              className="text-title font-serif font-medium mb-2 text-left"
               style={{
                 color: '#FF7533',
                 textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'
@@ -368,21 +368,21 @@ export default function Home() {
             </p>
             
             {/* Social Proof */}
-            <p className="text-caption text-blue-300 mb-6 font-light">
+            <p className="text-body text-blue-300 mb-6 font-light">
               Currently: UX Research Assistant | NJIT
             </p>
-            <p className="text-subtitle font-serif font-normal text-white/90 max-w-[80%] mb-6 text-left">
+            <p className="text-title font-serif font-normal text-white/90 max-w-[80%] mb-6 text-left">
               Where design meets code: I craft user-centered experiences that bring clarity, beauty, and accessibility to the web.
             </p>
             
             {/* Skills Preview */}
             <div className="mb-8">
-              <p className="text-caption text-blue-300 mb-3 font-medium">Core Skills</p>
+              <p className="text-body text-blue-300 mb-3 font-medium">Core Skills</p>
               <div className="flex flex-wrap gap-2 max-w-[80%]">
                 {['React', 'TypeScript', 'Figma', 'User Research', 'Next.js', 'UX Design', 'API Integration', 'AI Prompting'].map((skill) => (
                   <span 
                     key={skill}
-                    className="text-caption bg-blue-900/30 text-blue-200 px-3 py-1 rounded-full border border-blue-500/20 backdrop-blur-sm hover:bg-blue-800/40 transition-colors duration-300"
+                    className="text-body bg-blue-900/30 text-blue-200 px-4 py-2 rounded-full border border-blue-500/20 backdrop-blur-sm hover:bg-blue-800/40 transition-colors duration-300"
                   >
                     {skill}
                   </span>

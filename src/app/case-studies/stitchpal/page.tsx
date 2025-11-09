@@ -6,6 +6,9 @@ import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { caseStudies } from "@/lib/projects";
 import { ImageSlideshow } from "@/components/ImageSlideshow";
+import { ProjectNavigation } from "@/components/ProjectNavigation";
+import { ContactCTA } from "@/components/ContactCTA";
+import { ProjectMetrics } from "@/components/ProjectMetrics";
 
 export default function StitchPalCaseStudy() {
   // Find the StitchPal case study
@@ -20,7 +23,7 @@ export default function StitchPalCaseStudy() {
       {/* Back button */}
       <div>
         <Link 
-          href="/" 
+          href="/#projects" 
           className="inline-flex items-center px-6 py-3 rounded-lg bg-[#0a0f1e] text-white hover:bg-[#0a0f1e]/90 transition-colors border border-slate-800"
         >
           <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
@@ -403,6 +406,15 @@ export default function StitchPalCaseStudy() {
           </p>
         </div>
       </section>
+
+      {/* Contact CTA */}
+      <ContactCTA 
+        projectTitle="mobile app development"
+        accentColor="#f97316"
+      />
+
+      {/* Project Navigation */}
+      <ProjectNavigation currentSlug="stitchpal" />
       
     </div>
   );
