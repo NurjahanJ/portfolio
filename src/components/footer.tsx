@@ -44,7 +44,7 @@ export function Footer() {
             <span>LinkedIn</span>
           </a>
           <a 
-            href="/resume.pdf" 
+            href="/Resume.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-slate-300 hover:text-[#C33909] transition-colors duration-300 flex items-center"

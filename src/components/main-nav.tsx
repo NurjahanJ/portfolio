@@ -65,7 +65,7 @@ export function MainNav() {
   ]
   
   // Resume link (separate from main navigation routes)
-  const resumeLink = { href: "/Nurjahan_Resume.pdf", label: "Resume", external: true }
+  const resumeLink = { href: "/Resume.pdf", label: "Resume", external: true }
   
   // Function to check if the route is active
   const isActive = (path: string) => {
