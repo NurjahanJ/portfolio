@@ -1,6 +1,6 @@
 "use client";
 
-import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { CaseStudyCard } from "@/components/case-study-card";
 import { caseStudies } from "@/lib/projects";
 
 export function CaseStudySection() {

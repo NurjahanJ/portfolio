@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { StarBackground } from "@/components/star-background";
 
 interface CaseStudyCardProps {
   category: string;
@@ -24,21 +25,7 @@ export function CaseStudyCard({ category, title, description, imagePath, slug, d
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-20 px-12 md:px-20 relative max-w-[1600px] mx-auto">
       {/* Subtle star background */}
-      <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <div 
-            key={`star-casestudy-${i}`}
-            className="absolute rounded-full bg-white"
-            style={{
-              width: `${Math.random() * 2 + 1}px`,
-              height: `${Math.random() * 2 + 1}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              opacity: Math.random() * 0.7 + 0.3
-            }}
-          />
-        ))}
-      </div>
+      <StarBackground count={12} />
       
       {/* Content Section */}
       <div className="flex flex-col space-y-4 order-2 md:order-1 relative z-10 md:pr-8 md:pl-16 md:max-w-[90%] md:ml-6">

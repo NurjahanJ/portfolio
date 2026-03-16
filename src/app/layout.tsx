@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { IBM_Plex_Mono, Inter, Lora } from "next/font/google";
 import { MainNav } from "@/components/main-nav";
+
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({

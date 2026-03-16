@@ -1,34 +1,27 @@
 "use client";
 
-import Image from "next/image";
+import { notFound } from 'next/navigation'
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Users, Lightbulb, Target, Zap } from "lucide-react";
+import { ExternalLink, Users, Lightbulb, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { caseStudies } from "@/lib/projects";
-import { ProjectNavigation } from "@/components/ProjectNavigation";
-import { ContactCTA } from "@/components/ContactCTA";
-import { ProjectMetrics } from "@/components/ProjectMetrics";
+import { ProjectNavigation } from "@/components/project-navigation";
+import { ContactCTA } from "@/components/contact-cta";
+import { BackToProjects } from "@/components/back-to-projects";
+import { CaseStudyTags } from "@/components/case-study-tags";
 
 export default function PowerUpOrPowerDownCaseStudy() {
   // Find the Power Up Or Power Down case study
   const caseStudy = caseStudies.find(study => study.slug === "power-up-or-power-down");
   
   if (!caseStudy) {
-    return <div>Case study not found</div>;
+    notFound();
   }
 
   return (
     <div className="max-w-4xl mx-auto space-y-16 pb-16">
       {/* Back button */}
-      <div>
-        <Link 
-          href="/#projects" 
-          className="inline-flex items-center px-6 py-3 rounded-lg bg-[#0a0f1e] text-white hover:bg-[#0a0f1e]/90 transition-colors border border-slate-800"
-        >
-          <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
-          <span className="text-lg font-medium">Back to Projects</span>
-        </Link>
-      </div>
+      <BackToProjects />
       
       {/* Header */}
       <header className="space-y-4">
@@ -44,17 +37,7 @@ export default function PowerUpOrPowerDownCaseStudy() {
           Raising awareness about the environmental impact of generative AI through interactive design nudges.
         </p>
         
-        <div className="flex flex-wrap gap-2 mt-5" aria-label="Project technologies">
-          {caseStudy.tags.map((tag) => (
-            <span 
-              key={tag} 
-              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[rgba(10,17,40,0.9)] text-emerald-300 border border-emerald-500/30 transition-transform duration-300 hover:scale-105 hover:bg-emerald-900/30"
-              role="listitem"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        <CaseStudyTags tags={caseStudy.tags} colorClass="text-emerald-300 border-emerald-500/30 hover:bg-emerald-900/30" />
         
         <div className="mt-6 flex gap-4">
           <Button 

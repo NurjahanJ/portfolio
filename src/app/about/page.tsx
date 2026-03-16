@@ -3,20 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Code, Palette, Compass } from "lucide-react";
 
 export default function About() {
-  const [flippedCard, setFlippedCard] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  
-  // Handle card flip
-  const handleCardFlip = (index: number) => {
-    setFlippedCard(flippedCard === index ? null : index);
-  };
   
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#0a1128] text-slate-100">
@@ -30,14 +23,14 @@ export default function About() {
           {Array.from({ length: 100 }).map((_, i) => (
             <div 
               key={`star-sm-${i}`}
-              className="absolute rounded-full bg-white"
+              className="absolute rounded-full bg-white motion-reduce:animate-none"
               style={{
                 width: `${Math.random() * 2 + 1}px`,
                 height: `${Math.random() * 2 + 1}px`,
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
                 opacity: Math.random() * 0.7 + 0.3,
-                animation: `twinkle ${Math.random() * 5 + 3}s ease-in-out infinite ${Math.random() * 5}s`
+                animation: `twinkle ${Math.random() * 5 + 3}s ease-in-out infinite ${Math.random() * 5}s`,
               }}
             />
           ))}
@@ -48,14 +41,14 @@ export default function About() {
           {Array.from({ length: 50 }).map((_, i) => (
             <div 
               key={`star-md-${i}`}
-              className="absolute rounded-full bg-white"
+              className="absolute rounded-full bg-white motion-reduce:animate-none"
               style={{
                 width: `${Math.random() * 3 + 2}px`,
                 height: `${Math.random() * 3 + 2}px`,
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
                 opacity: Math.random() * 0.7 + 0.3,
-                animation: `twinkle ${Math.random() * 7 + 4}s ease-in-out infinite ${Math.random() * 5}s`
+                animation: `twinkle ${Math.random() * 7 + 4}s ease-in-out infinite ${Math.random() * 5}s`,
               }}
             />
           ))}
@@ -87,7 +80,7 @@ export default function About() {
               </h1>
               
               {/* Thin line separator */}
-              <div className="w-[500px] h-[2px] bg-[#C33909] mx-auto mt-6 mb-8"></div>
+              <div className="max-w-md w-full h-[2px] bg-[#C33909] mx-auto mt-6 mb-8"></div>
             </div>
             
             <div className="space-y-6 mb-12">
@@ -121,7 +114,7 @@ export default function About() {
               </h2>
               
               {/* Thin line separator */}
-              <div className="w-[500px] h-[2px] bg-[#C33909] mx-auto mt-2 mb-8"></div>
+              <div className="max-w-md w-full h-[2px] bg-[#C33909] mx-auto mt-2 mb-8"></div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-full mx-auto px-4">
                 {/* Crochet */}
@@ -129,7 +122,7 @@ export default function About() {
                   <div className="flex flex-col items-start">
                     <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-lg mx-auto">
                       <Image 
-                        src="/corchet.png" 
+                        src="/crochet.png" 
                         alt="Crochet hobby" 
                         fill
                         style={{ objectFit: 'cover' }}
