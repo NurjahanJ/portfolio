@@ -73,16 +73,13 @@ export function MainNav() {
     return false
   }
 
-  // Determine if we're on the About page
-  const isAboutPage = pathname === "/about";
-
   return (
     <nav 
       className={`flex items-center justify-between w-full z-50 transition-all duration-300 border-b border-[#C33909]/20 ${
         scrolled 
           ? 'py-3 backdrop-blur-[10px] bg-[rgba(4,10,30,0.65)] shadow-sm' 
           : 'py-5 backdrop-blur-[10px] bg-[rgba(4,10,30,0.55)] shadow-none'
-      } ${isAboutPage ? 'py-1 h-[70px]' : ''}`}
+      }`}
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
@@ -96,8 +93,8 @@ export function MainNav() {
               <img 
                 src="/logo.png" 
                 alt="Digital Map Logo" 
-                width={isAboutPage ? "50" : "70"} 
-                height={isAboutPage ? "50" : "70"} 
+                width="70" 
+                height="70" 
                 className="md:ml-4 ml-0 rounded-full" 
               />
             </div>
@@ -222,8 +219,8 @@ export function MainNav() {
                     <img 
                       src="/logo.png" 
                       alt="Digital Map Logo" 
-                      width={isAboutPage ? "70" : "120"} 
-                      height={isAboutPage ? "70" : "120"} 
+                      width="120" 
+                      height="120" 
                       className="rounded-full" 
                     />
                   </div>

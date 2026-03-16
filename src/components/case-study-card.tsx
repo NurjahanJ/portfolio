@@ -3,8 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { StarBackground } from "@/components/star-background";
 
 interface CaseStudyCardProps {
   category: string;
@@ -21,89 +19,57 @@ interface CaseStudyCardProps {
   highlights?: string[];
 }
 
-export function CaseStudyCard({ category, title, description, imagePath, slug, duration, teamSize, status, techStack, demo, github, highlights }: CaseStudyCardProps) {
+export function CaseStudyCard({ category, title, description, imagePath, slug, techStack }: CaseStudyCardProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-20 px-12 md:px-20 relative max-w-[1600px] mx-auto">
-      {/* Subtle star background */}
-      <StarBackground count={12} />
-      
-      {/* Content Section */}
-      <div className="flex flex-col space-y-4 order-2 md:order-1 relative z-10 md:pr-8 md:pl-16 md:max-w-[90%] md:ml-6">
-        <div className="text-overline font-medium" style={{color: '#FF7533', textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'}}>
+    <Link
+      href={`/case-studies/${slug}`}
+      className="group grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6 md:gap-10 items-center p-6 md:p-8 rounded-2xl border border-slate-700/50 hover:border-[#FF7533]/40 transition-all duration-500 bg-slate-900/40 backdrop-blur-sm"
+    >
+      {/* Content */}
+      <div className="space-y-3 order-2 md:order-1">
+        <p className="text-xs uppercase tracking-[0.2em] text-[#FF7533] font-medium">
           {category}
-        </div>
-        
-        <h3 className="text-title font-bold text-sky-300">
+        </p>
+
+        <h3 className="text-xl md:text-2xl font-serif font-medium text-white group-hover:text-blue-200 transition-colors duration-300">
           {title}
         </h3>
-        
-        <p className="text-slate-300 text-body font-light leading-relaxed">
+
+        <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed line-clamp-3">
           {description}
         </p>
-        
-        
-        {/* Tech Stack Preview */}
-        {techStack && techStack.length > 0 && (
-          <div className="mt-3">
-            <p className="text-caption text-slate-400 mb-2 font-medium">Tech Stack</p>
-            <div className="flex flex-wrap gap-1">
+
+        <div className="flex items-center justify-between pt-2">
+          {techStack && techStack.length > 0 && (
+            <div className="flex flex-wrap gap-2">
               {techStack.slice(0, 3).map((tech) => (
-                <span 
+                <span
                   key={tech}
-                  className="text-caption bg-slate-800/50 text-slate-300 px-2 py-1 rounded text-xs border border-slate-600/30"
+                  className="text-xs px-2.5 py-1 rounded-full bg-slate-800/60 text-slate-400 border border-slate-700/50"
                 >
                   {tech}
                 </span>
               ))}
-              {techStack.length > 3 && (
-                <span className="text-caption text-slate-400 px-2 py-1 text-xs">
-                  +{techStack.length - 3} more
-                </span>
-              )}
             </div>
-          </div>
-        )}
-        
-        {/* Differentiated CTAs */}
-        <div className="pt-4 flex flex-wrap gap-3">
-          {demo && (
-            <Button 
-              asChild 
-              variant="default" 
-              className="group bg-transparent hover:bg-[rgba(255,117,51,0.2)] text-[#FF7533] border border-[#FF7533]/50 hover:border-[#FF7533] focus:ring-2 focus:ring-[#FF7533] focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
-              style={{textShadow: '0 0 10px rgba(255, 117, 51, 0.4)'}}
-            >
-              <Link href={demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                View Live Demo
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
-            </Button>
           )}
-          
-          
-          <Button 
-            asChild 
-            variant="ghost" 
-            className="group bg-blue-900/30 text-blue-300 hover:text-blue-200 hover:bg-blue-800/40 border border-blue-500/20 transition-all duration-300"
-          >
-            <Link href={`/case-studies/${slug}`} className="inline-flex items-center">
-              Read Case Study
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </Link>
-          </Button>
+
+          <span className="inline-flex items-center gap-1.5 text-sm text-[#FF7533] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Read Case Study
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </span>
         </div>
       </div>
-      
-      {/* Image Section */}
-      <div className="relative order-1 md:order-2 aspect-[4/3] w-[60%] mx-auto md:w-[70%] overflow-hidden rounded-lg shadow-xl border border-sky-500/30 hover:border-sky-400/50 transition-all duration-300">
+
+      {/* Image */}
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-slate-700/40 order-1 md:order-2">
         <Image
           src={imagePath}
           alt={`${title} preview`}
           fill
-          className="object-contain object-center"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 280px"
         />
       </div>
-    </div>
+    </Link>
   );
 }
