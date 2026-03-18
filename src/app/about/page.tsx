@@ -2,18 +2,59 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFlutter, SiDart, SiFigma, SiCanva, SiGithub, SiVercel, SiHtml5, SiCss, SiJavascript, SiGit } from "react-icons/si";
+import { HiOutlineBeaker, HiOutlineCursorArrowRays, HiOutlineUserGroup, HiOutlineCpuChip, HiOutlineCodeBracket, HiOutlinePaintBrush } from "react-icons/hi2";
+import type { IconType } from "react-icons";
 
-const skills = [
-  { label: "React / Next.js", category: "dev" },
-  { label: "TypeScript", category: "dev" },
-  { label: "Tailwind CSS", category: "dev" },
-  { label: "Flutter / Dart", category: "dev" },
-  { label: "Figma", category: "design" },
-  { label: "UX Research", category: "design" },
-  { label: "Prototyping", category: "design" },
-  { label: "User Testing", category: "design" },
-  { label: "AI Prompting", category: "other" },
-  { label: "API Integration", category: "other" },
+interface Skill {
+  label: string;
+  icon: IconType;
+  color: string;
+}
+
+interface SkillCategory {
+  title: string;
+  icon: IconType;
+  skills: Skill[];
+}
+
+const skillCategories: SkillCategory[] = [
+  {
+    title: "Development",
+    icon: HiOutlineCodeBracket,
+    skills: [
+      { label: "React", icon: SiReact, color: "#61DAFB" },
+      { label: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+      { label: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { label: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { label: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { label: "HTML5", icon: SiHtml5, color: "#E34F26" },
+      { label: "CSS3", icon: SiCss, color: "#1572B6" },
+      { label: "Flutter", icon: SiFlutter, color: "#02569B" },
+      { label: "Dart", icon: SiDart, color: "#0175C2" },
+    ],
+  },
+  {
+    title: "Design & Research",
+    icon: HiOutlinePaintBrush,
+    skills: [
+      { label: "Figma", icon: SiFigma, color: "#F24E1E" },
+      { label: "Canva", icon: SiCanva, color: "#00C4CC" },
+      { label: "UX Research", icon: HiOutlineBeaker, color: "#A78BFA" },
+      { label: "Prototyping", icon: HiOutlineCursorArrowRays, color: "#F472B6" },
+      { label: "User Testing", icon: HiOutlineUserGroup, color: "#34D399" },
+    ],
+  },
+  {
+    title: "Tools & Workflow",
+    icon: HiOutlineCpuChip,
+    skills: [
+      { label: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+      { label: "Git", icon: SiGit, color: "#F05032" },
+      { label: "Vercel", icon: SiVercel, color: "#FFFFFF" },
+      { label: "AI Prompting", icon: HiOutlineCpuChip, color: "#FF7533" },
+    ],
+  },
 ];
 
 const hobbies = [
@@ -106,18 +147,41 @@ export default function About() {
           variants={fadeUp}
           className="mb-24"
         >
-          <div className="text-center mb-10">
+          <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-[0.25em] text-[#FF7533] font-medium mb-3">Toolkit</p>
             <h2 className="text-2xl md:text-3xl font-serif font-medium text-white">Skills &amp; Technologies</h2>
           </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {skills.map((skill) => (
-              <span
-                key={skill.label}
-                className="px-5 py-2.5 rounded-full text-sm font-medium border border-slate-700/60 bg-slate-900/50 text-slate-300 hover:border-[#FF7533]/40 hover:text-white transition-all duration-300"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {skillCategories.map((category) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut" as const }}
+                className="rounded-2xl border border-slate-700/50 bg-slate-900/40 backdrop-blur-sm p-6 hover:border-[#FF7533]/30 transition-colors duration-300"
               >
-                {skill.label}
-              </span>
+                <div className="flex items-center gap-3 mb-6">
+                  <category.icon className="w-5 h-5 text-[#FF7533]" />
+                  <h3 className="text-lg font-serif font-medium text-white">{category.title}</h3>
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.label}
+                      className="group flex flex-col items-center gap-2 py-3 rounded-xl hover:bg-slate-800/50 transition-colors duration-200"
+                    >
+                      <skill.icon
+                        className="w-7 h-7 transition-transform duration-300 group-hover:scale-110"
+                        style={{ color: skill.color }}
+                      />
+                      <span className="text-xs text-slate-400 group-hover:text-white text-center leading-tight transition-colors duration-200">
+                        {skill.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
