@@ -105,14 +105,3 @@ export const caseStudies: CaseStudy[] = [
     highlights: ["Economic Data Analysis", "Interactive Charts", "Market Insights"]
   }
 ];
-
-// Helper function to get all unique tags across projects
-export function getAllTags(): string[] {
-  const allTags = projects.flatMap(project => project.tags);
-  return [...new Set(allTags)];
-}
-
-// Helper function to filter projects by tag
-export function getProjectsByTag(tag: string): Project[] {
-  return projects.filter(project => project.tags.includes(tag));
-}

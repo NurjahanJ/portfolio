@@ -1,432 +1,168 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
-import { CaseStudySection } from "@/components/CaseStudySection";
+import { motion } from "framer-motion";
+import { ArrowDown, ArrowRight, Mail, Linkedin } from "lucide-react";
+import { CaseStudySection } from "@/components/case-study-section";
+import { StarFieldCanvas } from "@/components/star-field-canvas";
 
 export default function Home() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [headlineVisible, setHeadlineVisible] = useState(false);
-  const [buttonVisible, setButtonVisible] = useState(false);
-  const [compassBounce, setCompassBounce] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check for motion preferences and device type
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobileQuery = window.matchMedia('(max-width: 768px)');
-    
     setPrefersReducedMotion(mediaQuery.matches);
     setIsMobile(mobileQuery.matches);
-    
     const handleMotionChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
     const handleMobileChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    
     mediaQuery.addEventListener('change', handleMotionChange);
     mobileQuery.addEventListener('change', handleMobileChange);
-    
     return () => {
       mediaQuery.removeEventListener('change', handleMotionChange);
       mobileQuery.removeEventListener('change', handleMobileChange);
     };
   }, []);
 
-  // Animation timing effects
-  useEffect(() => {
-    // Respect motion preferences - faster animations or immediate display
-    const headlineDelay = prefersReducedMotion ? 100 : 300;
-    const buttonDelay = prefersReducedMotion ? 200 : 800;
-    const compassDelay = prefersReducedMotion ? 300 : 1500;
-    
-    const headlineTimer = setTimeout(() => setHeadlineVisible(true), headlineDelay);
-    const buttonTimer = setTimeout(() => setButtonVisible(true), buttonDelay);
-    const compassTimer = setTimeout(() => setCompassBounce(true), compassDelay);
-    
-    return () => {
-      clearTimeout(headlineTimer);
-      clearTimeout(buttonTimer);
-      clearTimeout(compassTimer);
-    };
-  }, []);
-
-  // Animated star field background effect
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    // Skip complex animation for reduced motion or mobile
-    if (prefersReducedMotion || isMobile) {
-      // Simple static background
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-      
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      
-      // Simple gradient background
-      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, "#001233");
-      gradient.addColorStop(0.5, "#001845");
-      gradient.addColorStop(1, "#000814");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      // Add a few static stars
-      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
-      for (let i = 0; i < 50; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
-        const size = Math.random() * 2;
-        ctx.beginPath();
-        ctx.arc(x, y, size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      
-      return;
-    }
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // Set canvas dimensions
-    const setCanvasDimensions = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    setCanvasDimensions();
-    window.addEventListener("resize", setCanvasDimensions);
-
-    // Create stars
-    const stars: Array<{
-      x: number;
-      y: number;
-      size: number;
-      opacity: number;
-      pulse: number;
-      pulseSpeed: number;
-    }> = [];
-    
-    // Create shooting stars
-    const shootingStars: Array<{
-      x: number;
-      y: number;
-      length: number;
-      speed: number;
-      angle: number;
-      opacity: number;
-      active: boolean;
-      trail: Array<{x: number, y: number, opacity: number}>
-      lifetime: number;
-      maxLifetime: number;
-    }> = [];
-    
-    // Initialize shooting stars (inactive initially)
-    for (let i = 0; i < 5; i++) {
-      shootingStars.push({
-        x: 0,
-        y: 0,
-        length: 0,
-        speed: 0,
-        angle: 0,
-        opacity: 0,
-        active: false,
-        trail: [],
-        lifetime: 0,
-        maxLifetime: 0
-      });
-    }
-
-    // Function to create a new shooting star
-    const createShootingStar = (star: typeof shootingStars[0]) => {
-      // Start position - anywhere in the top half of the screen
-      star.x = Math.random() * canvas.width;
-      star.y = Math.random() * (canvas.height * 0.5);
-      
-      // Angle - slightly downward trajectory (between 30° and 60°)
-      star.angle = Math.PI / 6 + Math.random() * (Math.PI / 6);
-      if (Math.random() > 0.5) star.angle = Math.PI - star.angle; // 50% chance to go left instead of right
-      
-      // Speed and length
-      star.speed = 5 + Math.random() * 10;
-      star.length = 50 + Math.random() * 80;
-      star.opacity = 0.7 + Math.random() * 0.3;
-      star.active = true;
-      star.trail = [];
-      star.lifetime = 0;
-      star.maxLifetime = 70 + Math.random() * 50; // Frames the star will live
-    };
-
-    // Create different types of stars
-    const starCount = Math.min(window.innerWidth / 3, 200); // Responsive star count
-    
-    for (let i = 0; i < starCount; i++) {
-      const size = Math.random() * 2.5;
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: size,
-        opacity: Math.random() * 0.8 + 0.2,
-        pulse: 0,
-        pulseSpeed: Math.random() * 0.02 + 0.005
-      });
-    }
-    
-    // Create a few larger stars that pulse more dramatically
-    for (let i = 0; i < 15; i++) {
-      const size = Math.random() * 1.5 + 2;
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: size,
-        opacity: Math.random() * 0.5 + 0.5,
-        pulse: Math.random() * Math.PI * 2, // Random start position in pulse cycle
-        pulseSpeed: Math.random() * 0.03 + 0.01
-      });
-    }
-
-    // Animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw deep space background
-      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, "#001233"); // Deep navy blue
-      gradient.addColorStop(0.5, "#001845"); // Slightly lighter navy
-      gradient.addColorStop(1, "#000814"); // Almost black
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      // Add subtle nebula effect
-      const nebulaGradient = ctx.createRadialGradient(
-        canvas.width * 0.8, canvas.height * 0.2, 0,
-        canvas.width * 0.8, canvas.height * 0.2, canvas.width * 0.6
-      );
-      nebulaGradient.addColorStop(0, "rgba(75, 0, 130, 0.03)"); // Indigo with low opacity
-      nebulaGradient.addColorStop(0.5, "rgba(138, 43, 226, 0.02)"); // Purple with low opacity
-      nebulaGradient.addColorStop(1, "rgba(0, 0, 0, 0)"); // Transparent
-      ctx.fillStyle = nebulaGradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Draw stars
-      for (const star of stars) {
-        // Update star pulse
-        star.pulse += star.pulseSpeed;
-        
-        // Calculate current opacity based on pulse
-        const pulseOpacity = star.opacity * (0.7 + 0.3 * Math.sin(star.pulse));
-        
-        // Draw star
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        
-        // Create a radial gradient for the star glow
-        const glow = ctx.createRadialGradient(
-          star.x, star.y, 0,
-          star.x, star.y, star.size * 2
-        );
-        glow.addColorStop(0, `rgba(255, 255, 255, ${pulseOpacity})`);
-        glow.addColorStop(1, 'rgba(255, 255, 255, 0)');
-        
-        ctx.fillStyle = glow;
-        ctx.fill();
-        
-        // Draw the star core
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${pulseOpacity + 0.2})`;
-        ctx.fill();
-      }
-      
-      // Randomly create new shooting stars
-      if (Math.random() < 0.01) { // 1% chance each frame to create a new shooting star
-        const inactiveStar = shootingStars.find(star => !star.active);
-        if (inactiveStar) {
-          createShootingStar(inactiveStar);
-        }
-      }
-      
-      // Update and draw shooting stars
-      for (const star of shootingStars) {
-        if (!star.active) continue;
-        
-        // Update position
-        star.x += Math.cos(star.angle) * star.speed;
-        star.y += Math.sin(star.angle) * star.speed;
-        
-        // Add to trail
-        star.trail.unshift({ x: star.x, y: star.y, opacity: star.opacity });
-        
-        // Limit trail length
-        if (star.trail.length > 20) {
-          star.trail.pop();
-        }
-        
-        // Draw shooting star head
-        ctx.beginPath();
-        const headGradient = ctx.createRadialGradient(
-          star.x, star.y, 0,
-          star.x, star.y, 3
-        );
-        headGradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity})`);
-        headGradient.addColorStop(1, `rgba(200, 255, 255, 0)`);
-        ctx.fillStyle = headGradient;
-        ctx.arc(star.x, star.y, 2, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Draw trail
-        if (star.trail.length > 1) {
-          ctx.beginPath();
-          ctx.moveTo(star.trail[0].x, star.trail[0].y);
-          
-          // Draw the main trail line
-          for (let i = 1; i < star.trail.length; i++) {
-            ctx.lineTo(star.trail[i].x, star.trail[i].y);
-          }
-          
-          // Create gradient for trail
-          const trailGradient = ctx.createLinearGradient(
-            star.trail[0].x, star.trail[0].y,
-            star.trail[star.trail.length - 1].x, star.trail[star.trail.length - 1].y
-          );
-          
-          trailGradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity})`);
-          trailGradient.addColorStop(0.3, `rgba(120, 220, 255, ${star.opacity * 0.6})`);
-          trailGradient.addColorStop(1, 'rgba(70, 120, 255, 0)');
-          
-          ctx.strokeStyle = trailGradient;
-          ctx.lineWidth = 2;
-          ctx.stroke();
-          
-          // Add glow effect to trail
-          ctx.lineWidth = 4;
-          ctx.strokeStyle = `rgba(255, 255, 255, ${star.opacity * 0.3})`;
-          ctx.stroke();
-        }
-        
-        // Check if star is out of bounds or lifetime exceeded
-        star.lifetime++;
-        if (
-          star.x < 0 ||
-          star.x > canvas.width ||
-          star.y < 0 ||
-          star.y > canvas.height ||
-          star.lifetime > star.maxLifetime
-        ) {
-          star.active = false;
-        }
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener("resize", setCanvasDimensions);
-    };
-  }, [prefersReducedMotion, isMobile]);
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (delay: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: prefersReducedMotion ? 0.1 : 0.8, delay: prefersReducedMotion ? 0 : delay, ease: "easeOut" as const },
+    }),
+  };
 
   return (
     <div className="relative">
-      {/* Animated Star Background Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-        aria-hidden="true"
-      />
+      <StarFieldCanvas prefersReducedMotion={prefersReducedMotion} isMobile={isMobile} />
 
-      {/* Fullscreen Hero Section */}
+      {/* Hero Section */}
       <section className="relative h-[90vh] flex flex-col items-start justify-center px-8 z-10 pt-16">
         <div className="max-w-[95%] ml-0 mr-auto space-y-12">
-          {/* Explorer Badge removed */}
-          
-          {/* Main Headline */}
-          <div className={`max-w-[100%] ml-16 mr-auto transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ marginTop: '-200px' }}>
-            <h1 
-              className={`text-display font-serif font-medium mb-6 text-left bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-1000 ease-out`} 
-              style={{ 
-                textShadow: '0 0 20px rgba(147, 197, 253, 0.5), 0 0 40px rgba(147, 197, 253, 0.3)',
-                paddingTop: '10px',
-                paddingBottom: '10px'
-              }}
+          <div className="max-w-[100%] ml-4 md:ml-16 mr-auto -mt-48">
+            <motion.h1
+              variants={fadeUp} initial="hidden" animate="visible" custom={0}
+              className="text-display font-serif font-medium mb-6 text-left bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent"
+              style={{ textShadow: '0 0 20px rgba(147, 197, 253, 0.5), 0 0 40px rgba(147, 197, 253, 0.3)' }}
             >
               Nurjahan Jhorna
-            </h1>
-            <p 
-              className="text-title font-serif font-medium mb-2 text-left"
-              style={{
-                color: '#FF7533',
-                textShadow: '0 0 10px rgba(255, 117, 51, 0.6)'
-              }}
+            </motion.h1>
+            <motion.p
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.1}
+              className="text-title font-serif font-medium mb-2 text-left text-[#FF7533]"
+              style={{ textShadow: '0 0 10px rgba(255, 117, 51, 0.6)' }}
             >
-              UX Designer & Frontend Developer
-            </p>
-            
-            {/* Social Proof */}
-            <p className="text-body text-blue-300 mb-6 font-light">
+              UX Designer &amp; Frontend Developer
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.2}
+              className="text-body text-blue-300 mb-6 font-light"
+            >
               Currently: UX Research Assistant | NJIT
-            </p>
-            <p className="text-title font-serif font-normal text-white/90 max-w-[80%] mb-6 text-left">
+            </motion.p>
+            <motion.p
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.3}
+              className="text-title font-serif font-normal text-white/90 max-w-[80%] mb-6 text-left"
+            >
               Where design meets code: I craft user-centered experiences that bring clarity, beauty, and accessibility to the web.
-            </p>
-            
-            {/* Skills Preview */}
-            <div className="mb-8">
-              <p className="text-body text-blue-300 mb-3 font-medium">Core Skills</p>
-              <div className="flex flex-wrap gap-2 max-w-[80%]">
-                {['React', 'TypeScript', 'Figma', 'User Research', 'Next.js', 'UX Design', 'API Integration', 'AI Prompting'].map((skill) => (
-                  <span 
-                    key={skill}
-                    className="text-body bg-blue-900/30 text-blue-200 px-4 py-2 rounded-full border border-blue-500/20 backdrop-blur-sm hover:bg-blue-800/40 transition-colors duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* Multiple CTAs */}
-            <div className={`flex flex-wrap gap-4 justify-start transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              {/* Primary CTA - View Portfolio */}
-              <Button asChild size="lg" className="rounded-full px-8 py-6 bg-transparent hover:bg-transparent relative group overflow-hidden">
-                <Link href="/#projects" className="relative z-10 text-white font-medium">
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#FF5722] rounded-full group-hover:bg-gradient-to-r group-hover:from-[#FF5722] group-hover:to-[#FF7533] transition-all duration-300"></span>
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FF7533] to-[#FF5722] rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-[#FF5722] group-hover:to-[#FF7533] group-hover:blur-lg transition-all duration-500"></span>
-                  <span className="relative z-20 flex items-center justify-center gap-2 text-white font-serif font-medium">
-                    View Projects
-                  </span>
-                </Link>
-              </Button>
-              
-              {/* Secondary CTA - LinkedIn */}
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-6 bg-transparent border-2 border-blue-400/50 text-blue-300 hover:bg-blue-400/10 hover:border-blue-400 transition-all duration-300">
-                <Link href="https://www.linkedin.com/in/nurjahanjhorna" target="_blank" rel="noopener noreferrer" className="font-serif font-medium">
-                  Get In Touch
-                </Link>
-              </Button>
-            </div>
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.45}
+              className="flex flex-wrap gap-4 justify-start"
+            >
+              <Link
+                href="/#projects"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] text-white font-medium hover:shadow-lg hover:shadow-[#FF7533]/25 transition-all duration-300 hover:scale-[1.03]"
+              >
+                View Projects
+                <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/nurjahanjhorna"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-blue-400/50 text-blue-300 font-medium hover:bg-blue-400/10 hover:border-blue-400 transition-all duration-300"
+              >
+                Get In Touch
+              </Link>
+            </motion.div>
           </div>
-          
-          {/* Scroll Indicator */}
-          <div className={`absolute bottom-30 left-1/2 transform -translate-x-1/2 ${compassBounce ? (prefersReducedMotion ? 'opacity-100' : 'animate-bounce') : 'opacity-0'} transition-opacity duration-500`}>
-            <div className="bg-slate-800/70 p-3 rounded-full border border-slate-600/50 backdrop-blur-sm">
-              <ChevronDown className="h-6 w-6 text-[#FF7533]" />
-              <span className="sr-only">Scroll down</span>
+
+          {/* Scroll indicator */}
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          >
+            <div className="w-6 h-10 rounded-full border-2 border-slate-500/40 flex justify-center pt-2">
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1.5 h-1.5 rounded-full bg-[#FF7533]"
+              />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <main className="container mx-auto px-4 relative z-10 mb-0" style={{ marginTop: '-120px', paddingTop: '80px' }}>
-        <div id="projects">
-          <CaseStudySection />
+      {/* Projects Section */}
+      <main className="relative z-10">
+        <div id="projects" className="container mx-auto px-4 pt-8 pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+          >
+            <CaseStudySection />
+          </motion.div>
         </div>
       </main>
+
+      {/* Contact Section */}
+      <section className="relative z-10 pb-24 pt-16">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+            className="max-w-2xl mx-auto text-center space-y-6"
+          >
+            <p className="text-sm uppercase tracking-[0.25em] text-[#FF7533] font-medium">Get In Touch</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-medium text-white">
+              Let&apos;s work together
+            </h2>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              I&apos;m always open to new opportunities and collaborations. Feel free to reach out.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <a
+                href="mailto:njhorna07@gmail.com"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] text-white font-medium hover:shadow-lg hover:shadow-[#FF7533]/25 transition-all duration-300 hover:scale-[1.03]"
+              >
+                <Mail className="h-4 w-4" />
+                Send an Email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nurjahanjhorna"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-slate-500/40 text-slate-300 font-medium hover:border-[#FF7533]/50 hover:text-white transition-all duration-300"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }

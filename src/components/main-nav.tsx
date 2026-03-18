@@ -8,12 +8,11 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { Menu, X, Compass, Mountain, ChevronDown } from "lucide-react"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { projects, caseStudies } from "@/lib/projects"
+import { Menu, X, ChevronDown } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { caseStudies } from "@/lib/projects"
 
 export function MainNav() {
   const pathname = usePathname()
@@ -74,25 +73,17 @@ export function MainNav() {
     return false
   }
 
-  // Determine if we're on the About page
-  const isAboutPage = pathname === "/about";
-
   return (
     <nav 
-      className={`flex items-center justify-between w-full z-50 transition-all duration-300 ${
+      className={`flex items-center justify-between w-full z-50 transition-all duration-300 border-b border-[#C33909]/20 ${
         scrolled 
-          ? 'py-3 backdrop-blur-[10px] bg-[rgba(4,10,30,0.65)] border-b border-[#FF7533]/50' 
-          : 'py-5 backdrop-blur-[10px] bg-[rgba(4,10,30,0.55)]'
-      } ${isAboutPage ? 'py-1' : ''}`} 
-      style={{
-        boxShadow: scrolled ? '0 4px 20px rgba(195, 57, 9, 0.05)' : 'none',
-        borderBottom: '1px solid rgba(195, 57, 9, 0.2)',
-        ...(isAboutPage && { height: '70px' })
-      }}
+          ? 'py-3 backdrop-blur-[10px] bg-[rgba(4,10,30,0.65)] shadow-sm' 
+          : 'py-5 backdrop-blur-[10px] bg-[rgba(4,10,30,0.55)] shadow-none'
+      }`}
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <div className="flex items-center" style={{ paddingLeft: '6rem' }}>
+        <div className="flex items-center pl-4 md:pl-24">
           <Link 
             href="/" 
             className="flex items-center gap-2 text-xl font-semibold text-white hover:text-[#FF7533] transition-colors duration-300" 
@@ -102,8 +93,8 @@ export function MainNav() {
               <img 
                 src="/logo.png" 
                 alt="Digital Map Logo" 
-                width={isAboutPage ? "50" : "70"} 
-                height={isAboutPage ? "50" : "70"} 
+                width="70" 
+                height="70" 
                 className="md:ml-4 ml-0 rounded-full" 
               />
             </div>
@@ -111,7 +102,7 @@ export function MainNav() {
         </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center" style={{ paddingRight: '10rem' }}>
+        <div className="hidden md:flex gap-8 items-center pr-4 md:pr-40">
           {routes.map((route, index) => {
             // Special handling for Projects link
             if (route.label === "Projects") {
@@ -228,8 +219,8 @@ export function MainNav() {
                     <img 
                       src="/logo.png" 
                       alt="Digital Map Logo" 
-                      width={isAboutPage ? "70" : "120"} 
-                      height={isAboutPage ? "70" : "120"} 
+                      width="120" 
+                      height="120" 
                       className="rounded-full" 
                     />
                   </div>
@@ -337,7 +328,7 @@ export function MainNav() {
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
                     <a 
-                      href="https://linkedin.com/in/nurjahan-jhorna" 
+                      href="https://www.linkedin.com/in/nurjahanjhorna" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-slate-800 text-[#FF7533] hover:bg-slate-700 transition-colors duration-300 border border-[#FF7533]/50 hover:border-[#FF7533]/40"
