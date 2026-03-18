@@ -81,7 +81,7 @@ export default function About() {
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}
           variants={fadeUp}
-          className="space-y-7 mb-24 text-slate-200 text-[24px] leading-[1.8]"
+          className="space-y-8 mb-24 text-white text-[28px] leading-[1.9]"
         >
           <p>
             Hi there! My name is Nurjahan Jhorna and I am a senior majoring at Web &amp; Information Systems student at New Jersey Institute of Technology.
@@ -134,7 +134,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {hobbies.map((hobby) => (
               <div key={hobby.title} className="group text-center">
-                <div className="relative w-full aspect-square mb-5 overflow-hidden rounded-2xl border border-slate-700/50 group-hover:border-[#FF7533]/30 transition-colors duration-300">
+                <div className="relative w-48 h-48 mx-auto mb-5 overflow-hidden rounded-2xl border border-slate-700/50 group-hover:border-[#FF7533]/30 transition-colors duration-300">
                   <Image
                     src={hobby.image}
                     alt={hobby.title}
