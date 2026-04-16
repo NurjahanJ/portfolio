@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFlutter, SiDart, SiFigma, SiCanva, SiGithub, SiVercel, SiHtml5, SiCss, SiJavascript, SiGit } from "react-icons/si";
-import { HiOutlineBeaker, HiOutlineCursorArrowRays, HiOutlineUserGroup, HiOutlineCpuChip, HiOutlineCodeBracket, HiOutlinePaintBrush } from "react-icons/hi2";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFlutter, SiDart, SiFigma, SiCanva, SiGithub, SiVercel, SiHtml5, SiCss, SiJavascript, SiGit, SiOpenai, SiNotion } from "react-icons/si";
+import { HiOutlineBeaker, HiOutlineCursorArrowRays, HiOutlineUserGroup, HiOutlineCpuChip, HiOutlineCodeBracket, HiOutlinePaintBrush, HiOutlineSparkles, HiOutlineChatBubbleLeftRight, HiOutlineCommandLine, HiOutlineCodeBracketSquare, HiOutlineMagnifyingGlass, HiOutlineChatBubbleBottomCenterText, HiOutlineClipboardDocumentList, HiOutlineRectangleStack, HiOutlineUsers, HiOutlineArrowsRightLeft, HiOutlinePencilSquare, HiOutlineLightBulb, HiOutlineCog6Tooth, HiOutlineChartBar } from "react-icons/hi2";
 import type { IconType } from "react-icons";
 
 interface Skill {
@@ -20,6 +21,36 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
+    title: "Design & Research",
+    icon: HiOutlinePaintBrush,
+    skills: [
+      { label: "Figma", icon: SiFigma, color: "#F24E1E" },
+      { label: "Canva", icon: SiCanva, color: "#00C4CC" },
+      { label: "Wireframing", icon: HiOutlineRectangleStack, color: "#60A5FA" },
+      { label: "Prototyping", icon: HiOutlineCursorArrowRays, color: "#F472B6" },
+      { label: "User Interviews", icon: HiOutlineUsers, color: "#34D399" },
+      { label: "Usability Testing", icon: HiOutlineClipboardDocumentList, color: "#A78BFA" },
+      { label: "Survey Design", icon: HiOutlineChatBubbleBottomCenterText, color: "#FCD34D" },
+      { label: "Interaction Design", icon: HiOutlineArrowsRightLeft, color: "#FB923C" },
+      { label: "User Flows", icon: HiOutlinePencilSquare, color: "#C084FC" },
+    ],
+  },
+  {
+    title: "AI",
+    icon: HiOutlineSparkles,
+    skills: [
+      { label: "ChatGPT", icon: SiOpenai, color: "#10A37F" },
+      { label: "Claude", icon: HiOutlineSparkles, color: "#D97757" },
+      { label: "Perplexity", icon: HiOutlineMagnifyingGlass, color: "#20B2AA" },
+      { label: "Prompting", icon: HiOutlineChatBubbleLeftRight, color: "#FF7533" },
+      { label: "Prompt Optimization", icon: HiOutlineLightBulb, color: "#FCD34D" },
+      { label: "Ideation Assistance", icon: HiOutlineCommandLine, color: "#A78BFA" },
+      { label: "Code Generation", icon: HiOutlineCodeBracketSquare, color: "#34D399" },
+      { label: "Workflow Integration", icon: HiOutlineCog6Tooth, color: "#60A5FA" },
+      { label: "Data Analysis", icon: HiOutlineChartBar, color: "#FB923C" },
+    ],
+  },
+  {
     title: "Development",
     icon: HiOutlineCodeBracket,
     skills: [
@@ -35,24 +66,13 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Design & Research",
-    icon: HiOutlinePaintBrush,
-    skills: [
-      { label: "Figma", icon: SiFigma, color: "#F24E1E" },
-      { label: "Canva", icon: SiCanva, color: "#00C4CC" },
-      { label: "UX Research", icon: HiOutlineBeaker, color: "#A78BFA" },
-      { label: "Prototyping", icon: HiOutlineCursorArrowRays, color: "#F472B6" },
-      { label: "User Testing", icon: HiOutlineUserGroup, color: "#34D399" },
-    ],
-  },
-  {
     title: "Tools & Workflow",
     icon: HiOutlineCpuChip,
     skills: [
       { label: "GitHub", icon: SiGithub, color: "#FFFFFF" },
       { label: "Git", icon: SiGit, color: "#F05032" },
       { label: "Vercel", icon: SiVercel, color: "#FFFFFF" },
-      { label: "AI Prompting", icon: HiOutlineCpuChip, color: "#FF7533" },
+      { label: "Notion", icon: SiNotion, color: "#FFFFFF" },
     ],
   },
 ];
@@ -75,12 +95,14 @@ const hobbies = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
-};
-
 export default function About() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#0a1128] text-slate-100">
       {/* Subtle star background */}
@@ -151,39 +173,50 @@ export default function About() {
             <p className="text-sm uppercase tracking-[0.25em] text-[#FF7533] font-medium mb-3">Toolkit</p>
             <h2 className="text-2xl md:text-3xl font-serif font-medium text-white">Skills &amp; Technologies</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {skillCategories.map((category) => (
-              <motion.div
+
+          {/* Tab buttons */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {skillCategories.map((category, index) => (
+              <button
                 key={category.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut" as const }}
-                className="rounded-2xl border border-slate-700/50 bg-slate-900/40 backdrop-blur-sm p-6 hover:border-[#FF7533]/30 transition-colors duration-300"
+                onClick={() => setActiveTab(index)}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
+                  activeTab === index
+                    ? 'bg-[#FF7533] text-white shadow-lg shadow-[#FF7533]/25'
+                    : 'bg-slate-800/50 text-slate-400 border border-slate-700/50 hover:border-[#FF7533]/40 hover:text-slate-300'
+                }`}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <category.icon className="w-5 h-5 text-[#FF7533]" />
-                  <h3 className="text-lg font-serif font-medium text-white">{category.title}</h3>
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  {category.skills.map((skill) => (
-                    <div
-                      key={skill.label}
-                      className="group flex flex-col items-center gap-2 py-3 rounded-xl hover:bg-slate-800/50 transition-colors duration-200"
-                    >
-                      <skill.icon
-                        className="w-7 h-7 transition-transform duration-300 group-hover:scale-110"
-                        style={{ color: skill.color }}
-                      />
-                      <span className="text-xs text-slate-400 group-hover:text-white text-center leading-tight transition-colors duration-200">
-                        {skill.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+                <category.icon className="w-4 h-4" />
+                {category.title}
+              </button>
             ))}
           </div>
+
+          {/* Skills grid for active tab */}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="rounded-2xl border border-slate-700/50 bg-slate-900/40 backdrop-blur-sm p-8 max-w-3xl mx-auto"
+          >
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              {skillCategories[activeTab].skills.map((skill) => (
+                <div
+                  key={skill.label}
+                  className="group flex flex-col items-center gap-3 py-4 rounded-xl hover:bg-slate-800/50 transition-colors duration-200"
+                >
+                  <skill.icon
+                    className="w-10 h-10 transition-transform duration-300 group-hover:scale-110"
+                    style={{ color: skill.color }}
+                  />
+                  <span className="text-xs text-slate-400 group-hover:text-white text-center leading-tight transition-colors duration-200">
+                    {skill.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Hobbies */}

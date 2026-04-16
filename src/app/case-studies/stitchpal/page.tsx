@@ -41,7 +41,28 @@ export default function StitchPalCaseStudy() {
         
         <CaseStudyTags tags={caseStudy.tags} colorClass="text-orange-300 border-orange-500/30 hover:bg-orange-900/30" />
         
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap gap-3">
+          {caseStudy.demo && (
+            <Button 
+              asChild 
+              size="lg" 
+              className="rounded-full px-6 py-2 text-base bg-transparent hover:bg-transparent relative group overflow-hidden"
+            >
+              <Link 
+                href={caseStudy.demo} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="relative z-10 text-white font-medium"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-300 to-pink-400 rounded-full group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-orange-300 transition-all duration-300"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-300 to-pink-500 rounded-full blur-md group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-orange-300 group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                <span className="relative z-20 flex items-center justify-center gap-2 text-white font-serif font-medium">
+                  <ExternalLink className="mr-1 h-4 w-4" aria-hidden="true" />
+                  View Demo
+                </span>
+              </Link>
+            </Button>
+          )}
           {caseStudy.github && (
             <Button 
               asChild 

@@ -19,12 +19,9 @@ interface CaseStudyCardProps {
   highlights?: string[];
 }
 
-export function CaseStudyCard({ category, title, description, imagePath, slug, techStack }: CaseStudyCardProps) {
+export function CaseStudyCard({ category, title, description, imagePath, slug, techStack, demo, github }: CaseStudyCardProps) {
   return (
-    <Link
-      href={`/case-studies/${slug}`}
-      className="group grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6 md:gap-10 items-center p-6 md:p-8 rounded-2xl border border-slate-700/50 hover:border-[#FF7533]/40 transition-all duration-500 bg-slate-900/40 backdrop-blur-sm"
-    >
+    <div className="group grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6 md:gap-10 items-center p-6 md:p-8 rounded-2xl border border-slate-700/50 hover:border-[#FF7533]/40 transition-all duration-500 bg-slate-900/40 backdrop-blur-sm">
       {/* Content */}
       <div className="space-y-3 order-2 md:order-1">
         <p className="text-xs uppercase tracking-[0.2em] text-[#FF7533] font-medium">
@@ -52,11 +49,40 @@ export function CaseStudyCard({ category, title, description, imagePath, slug, t
               ))}
             </div>
           )}
+        </div>
 
-          <span className="inline-flex items-center gap-1.5 text-sm text-[#FF7533] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="flex flex-wrap gap-3 pt-2">
+          {demo && (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm rounded-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] text-white font-medium hover:shadow-lg hover:shadow-[#FF7533]/25 transition-all duration-300"
+            >
+              View Demo
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm rounded-full border border-slate-500/40 text-slate-300 font-medium hover:border-[#FF7533]/50 hover:text-white transition-all duration-300"
+            >
+              GitHub
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+          )}
+          <Link
+            href={`/case-studies/${slug}`}
+            className="inline-flex items-center gap-1.5 text-sm text-[#FF7533] font-medium hover:text-[#FF7533]/80 transition-colors duration-300"
+          >
             Read Case Study
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </span>
+          </Link>
         </div>
       </div>
 
@@ -70,6 +96,6 @@ export function CaseStudyCard({ category, title, description, imagePath, slug, t
           sizes="(max-width: 768px) 100vw, 280px"
         />
       </div>
-    </Link>
+    </div>
   );
 }

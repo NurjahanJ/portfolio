@@ -52,12 +52,29 @@ export const projects: Project[] = [
     title: "StitchPal",
     description: "AI crochet companion for patterns, yarn, and project tools.",
     tags: ["AI", "Mobile App", "Crafting", "UX Design"],
-    github: "https://github.com/NurjahanJ/stitchpal"
+    github: "https://github.com/NurjahanJ/stitchpal",
+    demo: "https://stitchpal.netlify.app/"
   }
 ];
 
 // Export an array of case studies
 export const caseStudies: CaseStudy[] = [
+  {
+    title: "StitchPal",
+    slug: "stitchpal",
+    category: "APP DESIGN | MVP (Prototype)",
+    description: "Flutter mobile app integrating OpenAI for personalized crochet patterns. Features AI-powered yarn suggestions, stitch counter, and wellness tools with Material Design 3 interface.",
+    tags: ["AI", "Mobile App", "Crafting", "UX Design"],
+    github: "https://github.com/NurjahanJ/stitchpal",
+    demo: "https://stitchpal.netlify.app/",
+    imagePath: "/project1-images copy/op-page.png",
+    isFeatured: true,
+    duration: "3 weeks",
+    teamSize: "Solo project",
+    status: "Live demo",
+    techStack: ["Flutter", "OpenAI", "Material Design"],
+    highlights: ["AI-Powered Patterns", "Material Design 3", "Wellness Features"]
+  },
   {
     title: "Power Up Or Power Down",
     slug: "power-up-or-power-down",
@@ -72,21 +89,6 @@ export const caseStudies: CaseStudy[] = [
     status: "Live demo",
     techStack: ["React", "ChatGPT API", "Vercel"],
     highlights: ["33+ User Interviews", "2 Interactive Prototypes", "Environmental UX Research"]
-  },
-  {
-    title: "StitchPal",
-    slug: "stitchpal",
-    category: "APP DESIGN | MVP (Prototype)",
-    description: "Flutter mobile app integrating OpenAI for personalized crochet patterns. Features AI-powered yarn suggestions, stitch counter, and wellness tools with Material Design 3 interface.",
-    tags: ["AI", "Mobile App", "Crafting", "UX Design"],
-    github: "https://github.com/NurjahanJ/stitchpal",
-    imagePath: "/project1-images copy/op-page.png",
-    isFeatured: true,
-    duration: "3 weeks",
-    teamSize: "Solo project",
-    status: "Prototype",
-    techStack: ["Flutter", "OpenAI", "Material Design"],
-    highlights: ["AI-Powered Patterns", "Material Design 3", "Wellness Features"]
   },
   {
     title: "Inflation & Housing Dashboard",

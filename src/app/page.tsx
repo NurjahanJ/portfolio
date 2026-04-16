@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, Mail, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowRight, Mail, Linkedin, PenTool, Code, Search, Sparkles } from "lucide-react";
 import { CaseStudySection } from "@/components/case-study-section";
 import { StarFieldCanvas } from "@/components/star-field-canvas";
 
@@ -108,6 +108,131 @@ export default function Home() {
               />
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* What I Do Section */}
+      <section className="relative z-10 pt-8 pb-24">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+            className="text-center mb-20"
+          >
+            <p className="text-sm uppercase tracking-[0.25em] text-[#FF7533] font-medium mb-3">What I Do</p>
+          </motion.div>
+
+          {/* Desktop: Horizontal Timeline */}
+          <div className="hidden md:block max-w-6xl mx-auto">
+            {/* Timeline connector line */}
+            <div className="relative">
+              <div className="absolute top-6 left-[calc(12.5%)] right-[calc(12.5%)] h-[2px] bg-gradient-to-r from-[#FF7533]/60 via-blue-400/40 to-[#FF7533]/60" />
+
+              <div className="grid grid-cols-4 gap-4">
+                {[
+                  {
+                    icon: <Search className="h-5 w-5" />,
+                    title: "UX Research & Insights",
+                    summary: "User interviews, usability testing, and research-driven insights.",
+                    detail: "I synthesize qualitative and quantitative findings to uncover key insights and translate them into actionable recommendations that guide user-centered design decisions.",
+                  },
+                  {
+                    icon: <PenTool className="h-5 w-5" />,
+                    title: "Design & Prototyping",
+                    summary: "Wireframes, mockups, and interactive prototypes in Figma.",
+                    detail: "I focus on translating complex ideas into clear, usable interfaces that improve usability, accessibility, and overall interaction quality.",
+                  },
+                  {
+                    icon: <Code className="h-5 w-5" />,
+                    title: "Frontend Development",
+                    summary: "Responsive, accessible websites with React, Next.js, and Tailwind.",
+                    detail: "I bring designs to life with clean, maintainable code and a focus on performance, accessibility, and responsive design across all devices.",
+                  },
+                  {
+                    icon: <Sparkles className="h-5 w-5" />,
+                    title: "AI-Assisted Workflows",
+                    summary: "Prompt engineering, AI-assisted research, and code generation.",
+                    detail: "I explore how AI can enhance the creative and technical process, boosting efficiency and innovation across design and development workflows.",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: index * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
+                    className="group flex flex-col items-center text-center"
+                  >
+                    {/* Node dot */}
+                    <div className="w-12 h-12 rounded-full bg-slate-900 border-2 border-[#FF7533]/60 flex items-center justify-center text-[#FF7533] mb-6 group-hover:bg-[#FF7533]/20 group-hover:border-[#FF7533] transition-all duration-300 relative z-10">
+                      {item.icon}
+                    </div>
+                    {/* Content */}
+                    <h3 className="text-base font-serif font-medium text-white mb-2">{item.title}</h3>
+                    <p className="text-sm text-slate-300 leading-relaxed px-2">{item.summary}</p>
+                    {/* Full detail on hover */}
+                    <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                      <p className="text-sm text-slate-400 leading-relaxed px-2 pt-2">{item.detail}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile: Vertical Timeline */}
+          <div className="md:hidden max-w-md mx-auto">
+            <div className="relative pl-10">
+              {/* Vertical line */}
+              <div className="absolute left-[18px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF7533]/60 via-blue-400/40 to-[#FF7533]/60" />
+
+              <div className="space-y-12">
+                {[
+                  {
+                    icon: <Search className="h-5 w-5" />,
+                    title: "UX Research & Insights",
+                    description: "I identify user needs and behavioral patterns through user interviews and usability testing, supported by structured research analysis. I synthesize qualitative and quantitative findings to uncover key insights and translate them into actionable recommendations that guide user-centered design decisions.",
+                  },
+                  {
+                    icon: <PenTool className="h-5 w-5" />,
+                    title: "Design & Prototyping",
+                    description: "I develop wireframes, mockups, and interactive prototypes in Figma that transform research insights into intuitive product experiences. I focus on translating complex ideas into clear, usable interfaces that improve usability, accessibility, and overall interaction quality.",
+                  },
+                  {
+                    icon: <Code className="h-5 w-5" />,
+                    title: "Frontend Development",
+                    description: "I build responsive, accessible web experiences using React, Next.js, TypeScript, and Tailwind CSS. I bring designs to life with clean, maintainable code and a focus on performance, accessibility, and responsive design across all devices.",
+                  },
+                  {
+                    icon: <Sparkles className="h-5 w-5" />,
+                    title: "AI-Assisted Workflows",
+                    description: "I integrate AI tools into design and development workflows to boost efficiency and innovation. From prompt engineering and AI-assisted UX research to code generation, I explore how AI can enhance the creative and technical process.",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
+                    className="relative"
+                  >
+                    {/* Node dot */}
+                    <div className="absolute -left-10 top-0 w-10 h-10 rounded-full bg-slate-900 border-2 border-[#FF7533]/60 flex items-center justify-center text-[#FF7533]">
+                      {item.icon}
+                    </div>
+                    {/* Content */}
+                    <div className="pl-4">
+                      <h3 className="text-base font-serif font-medium text-white mb-2">{item.title}</h3>
+                      <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
