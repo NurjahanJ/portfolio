@@ -193,22 +193,26 @@ export default function Home() {
                   {
                     icon: <Search className="h-5 w-5" />,
                     title: "UX Research & Insights",
-                    description: "I identify user needs and behavioral patterns through user interviews and usability testing, supported by structured research analysis. I synthesize qualitative and quantitative findings to uncover key insights and translate them into actionable recommendations that guide user-centered design decisions.",
+                    summary: "User interviews, usability testing, and research-driven insights.",
+                    detail: "Turning user feedback into actionable design decisions through structured analysis of qualitative and quantitative data.",
                   },
                   {
                     icon: <PenTool className="h-5 w-5" />,
                     title: "Design & Prototyping",
-                    description: "I develop wireframes, mockups, and interactive prototypes in Figma that transform research insights into intuitive product experiences. I focus on translating complex ideas into clear, usable interfaces that improve usability, accessibility, and overall interaction quality.",
+                    summary: "Wireframes, mockups, and interactive prototypes in Figma.",
+                    detail: "Creating intuitive, accessible interfaces that balance user needs with business goals and technical constraints.",
                   },
                   {
                     icon: <Code className="h-5 w-5" />,
                     title: "Frontend Development",
-                    description: "I build responsive, accessible web experiences using React, Next.js, TypeScript, and Tailwind CSS. I bring designs to life with clean, maintainable code and a focus on performance, accessibility, and responsive design across all devices.",
+                    summary: "Responsive, accessible websites with React, Next.js, and Tailwind.",
+                    detail: "Building performant, maintainable web experiences with modern frameworks and a mobile-first approach.",
                   },
                   {
                     icon: <Sparkles className="h-5 w-5" />,
                     title: "AI-Assisted Workflows",
-                    description: "I integrate AI tools into design and development workflows to boost efficiency and innovation. From prompt engineering and AI-assisted UX research to code generation, I explore how AI can enhance the creative and technical process.",
+                    summary: "Prompt engineering, AI-assisted research, and code generation.",
+                    detail: "Leveraging AI tools to accelerate ideation, streamline research, and enhance both design and development processes.",
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -226,7 +230,8 @@ export default function Home() {
                     {/* Content */}
                     <div className="pl-4">
                       <h3 className="text-base font-serif font-medium text-white mb-2">{item.title}</h3>
-                      <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
+                      <p className="text-sm text-slate-300 leading-relaxed mb-2">{item.summary}</p>
+                      <p className="text-sm text-slate-400 leading-relaxed">{item.detail}</p>
                     </div>
                   </motion.div>
                 ))}
