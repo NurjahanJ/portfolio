@@ -80,6 +80,14 @@ export default function PowerUpOrPowerDownCaseStudy() {
             </Link>
           </Button>
         </div>
+
+        {caseStudy.collaborators && caseStudy.collaborators.length > 0 && (
+          <div className="mt-4">
+            <p className="text-slate-300 text-base">
+              <span className="font-medium text-white">Collaborators:</span> {caseStudy.collaborators.join(", ")}
+            </p>
+          </div>
+        )}
       </header>
       
       {/* At a glance */}

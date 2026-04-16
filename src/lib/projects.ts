@@ -16,6 +16,7 @@ export interface CaseStudy extends Project {
   isFeatured?: boolean; // Whether to feature this case study prominently
   duration?: string; // Project duration
   teamSize?: string; // Team size
+  collaborators?: string[]; // Project collaborators
   status?: string; // Project status (prototype, live, etc.)
   techStack?: string[]; // Key technologies for quick preview
   highlights?: string[]; // Key project highlights/achievements
@@ -86,6 +87,7 @@ export const caseStudies: CaseStudy[] = [
     isFeatured: true,
     duration: "3 weeks",
     teamSize: "Solo project",
+    collaborators: ["Syeda Foyez", "Natalie Ramlall"],
     status: "Live demo",
     techStack: ["React", "ChatGPT API", "Vercel"],
     highlights: ["33+ User Interviews", "2 Interactive Prototypes", "Environmental UX Research"]
