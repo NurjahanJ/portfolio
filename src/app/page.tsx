@@ -62,7 +62,7 @@ export default function Home() {
               variants={fadeUp} initial="hidden" animate="visible" custom={0.2}
               className="text-body text-blue-300 mb-6 font-light"
             >
-              Currently: UX Research Assistant | NJIT
+              Experience: UX Research Assistant | NJIT
             </motion.p>
             <motion.p
               variants={fadeUp} initial="hidden" animate="visible" custom={0.3}

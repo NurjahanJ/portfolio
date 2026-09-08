@@ -17,6 +17,8 @@ export interface CaseStudy extends Project {
   duration?: string; // Project duration
   teamSize?: string; // Team size
   collaborators?: string[]; // Project collaborators
+  studentResearchers?: string[]; // Student researchers
+  facultyAdvisor?: string; // Faculty advisor
   status?: string; // Project status (prototype, live, etc.)
   techStack?: string[]; // Key technologies for quick preview
   highlights?: string[]; // Key project highlights/achievements
@@ -24,6 +26,13 @@ export interface CaseStudy extends Project {
 
 // Export an array of projects
 export const projects: Project[] = [
+  {
+    title: "Greener AI",
+    description: "Full-stack research platform with 4 ChatGPT clones investigating sustainable AI usage through UI-based nudges. Features EcoMode delays, environmental impact tracking, visual energy meters, and real-time data collection via Convex database. Built with React, Express.js, OpenAI API, and deployed on Vercel.",
+    tags: ["Full-Stack", "React", "Express.js", "OpenAI API", "UX Research", "Sustainability"],
+    github: "https://github.com/NurjahanJ",
+    demo: "https://chat-gpt-interface-mu.vercel.app/"
+  },
   {
     title: "Power Up Or Power Down",
     description: "UX research project exploring environmental awareness in AI usage through interactive prototypes. Features two ChatGPT-like interfaces with visual feedback systems: a color-changing screen that reflects energy usage and a battery icon that depletes with each prompt. Built for IT481: Prototyping in UX course to encourage mindful AI consumption.",
@@ -60,6 +69,24 @@ export const projects: Project[] = [
 
 // Export an array of case studies
 export const caseStudies: CaseStudy[] = [
+  {
+    title: "Greener AI",
+    slug: "greener-ai",
+    category: "FULL-STACK | UX RESEARCH",
+    description: "Sustainable AI interaction research platform featuring 4 full-stack ChatGPT clones with different sustainability interventions. Includes EcoMode delays, environmental impact tracking, visual energy meters, and silent data collection via Convex for behavioral research.",
+    tags: ["Full-Stack", "React", "Express.js", "OpenAI API", "UX Research", "Sustainability", "Convex"],
+    github: "https://github.com/NurjahanJ",
+    demo: "https://chat-gpt-interface-mu.vercel.app/",
+    imagePath: "/greenerai.png",
+    isFeatured: true,
+    duration: "Research project",
+    teamSize: "Solo project",
+    status: "Live - 4 apps",
+    studentResearchers: ["Nurjahan Jhorna", "Syeda Foyez", "Natalie Ramlall"],
+    facultyAdvisor: "Dr. Eugene Cho Snyder",
+    techStack: ["React", "Express.js", "Node.js", "OpenAI API", "Convex", "Vercel"],
+    highlights: ["4 Full-Stack Apps", "Real-time Data Collection", "A/B/C/D Testing", "Environmental UX"]
+  },
   {
     title: "StitchPal",
     slug: "stitchpal",

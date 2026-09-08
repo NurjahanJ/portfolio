@@ -31,6 +31,8 @@ export function CaseStudySection() {
               imagePath={study.imagePath}
               slug={study.slug}
               techStack={study.techStack}
+              studentResearchers={study.studentResearchers}
+              facultyAdvisor={study.facultyAdvisor}
             />
           </motion.div>
         ))}

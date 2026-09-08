@@ -17,9 +17,11 @@ interface CaseStudyCardProps {
   demo?: string;
   github?: string;
   highlights?: string[];
+  studentResearchers?: string[];
+  facultyAdvisor?: string;
 }
 
-export function CaseStudyCard({ category, title, description, imagePath, slug, techStack, demo, github }: CaseStudyCardProps) {
+export function CaseStudyCard({ category, title, description, imagePath, slug, techStack, demo, github, studentResearchers, facultyAdvisor }: CaseStudyCardProps) {
   return (
     <div className="group grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6 md:gap-10 items-center p-6 md:p-8 rounded-2xl border border-slate-700/50 hover:border-[#FF7533]/40 transition-all duration-500 bg-slate-900/40 backdrop-blur-sm">
       {/* Content */}
@@ -50,6 +52,21 @@ export function CaseStudyCard({ category, title, description, imagePath, slug, t
             </div>
           )}
         </div>
+
+        {(studentResearchers || facultyAdvisor) && (
+          <div className="pt-2 space-y-1 text-xs text-slate-400">
+            {studentResearchers && studentResearchers.length > 0 && (
+              <div>
+                <span className="font-medium text-slate-300">Student Researchers:</span> {studentResearchers.join(", ")}
+              </div>
+            )}
+            {facultyAdvisor && (
+              <div>
+                <span className="font-medium text-slate-300">Faculty Advisor:</span> {facultyAdvisor}
+              </div>
+            )}
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-3 pt-2">
           {demo && (
