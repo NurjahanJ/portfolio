@@ -1,7 +1,6 @@
 "use client";
 
 import { notFound } from 'next/navigation'
-import Image from "next/image";
 import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -110,7 +109,7 @@ export default function MoodQuestCaseStudy() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-ulue300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Overview</h2>
+        <h2 className="text-3xl font-bold text-amber-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Overview</h2>
         <p className="text-slate-300 text-lg leading-relaxed">
           MoodQuest is a dual-mode AI application designed to transform entertainment discovery into a more emotional and immersive experience. The platform combines AI-powered recommendation systems, multimodal AI generation, cinematic visual design, structured AI workflows, progressive rendering, and reliability-focused fallback systems.
         </p>
