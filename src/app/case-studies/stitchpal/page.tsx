@@ -36,7 +36,7 @@ export default function StitchPalCaseStudy() {
         </h1>
 
         <p className="text-subtitle md:text-2xl font-serif font-medium mt-4" style={{ color: 'white', textShadow: '0 0 10px rgba(232, 165, 152, 0.5)' }}>
-          A comprehensive Flutter app combining AI pattern generation with essential crochet tools and wellness features.
+          AI-powered product that generates structured crochet patterns and supports an end-to-end creative workflow.
         </p>
         
         <CaseStudyTags tags={caseStudy.tags} colorClass="text-orange-300 border-orange-500/30 hover:bg-orange-900/30" />
@@ -122,6 +122,14 @@ export default function StitchPalCaseStudy() {
         </p>
         <p className="text-slate-300 text-lg leading-relaxed">
           <span className="font-medium text-white">Goal:</span> Create a comprehensive crochet companion that combines AI-powered pattern generation with essential tools, project management, and wellness features to support crafters throughout their entire creative journey.
+        </p>
+      </section>
+
+      {/* Product Thinking */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-orange-300" style={{ fontFamily: 'var(--font-lora)', fontWeight: 500 }}>Product Thinking</h2>
+        <p className="text-slate-300 text-lg leading-relaxed">
+          I approached StitchPal as a product, not just a class project. The goal was to reduce context switching and cognitive load by consolidating multiple tools into a single AI-powered workflow. Instead of users switching between tutorials, counters, and pattern generators, StitchPal integrates these into one cohesive system.
         </p>
       </section>
       
@@ -282,7 +290,7 @@ export default function StitchPalCaseStudy() {
           <div className="space-y-4">
             <div>
               <h4 className="font-medium text-white mb-2">Pattern Generation Pipeline</h4>
-              <p className="text-slate-300 text-sm mb-3">Sophisticated prompt engineering with structured JSON parsing and error handling:</p>
+              <p className="text-slate-300 text-sm mb-3">Sophisticated prompt engineering with structured AI output using JSON parsing and error handling:</p>
               <div className="bg-slate-800/50 p-4 rounded border border-slate-700">
                 <code className="text-xs text-slate-300">
                   User Input → GPT-4 Prompt → JSON Response → Parse & Validate → CrochetPattern Object → UI Display
@@ -290,10 +298,10 @@ export default function StitchPalCaseStudy() {
               </div>
             </div>
             <div>
-              <h4 className="font-medium text-white mb-2">Robust Error Handling</h4>
+              <h4 className="font-medium text-white mb-2">Robust Error Handling for API Failures</h4>
               <ul className="space-y-1 text-slate-300 text-sm">
-                <li>• Fallback to sample patterns when API unavailable</li>
-                <li>• JSON parsing with error recovery</li>
+                <li>• Fallback logic for degraded AI performance with sample patterns</li>
+                <li>• Structured JSON parsing with error recovery</li>
                 <li>• Rate limiting and authentication error handling</li>
                 <li>• Graceful degradation for offline use</li>
               </ul>

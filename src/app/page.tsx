@@ -55,7 +55,7 @@ export default function Home() {
               className="text-title font-serif font-medium mb-2 text-left text-[#FF7533]"
               style={{ textShadow: '0 0 10px rgba(255, 117, 51, 0.6)' }}
             >
-              UX Designer &amp; Frontend Developer
+              AI Product Engineer &amp; UX Designer
             </motion.p>
 
             <motion.p
@@ -64,11 +64,12 @@ export default function Home() {
             >
               Experience: UX Research Assistant | NJIT
             </motion.p>
+
             <motion.p
               variants={fadeUp} initial="hidden" animate="visible" custom={0.3}
               className="text-title font-serif font-normal text-white/90 max-w-[80%] mb-6 text-left"
             >
-              Where design meets code: I craft user-centered experiences that bring clarity, beauty, and accessibility to the web.
+              I create AI-powered experiences that blend product thinking, intelligent systems, and human-centered design. My work focuses on building interactive applications that feel thoughtful, immersive, and genuinely useful.
             </motion.p>
 
             {/* CTAs */}
@@ -133,6 +134,12 @@ export default function Home() {
               <div className="grid grid-cols-4 gap-4">
                 {[
                   {
+                    icon: <Sparkles className="h-5 w-5" />,
+                    title: "AI Product Development",
+                    summary: "Designing and building AI-powered features and systems.",
+                    detail: "Designing and building AI-powered features and systems, including prompt engineering, API integration, and intelligent workflows.",
+                  },
+                  {
                     icon: <Search className="h-5 w-5" />,
                     title: "UX Research & Insights",
                     summary: "User interviews, usability testing, and research-driven insights.",
@@ -149,12 +156,6 @@ export default function Home() {
                     title: "Frontend Development",
                     summary: "Responsive, accessible websites with React, Next.js, and Tailwind.",
                     detail: "Building performant, maintainable web experiences with modern frameworks and a mobile-first approach.",
-                  },
-                  {
-                    icon: <Sparkles className="h-5 w-5" />,
-                    title: "AI-Assisted Workflows",
-                    summary: "Prompt engineering, AI-assisted research, and code generation.",
-                    detail: "Leveraging AI tools to accelerate ideation, streamline research, and enhance both design and development processes.",
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -191,6 +192,12 @@ export default function Home() {
               <div className="space-y-12">
                 {[
                   {
+                    icon: <Sparkles className="h-5 w-5" />,
+                    title: "AI Product Development",
+                    summary: "Designing and building AI-powered features and systems.",
+                    detail: "Designing and building AI-powered features and systems, including prompt engineering, API integration, and intelligent workflows.",
+                  },
+                  {
                     icon: <Search className="h-5 w-5" />,
                     title: "UX Research & Insights",
                     summary: "User interviews, usability testing, and research-driven insights.",
@@ -207,12 +214,6 @@ export default function Home() {
                     title: "Frontend Development",
                     summary: "Responsive, accessible websites with React, Next.js, and Tailwind.",
                     detail: "Building performant, maintainable web experiences with modern frameworks and a mobile-first approach.",
-                  },
-                  {
-                    icon: <Sparkles className="h-5 w-5" />,
-                    title: "AI-Assisted Workflows",
-                    summary: "Prompt engineering, AI-assisted research, and code generation.",
-                    detail: "Leveraging AI tools to accelerate ideation, streamline research, and enhance both design and development processes.",
                   },
                 ].map((item, index) => (
                   <motion.div

@@ -42,11 +42,10 @@ const skillCategories: SkillCategory[] = [
       { label: "ChatGPT", icon: SiOpenai, color: "#10A37F" },
       { label: "Claude", icon: HiOutlineSparkles, color: "#D97757" },
       { label: "Perplexity", icon: HiOutlineMagnifyingGlass, color: "#20B2AA" },
-      { label: "Prompting", icon: HiOutlineChatBubbleLeftRight, color: "#FF7533" },
-      { label: "Prompt Optimization", icon: HiOutlineLightBulb, color: "#FCD34D" },
-      { label: "Ideation Assistance", icon: HiOutlineCommandLine, color: "#A78BFA" },
+      { label: "Prompt Engineering", icon: HiOutlineChatBubbleLeftRight, color: "#FF7533" },
+      { label: "LLM Integration", icon: HiOutlineLightBulb, color: "#FCD34D" },
+      { label: "AI System Integration", icon: HiOutlineCog6Tooth, color: "#60A5FA" },
       { label: "Code Generation", icon: HiOutlineCodeBracketSquare, color: "#34D399" },
-      { label: "Workflow Integration", icon: HiOutlineCog6Tooth, color: "#60A5FA" },
       { label: "Data Analysis", icon: HiOutlineChartBar, color: "#FB923C" },
     ],
   },
@@ -150,13 +149,16 @@ export default function About() {
             Hi there! My name is Nurjahan Jhorna and I am a Web Developer &amp; UX Designer with a Bachelor of Science in Web &amp; Information Systems from New Jersey Institute of Technology.
           </p>
           <p>
-            I&apos;m passionate about crafting digital experiences that are intuitive, impactful, and centered around people. My curiosity for technology started with a simple question: <em className="text-white not-italic">how can design and code work together to make life easier and more enjoyable?</em> Over time, that curiosity grew into a drive to design and build solutions that combine usability with creativity.
+            I&apos;m passionate about building intelligent products that solve real user problems. My curiosity for technology started with a simple question: <em className="text-white not-italic">how can design, code, and AI work together to create meaningful solutions?</em> Over time, that curiosity evolved into a drive to design and build AI-powered products that combine user research, product thinking, and intelligent systems.
           </p>
           <p>
-            Throughout my academic journey, I&apos;ve gained hands-on experience with front-end development such as HTML, CSS, JavaScript, React, and Next.js, while also exploring UX design and research. I enjoy prototyping with Figma and translating ideas into responsive, accessible websites. For me, every project is more than just development; it&apos;s a chance to solve problems thoughtfully and bring clarity, beauty, and functionality to the web.
+            Throughout my academic journey, I&apos;ve gained hands-on experience with front-end development such as HTML, CSS, JavaScript, React, and Next.js, while also exploring UX design and research. I enjoy prototyping with Figma and translating ideas into responsive, accessible applications. For me, every project is more than just development; it&apos;s a chance to solve problems thoughtfully and create experiences that are both beautiful and intelligent.
           </p>
           <p>
-            I&apos;m a lifelong learner, always experimenting with new frameworks and exploring ways to design solutions that are practical and human-centered. I&apos;ve integrated AI into my workflow to boost efficiency and spark innovation. As a Research Assistant at NJIT, I collaborated on interdisciplinary research applying AI to sustainability challenges, designed interactive web-based prototypes, and built back-end services and data collection pipelines.
+            I am particularly interested in building AI-powered products that combine user insight with intelligent systems. I focus on designing experiences where AI is not just a feature, but a core part of solving meaningful problems.
+          </p>
+          <p>
+            I&apos;m a lifelong learner, always experimenting with new frameworks and exploring ways to design solutions that are practical and human-centered. I&apos;ve integrated AI into my product development workflow to keep pace with industry shifts, boost efficiency, and spark innovation. As a Research Assistant at NJIT, I collaborated on interdisciplinary research applying AI to sustainability challenges, designed interactive web-based prototypes, and built back-end services and data collection pipelines.
           </p>
           <p>
             Whether I&apos;m coding, sketching, or testing with users, my goal remains simple: to create experiences that resonate, empower, and make a difference.

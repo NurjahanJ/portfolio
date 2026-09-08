@@ -64,6 +64,13 @@ export const projects: Project[] = [
     tags: ["AI", "Mobile App", "Crafting", "UX Design"],
     github: "https://github.com/NurjahanJ/stitchpal",
     demo: "https://stitchpal.netlify.app/"
+  },
+  {
+    title: "MoodQuest",
+    description: "AI-powered game and movie discovery platform that combines immersive mood board generation with personalized recommendation systems using multimodal AI workflows and cinematic UX design.",
+    tags: ["AI", "Next.js", "Multimodal AI", "Product Engineering"],
+    github: "https://github.com/NurjahanJ/moodquest",
+    demo: "https://moodquest-ai.netlify.app/"
   }
 ];
 
@@ -88,10 +95,26 @@ export const caseStudies: CaseStudy[] = [
     highlights: ["4 Full-Stack Apps", "Real-time Data Collection", "A/B/C/D Testing", "Environmental UX"]
   },
   {
+    title: "MoodQuest",
+    slug: "moodquest",
+    category: "APP DESIGN | AI PRODUCT ENGINEERING",
+    description: "AI-powered game and movie discovery platform that combines immersive mood board generation with personalized recommendation systems using multimodal AI workflows and cinematic UX design.",
+    tags: ["AI", "Next.js", "Multimodal AI", "Product Engineering", "OpenAI"],
+    github: "https://github.com/NurjahanJ/moodquest",
+    demo: "https://moodquest-ai.netlify.app/",
+    imagePath: "/mood-quest.png",
+    isFeatured: true,
+    duration: "Portfolio project",
+    teamSize: "Solo project",
+    status: "Live demo",
+    techStack: ["Next.js", "OpenAI", "Multimodal AI"],
+    highlights: ["Multimodal AI Workflows", "Cinematic UX Design", "Fallback Systems"]
+  },
+  {
     title: "StitchPal",
     slug: "stitchpal",
     category: "APP DESIGN | MVP (Prototype)",
-    description: "Flutter mobile app integrating OpenAI for personalized crochet patterns. Features AI-powered yarn suggestions, stitch counter, and wellness tools with Material Design 3 interface.",
+    description: "AI-powered Flutter mobile app that generates structured crochet patterns and supports an end-to-end creative workflow. Integrates OpenAI for personalized patterns, yarn suggestions, stitch counter, and wellness tools with Material Design 3 interface.",
     tags: ["AI", "Mobile App", "Crafting", "UX Design"],
     github: "https://github.com/NurjahanJ/stitchpal",
     demo: "https://stitchpal.netlify.app/",
