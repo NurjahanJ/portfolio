@@ -129,7 +129,7 @@ export default function MoodQuestCaseStudy() {
       <section className="space-y-5">
         <SectionHeading accentClass={accentText} barClass={accentBar}>The Problem</SectionHeading>
         <p className="text-slate-300 text-lg leading-relaxed">
-          Most recommendation systems focus only on functionality: "What should I watch?" or "What should I play?" But people often search for entertainment emotionally rather than logically. Users usually know the atmosphere they want, the emotional energy they want, and the aesthetic experience they want—but traditional recommendation systems rarely capture mood, emotional tone, cinematic atmosphere, or sensory identity.
+          Most recommendation systems focus only on functionality: "What should I watch?" or "What should I play?" But people often search for entertainment emotionally rather than logically. Users usually know the atmosphere they want, the emotional energy they want, and the aesthetic experience they want, but traditional recommendation systems rarely capture mood, emotional tone, cinematic atmosphere, or sensory identity.
         </p>
         <p className="text-slate-300 text-lg leading-relaxed">
           MoodQuest was designed to bridge that gap through AI-powered emotional personalization and immersive visual exploration.

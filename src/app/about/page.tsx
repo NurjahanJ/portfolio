@@ -81,7 +81,7 @@ const hobbies = [
   {
     title: "Crochet",
     image: "/crochet.png",
-    description: "Bringing creativity to life with yarn — cozy blankets, intricate patterns, and a sense of calm.",
+    description: "Bringing creativity to life with yarn: cozy blankets, intricate patterns, and a sense of calm.",
   },
   {
     title: "Cross Stitch",
@@ -149,7 +149,7 @@ export default function About() {
           {/* Bio text */}
           <div className="space-y-6 order-2 lg:order-1">
             <p className="text-xl md:text-2xl font-serif font-light text-white leading-relaxed">
-              Hi there! I&apos;m Nurjahan Jhorna — a Web Developer &amp; UX Designer passionate about building intelligent products that solve real user problems.
+              Hi there! I&apos;m Nurjahan Jhorna, a Web Developer &amp; UX Designer passionate about building intelligent products that solve real user problems.
             </p>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed">
               My curiosity for technology started with a simple question: <em className="text-white not-italic font-medium">how can design, code, and AI work together to create meaningful solutions?</em> Over time, that curiosity evolved into a drive to design and build AI-powered products that combine user research, product thinking, and intelligent systems.

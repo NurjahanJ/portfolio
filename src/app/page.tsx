@@ -69,7 +69,7 @@ export default function Home() {
             variants={fadeUp} initial="hidden" animate="visible" custom={0.24}
             className="text-lg md:text-xl font-light text-white/80 max-w-2xl mb-7 text-left leading-relaxed"
           >
-            I design and build AI-powered experiences that blend UX research, human-centered design, and modern frontend engineering — turning intelligent systems into interactive applications that feel thoughtful, immersive, and genuinely useful.
+            I design and build AI-powered experiences that blend UX research, human-centered design, and modern frontend engineering, turning intelligent systems into interactive applications that feel thoughtful, immersive, and genuinely useful.
           </motion.p>
 
           {/* Skill chips */}
@@ -136,7 +136,7 @@ export default function Home() {
               Research, design, and build end-to-end
             </h2>
             <p className="text-slate-400 text-base md:text-lg leading-relaxed mt-4">
-              I work across the full product lifecycle — from user research and interface design to shipping production frontend and AI-powered features.
+              I work across the full product lifecycle, from user research and interface design to shipping production frontend and AI-powered features.
             </p>
           </motion.div>
 
