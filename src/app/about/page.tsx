@@ -4,7 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFlutter, SiDart, SiFigma, SiCanva, SiGithub, SiVercel, SiHtml5, SiCss, SiJavascript, SiGit, SiOpenai, SiNotion } from "react-icons/si";
-import { HiOutlineBeaker, HiOutlineCursorArrowRays, HiOutlineUserGroup, HiOutlineCpuChip, HiOutlineCodeBracket, HiOutlinePaintBrush, HiOutlineSparkles, HiOutlineChatBubbleLeftRight, HiOutlineCommandLine, HiOutlineCodeBracketSquare, HiOutlineMagnifyingGlass, HiOutlineChatBubbleBottomCenterText, HiOutlineClipboardDocumentList, HiOutlineRectangleStack, HiOutlineUsers, HiOutlineArrowsRightLeft, HiOutlinePencilSquare, HiOutlineLightBulb, HiOutlineCog6Tooth, HiOutlineChartBar } from "react-icons/hi2";
+import { HiOutlineBeaker, HiOutlineCursorArrowRays, HiOutlineUserGroup, HiOutlineCpuChip, HiOutlineCodeBracket, HiOutlinePaintBrush, HiOutlineSparkles, HiOutlineChatBubbleLeftRight, HiOutlineCommandLine, HiOutlineCodeBracketSquare, HiOutlineMagnifyingGlass, HiOutlineChatBubbleBottomCenterText, HiOutlineClipboardDocumentList, HiOutlineRectangleStack, HiOutlineUsers, HiOutlineArrowsRightLeft, HiOutlinePencilSquare, HiOutlineLightBulb, HiOutlineCog6Tooth, HiOutlineChartBar, HiOutlineArrowDownTray, HiOutlineMapPin, HiOutlineAcademicCap, HiOutlineBriefcase } from "react-icons/hi2";
+import { Linkedin, Mail } from "lucide-react";
 import type { IconType } from "react-icons";
 
 interface Skill {
@@ -143,26 +144,76 @@ export default function About() {
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}
           variants={fadeUp}
-          className="space-y-8 mb-24 text-white text-[28px] leading-[1.9]"
+          className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-16 mb-24 items-start"
         >
-          <p>
-            Hi there! My name is Nurjahan Jhorna and I am a Web Developer &amp; UX Designer with a Bachelor of Science in Web &amp; Information Systems from New Jersey Institute of Technology.
-          </p>
-          <p>
-            I&apos;m passionate about building intelligent products that solve real user problems. My curiosity for technology started with a simple question: <em className="text-white not-italic">how can design, code, and AI work together to create meaningful solutions?</em> Over time, that curiosity evolved into a drive to design and build AI-powered products that combine user research, product thinking, and intelligent systems.
-          </p>
-          <p>
-            Throughout my academic journey, I&apos;ve gained hands-on experience with front-end development such as HTML, CSS, JavaScript, React, and Next.js, while also exploring UX design and research. I enjoy prototyping with Figma and translating ideas into responsive, accessible applications. For me, every project is more than just development; it&apos;s a chance to solve problems thoughtfully and create experiences that are both beautiful and intelligent.
-          </p>
-          <p>
-            I am particularly interested in building AI-powered products that combine user insight with intelligent systems. I focus on designing experiences where AI is not just a feature, but a core part of solving meaningful problems.
-          </p>
-          <p>
-            I&apos;m a lifelong learner, always experimenting with new frameworks and exploring ways to design solutions that are practical and human-centered. I&apos;ve integrated AI into my product development workflow to keep pace with industry shifts, boost efficiency, and spark innovation. As a Research Assistant at NJIT, I collaborated on interdisciplinary research applying AI to sustainability challenges, designed interactive web-based prototypes, and built back-end services and data collection pipelines.
-          </p>
-          <p>
-            Whether I&apos;m coding, sketching, or testing with users, my goal remains simple: to create experiences that resonate, empower, and make a difference.
-          </p>
+          {/* Bio text */}
+          <div className="space-y-6 order-2 lg:order-1">
+            <p className="text-xl md:text-2xl font-serif font-light text-white leading-relaxed">
+              Hi there! I&apos;m Nurjahan Jhorna — a Web Developer &amp; UX Designer passionate about building intelligent products that solve real user problems.
+            </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed">
+              My curiosity for technology started with a simple question: <em className="text-white not-italic font-medium">how can design, code, and AI work together to create meaningful solutions?</em> Over time, that curiosity evolved into a drive to design and build AI-powered products that combine user research, product thinking, and intelligent systems.
+            </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed">
+              Throughout my academic journey, I&apos;ve gained hands-on experience with front-end development such as HTML, CSS, JavaScript, React, and Next.js, while also exploring UX design and research. I enjoy prototyping with Figma and translating ideas into responsive, accessible applications. For me, every project is more than just development; it&apos;s a chance to solve problems thoughtfully and create experiences that are both beautiful and intelligent.
+            </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed">
+              I&apos;m especially interested in building experiences where AI is not just a feature, but a core part of solving meaningful problems. As a Research Assistant at NJIT, I collaborated on interdisciplinary research applying AI to sustainability challenges, designed interactive web-based prototypes, and built back-end services and data collection pipelines.
+            </p>
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed">
+              I&apos;m a lifelong learner, always experimenting with new frameworks and human-centered ways to design. Whether I&apos;m coding, sketching, or testing with users, my goal remains simple: to create experiences that resonate, empower, and make a difference.
+            </p>
+          </div>
+
+          {/* Quick facts card */}
+          <div className="order-1 lg:order-2 lg:sticky lg:top-24">
+            <div className="rounded-2xl border border-slate-700/50 bg-slate-900/40 backdrop-blur-sm p-8">
+              <dl className="space-y-5">
+                {[
+                  { icon: HiOutlineBriefcase, label: "Role", value: "UX/UI Designer & Frontend Developer" },
+                  { icon: HiOutlineAcademicCap, label: "Education", value: "B.S. Web & Information Systems, NJIT" },
+                  { icon: HiOutlineSparkles, label: "Focus", value: "AI-powered products & human-centered design" },
+                  { icon: HiOutlineMapPin, label: "Based in", value: "New Jersey, USA" },
+                ].map((fact) => (
+                  <div key={fact.label} className="flex gap-3">
+                    <fact.icon className="w-5 h-5 text-[#FF7533] shrink-0 mt-0.5" />
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.15em] text-slate-500 mb-0.5">{fact.label}</dt>
+                      <dd className="text-sm text-slate-200 leading-snug">{fact.value}</dd>
+                    </div>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="flex flex-wrap gap-2.5 mt-7 pt-6 border-t border-slate-700/40">
+                <a
+                  href="/Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm rounded-full bg-gradient-to-r from-[#FF7533] to-[#E64A19] text-white font-medium hover:shadow-lg hover:shadow-[#FF7533]/25 transition-all duration-300"
+                >
+                  <HiOutlineArrowDownTray className="w-4 h-4" />
+                  Resume
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nurjahanjhorna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-600/50 text-slate-300 hover:border-[#FF7533]/50 hover:text-white transition-all duration-300"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:njhorna07@gmail.com"
+                  aria-label="Email"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-600/50 text-slate-300 hover:border-[#FF7533]/50 hover:text-white transition-all duration-300"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Skills */}
