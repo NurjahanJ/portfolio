@@ -95,22 +95,6 @@ export const caseStudies: CaseStudy[] = [
     highlights: ["4 Full-Stack Apps", "Real-time Data Collection", "A/B/C/D Testing", "Environmental UX"]
   },
   {
-    title: "MoodQuest",
-    slug: "moodquest",
-    category: "APP DESIGN | AI PRODUCT ENGINEERING",
-    description: "AI-powered game and movie discovery platform that combines immersive mood board generation with personalized recommendation systems using multimodal AI workflows and cinematic UX design.",
-    tags: ["AI", "Next.js", "Multimodal AI", "Product Engineering", "OpenAI"],
-    github: "https://github.com/NurjahanJ/moodquest",
-    demo: "https://moodquest-ai.netlify.app/",
-    imagePath: "/mood-quest.png",
-    isFeatured: true,
-    duration: "Portfolio project",
-    teamSize: "Solo project",
-    status: "Live demo",
-    techStack: ["Next.js", "OpenAI", "Multimodal AI"],
-    highlights: ["Multimodal AI Workflows", "Cinematic UX Design", "Fallback Systems"]
-  },
-  {
     title: "StitchPal",
     slug: "stitchpal",
     category: "APP DESIGN | MVP (Prototype)",
@@ -125,6 +109,22 @@ export const caseStudies: CaseStudy[] = [
     status: "Live demo",
     techStack: ["Flutter", "OpenAI", "Material Design"],
     highlights: ["AI-Powered Patterns", "Material Design 3", "Wellness Features"]
+  },
+  {
+    title: "Inflation & Housing Dashboard",
+    slug: "dashboard",
+    category: "WEB APP | DATA VISUALIZATION",
+    description: "React-based data visualization analyzing housing market trends. Processes economic data with interactive Plotly.js charts, D3.js visualizations, and CSV parsing for market insights.",
+    tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
+    github: "https://github.com/NurjahanJ/dasboard",
+    demo: "https://dasboard-wheat.vercel.app/",
+    imagePath: "/project2-images/image.png",
+    isFeatured: true,
+    duration: "2 weeks",
+    teamSize: "Solo project",
+    status: "Live demo",
+    techStack: ["React", "Plotly.js", "D3.js"],
+    highlights: ["Economic Data Analysis", "Interactive Charts", "Market Insights"]
   },
   {
     title: "Power Up Or Power Down",
@@ -143,19 +143,19 @@ export const caseStudies: CaseStudy[] = [
     highlights: ["33+ User Interviews", "2 Interactive Prototypes", "Environmental UX Research"]
   },
   {
-    title: "Inflation & Housing Dashboard",
-    slug: "dashboard",
-    category: "WEB APP | DATA VISUALIZATION",
-    description: "React-based data visualization analyzing housing market trends. Processes economic data with interactive Plotly.js charts, D3.js visualizations, and CSV parsing for market insights.",
-    tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
-    github: "https://github.com/NurjahanJ/dasboard",
-    demo: "https://dasboard-wheat.vercel.app/",
-    imagePath: "/project2-images/image.png",
+    title: "MoodQuest",
+    slug: "moodquest",
+    category: "APP DESIGN | AI PRODUCT ENGINEERING",
+    description: "AI-powered game and movie discovery platform that combines immersive mood board generation with personalized recommendation systems using multimodal AI workflows and cinematic UX design.",
+    tags: ["AI", "Next.js", "Multimodal AI", "Product Engineering", "OpenAI"],
+    github: "https://github.com/NurjahanJ/moodquest",
+    demo: "https://moodquest-ai.netlify.app/",
+    imagePath: "/mood-quest.png",
     isFeatured: true,
-    duration: "2 weeks",
+    duration: "Portfolio project",
     teamSize: "Solo project",
     status: "Live demo",
-    techStack: ["React", "Plotly.js", "D3.js"],
-    highlights: ["Economic Data Analysis", "Interactive Charts", "Market Insights"]
+    techStack: ["Next.js", "OpenAI", "Multimodal AI"],
+    highlights: ["Multimodal AI Workflows", "Cinematic UX Design", "Fallback Systems"]
   }
 ];

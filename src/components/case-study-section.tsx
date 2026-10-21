@@ -15,14 +15,14 @@ export function CaseStudySection() {
         <h2 className="text-3xl md:text-4xl font-serif font-medium text-white">Case Studies</h2>
       </div>
 
-      <div className="space-y-12 max-w-5xl mx-auto">
+      <div className="space-y-20 md:space-y-28 max-w-6xl mx-auto">
         {studiesToShow.map((study, index) => (
           <motion.div
             key={study.slug}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
           >
             <CaseStudyCard
               category={study.category}
@@ -31,8 +31,12 @@ export function CaseStudySection() {
               imagePath={study.imagePath}
               slug={study.slug}
               techStack={study.techStack}
+              demo={study.demo}
+              github={study.github}
               studentResearchers={study.studentResearchers}
               facultyAdvisor={study.facultyAdvisor}
+              index={index}
+              reverse={index % 2 === 1}
             />
           </motion.div>
         ))}

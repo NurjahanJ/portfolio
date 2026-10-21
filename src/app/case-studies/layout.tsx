@@ -1,4 +1,12 @@
 import type { Metadata } from "next";
+import { Fraunces } from "next/font/google";
+
+const fraunces = Fraunces({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Case Studies | Project Journal",
@@ -11,7 +19,7 @@ export default function CaseStudiesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen w-full bg-[rgba(10,15,30,0.9)] backdrop-blur-[10px]">
+    <div className={`${fraunces.variable} case-study-scope min-h-screen w-full bg-[#1b2440]`}>
       <div className="container mx-auto px-4 py-8">
         {children}
       </div>

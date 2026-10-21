@@ -216,6 +216,11 @@
 }
 
 @layer components {
+  /* Scope Fraunces display serif to case-study project pages only */
+  .case-study-scope .font-serif {
+    font-family: var(--font-fraunces), Georgia, serif;
+  }
+
   .card {
     @apply rounded-xl shadow-md bg-card text-card-foreground p-6 mb-6;
   }
